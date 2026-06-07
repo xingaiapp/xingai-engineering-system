@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.1.0
+**Version:** 0.1.1
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -51,6 +51,7 @@ docs/
 - `version-readme-before-push.mdc` — README/version notes before push
 - `poc-bilingual-design-reference.mdc` — POCs must reference EN + 中文 design docs
 - `reusable-xingai-engineering-system.mdc` — identify reusable assets without over-engineering
+- `legal-protection-all-repos.mdc` — require disclaimers and liability protection across public repos
 
 ### Cursor Skills
 
@@ -68,6 +69,7 @@ docs/
 - `poc-readme.md`
 - `adr-template.md`
 - `prd-template.md`
+- `disclaimer-template.md`
 
 ## Install
 
@@ -82,6 +84,11 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.1.1
+
+- Add global legal protection rule for all XingAI repos
+- Add reusable disclaimer template for public repos, POCs, docs, prompts, and code examples
 
 ### 0.1.0
 
