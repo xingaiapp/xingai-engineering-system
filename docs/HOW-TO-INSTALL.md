@@ -46,11 +46,12 @@ Copy a skill folder:
 mkdir -p ~/.cursor/skills
 cp -R cursor/skills/project-init ~/.cursor/skills/
 cp -R cursor/skills/xingai-web-design ~/.cursor/skills/
+cp -R cursor/skills/research-ai-loading-ux ~/.cursor/skills/
 ```
 
 Why this works:
 
-Skills are better than rules for repeatable workflows with multiple steps. For example, `project-init` is a workflow for bootstrapping a new app. `xingai-web-design` is a workflow for UI work.
+Skills are better than rules for repeatable workflows with multiple steps. For example, `project-init` is a workflow for bootstrapping a new app. `xingai-web-design` is a workflow for UI work. `research-ai-loading-ux` is a workflow for AI/search loading states that need visible progress, elapsed time, completion, and retry behavior.
 
 Common mistake:
 

@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.1.1
+**Version:** 0.1.3
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -58,6 +58,7 @@ docs/
 - `project-init` — initialize new XingAI apps
 - `xingai-web-design` — build and refine XingAI web UI surfaces
 - `apply-worktree-safely` — apply agent worktree changes back to main without unsafe commits or silent overwrites
+- `research-ai-loading-ux` — loading/status UX for AI, search, polling, RAG, and long-running jobs
 
 ### Prompts
 
@@ -85,6 +86,11 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.1.3
+
+- Add `research-ai-loading-ux` Cursor Skill for trustworthy AI/search loading states
+- Standardize staged status boxes with elapsed time, progress, completion, and retry behavior
 
 ### 0.1.2
 
