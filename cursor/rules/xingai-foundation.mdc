@@ -1,0 +1,89 @@
+---
+description: XingAI foundation — mobile chrome, i18n, theme, legal, SEO/AEO for public product apps
+alwaysApply: true
+---
+
+# XingAI Foundation
+
+Applies to every `xingai-*` repo and public `*.xingai.app` product app.
+
+## Mobile-First
+
+- Design for 320-430px usable width first.
+- Touch targets should be at least 44x44 CSS px.
+- Use safe-area padding for fixed top/bottom chrome.
+- Default to single-column layouts on phones.
+- Put primary decision content before decorative chrome in DOM order.
+- Do not fake OS status bars in the DOM.
+
+## Navigation Chrome
+
+Every shipped product surface should expose the same nav destinations across form factors.
+
+| Surface | Mobile | Desktop |
+|---|---|---|
+| Top bar | menu, brand/title, language, theme, profile/login if applicable | sticky top bar or reachable controls |
+| Side menu | sheet/drawer with full nav + settings fallback | same sheet or persistent sidebar |
+| Footer bar | fixed bottom tab bar for primary destinations | no bottom tab bar |
+| Footer links | legal + help in drawer/page footer | same legal links in footer |
+
+Rules:
+
+1. Never hide language or theme on mobile unless the side drawer repeats them.
+2. Long titles should truncate cleanly.
+3. Main content needs bottom padding when bottom nav exists.
+4. Mark unreleased nav items `Soon`; do not ship empty routes.
+5. Do not expose internal labels like V1/V2 in user-facing nav or titles.
+
+## Language
+
+Required locales:
+
+- `en`
+- `zh`
+- `ko`
+
+All new user-facing strings should go through the repo i18n layer. Product AI prompts and outputs should respect selected language where applicable.
+
+## Theme
+
+- Support light and dark themes.
+- Use repo theme convention: `next-themes`, `.dark`, or `data-theme`.
+- Avoid theme flash.
+- Update `theme-color` metadata where supported.
+- Use repo tokens, preferably `oklch`; do not introduce random primary hex colors.
+
+## Legal
+
+Every public product must link:
+
+- `/legal/privacy`
+- `/legal/terms`
+- `/legal/disclaimer`
+
+AI lifestyle/travel/style/research products must say suggestions are informational and users should verify before action. Finance products need risk-first copy and no return promises.
+
+## SEO + AEO
+
+Before calling a product route shipped:
+
+- `metadataBase`
+- unique title + description per route
+- canonical URL
+- Open Graph + Twitter card
+- sitemap.xml
+- robots.txt
+- correct `<html lang>`
+- `llms.txt`
+- short factual FAQ
+- JSON-LD where applicable
+
+## Pre-Ship Checklist
+
+- [ ] Mobile layout verified at ~375px
+- [ ] Top bar, side drawer, and bottom nav wired where applicable
+- [ ] en / zh / ko strings complete
+- [ ] Light/dark readable
+- [ ] Privacy, Terms, Disclaimer linked
+- [ ] SEO/AEO files updated
+- [ ] No internal version labels in UI
