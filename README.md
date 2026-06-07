@@ -57,6 +57,7 @@ docs/
 
 - `project-init` — initialize new XingAI apps
 - `xingai-web-design` — build and refine XingAI web UI surfaces
+- `apply-worktree-safely` — apply agent worktree changes back to main without unsafe commits or silent overwrites
 
 ### Prompts
 
@@ -84,6 +85,11 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.1.2
+
+- Add `apply-worktree-safely` Cursor Skill for safer multi-worktree agent workflows
+- Document a patch-based apply flow that avoids temporary commits and refuses silent untracked-file overwrites
 
 ### 0.1.1
 
