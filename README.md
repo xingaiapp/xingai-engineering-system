@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.0
+**Version:** 0.3.1
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -69,6 +69,7 @@ docs/
 - `apply-worktree-safely` — apply agent worktree changes back to main without unsafe commits or silent overwrites
 - `research-ai-loading-ux` — loading/status UX for AI, search, polling, RAG, and long-running jobs
 - `multi-agent-poc` — build and demo orchestrator + specialist agent POCs for Enterprise Agent Platform validation
+- `system-design-docs` — bilingual enterprise system design docs, 5W framework, system-design UX mockup PNGs (architecture posters, not web UI)
 
 ### Prompts
 
@@ -113,6 +114,11 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.3.1
+
+- Add `system-design-docs` Cursor Skill — bilingual EN/ZH architecture docs, 5W framework, layered system-design UX mockup PNGs, dual-audience writing, XingAI pattern alignment
+- Add `template.md` and `ux-mockup-prompt.md` supporting files under `cursor/skills/system-design-docs/`
 
 ### 0.3.0
 
