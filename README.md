@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.1.3
+**Version:** 0.1.4
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -59,19 +59,28 @@ docs/
 - `xingai-web-design` — build and refine XingAI web UI surfaces
 - `apply-worktree-safely` — apply agent worktree changes back to main without unsafe commits or silent overwrites
 - `research-ai-loading-ux` — loading/status UX for AI, search, polling, RAG, and long-running jobs
+- `multi-agent-poc` — build and demo orchestrator + specialist agent POCs for Enterprise Agent Platform validation
 
 ### Prompts
 
 - `reusable-asset-review.md` — decide whether a solution should become a reusable asset
 - `architecture-review.md` — review a project or POC for reusable architecture patterns
+- `multi-agent-poc-review.md` — review multi-agent POCs before team or leadership demos
 
 ### Templates
 
 - `product-readme.md`
 - `poc-readme.md`
+- `enterprise-agent-poc-readme.md` — Phase 1 MVP Validation Layer POC docs
 - `adr-template.md`
 - `prd-template.md`
 - `disclaimer-template.md`
+
+### Patterns
+
+- `worker-cache-boundary.md` — worker computes, API reads cache
+- `orchestrator-trace-governance.md` — multi-agent orchestration + trace audit trail
+- `cache-first-before-llm.md` — hash-based input/analysis cache before LLM calls
 
 ## Install
 
@@ -86,6 +95,13 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.1.4
+
+- Add `multi-agent-poc` Cursor Skill (orchestrator + specialist agents + trace demos)
+- Add patterns: `orchestrator-trace-governance`, `cache-first-before-llm`
+- Add prompt `multi-agent-poc-review.md` and template `enterprise-agent-poc-readme.md`
+- Promoted from `xingai-enterprise-ai-pocs`, `xingai-learn`, and `xingai-founder` work
 
 ### 0.1.3
 

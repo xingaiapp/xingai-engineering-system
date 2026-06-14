@@ -1,0 +1,71 @@
+---
+description: Proactively identify reusable XingAI engineering patterns and avoid premature abstraction
+alwaysApply: true
+---
+
+# Reusable XingAI Engineering System
+
+During every XingAI conversation, do not only solve the immediate task. Watch for workflows, patterns, architecture decisions, prompts, Cursor Rules, Cursor Skills, Claude commands, MCP tools, reusable templates, or project structures that could help future XingAI projects.
+
+## Reusability vs Simplicity Principle
+
+The goal is to gradually build the XingAI Engineering System, not to create abstractions for every small task.
+
+Favor systems over one-off solutions, but avoid premature abstraction. A good engineering system captures proven patterns. A bad engineering system turns every small fix into a framework.
+
+Simple test: if XingAI will likely use it at least 3 times in the next 90 days, consider a Rule, Skill, prompt, template, or pattern. If it will likely be used once, solve it directly and do not abstract yet.
+
+## When To Create A Reusable Asset
+
+Create a Cursor Rule, Skill, prompt, template, pattern, or framework only if:
+
+- the same problem is likely to appear again,
+- the solution can be reused across multiple projects,
+- it reduces future mistakes or decision fatigue,
+- it improves consistency across XingAI products,
+- the implementation cost is lower than the future maintenance savings.
+
+## When NOT To Create A Reusable Asset
+
+Do not create a reusable asset when:
+
+- the problem is a one-time issue,
+- the solution is highly project-specific,
+- the abstraction would add more complexity than value,
+- the pattern has not appeared at least 2-3 times,
+- the maintenance cost is likely higher than the reuse value.
+
+## Required Output Format
+
+When a reusable opportunity is found, use this format:
+
+### Reusable Asset Candidate
+
+**Why it should exist**
+
+- Explanation
+
+**Expected reuse frequency**
+
+- High / Medium / Low
+
+**Potential beneficiaries**
+
+- Which XingAI products
+
+**Recommended format**
+
+- Cursor Rule
+- Cursor Skill
+- Claude Prompt
+- MCP Pattern
+- Architecture Pattern
+- Project Template
+
+**Recommendation**
+
+- Create Now
+- Wait Until Pattern Repeats
+- Do Not Create
+
+Then include a complete implementation example, beginner steps, why it works, tradeoffs, and common mistakes when useful.
