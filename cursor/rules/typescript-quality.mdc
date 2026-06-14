@@ -1,0 +1,127 @@
+---
+description: TypeScript quality baseline for XingAI Next.js products — strict mode, Zod validation, no-any, typed errors
+alwaysApply: true
+globs: "**/*.ts,**/*.tsx"
+---
+
+# TypeScript Quality
+
+Applies to every XingAI Next.js product and TypeScript codebase.
+
+## Strict Mode
+
+Every XingAI TypeScript project must have `strict: true` in `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true
+  }
+}
+```
+
+## No `any`
+
+Never use `any`. Use:
+
+- `unknown` when the type is not yet known — narrow it before use.
+- `never` for unreachable branches.
+- Specific types or `z.infer<typeof Schema>` from Zod.
+
+```ts
+// ❌
+const data: any = await res.json();
+
+// ✅
+const data: unknown = await res.json();
+const parsed = MySchema.safeParse(data);
+if (!parsed.success) throw new Error("Unexpected response shape");
+```
+
+## Runtime Validation with Zod
+
+Validate all external data at the boundary:
+
+- API request bodies
+- API response shapes from third-party APIs
+- Environment variables (use `env.ts` pattern)
+- URL params and search params
+
+```ts
+import { z } from "zod";
+
+const ResponseSchema = z.object({
+  verdict: z.string(),
+  confidence: z.number().min(0).max(1),
+  reasons: z.array(z.string()),
+});
+
+type Response = z.infer<typeof ResponseSchema>;
+```
+
+## Typed Errors
+
+Do not `catch (e: any)`. Narrow the error type:
+
+```ts
+// ✅
+try {
+  await doWork();
+} catch (err) {
+  const message = err instanceof Error ? err.message : String(err);
+  console.error(message);
+}
+```
+
+For custom errors, extend `Error`:
+
+```ts
+export class CacheError extends Error {
+  constructor(message: string, public readonly key: string) {
+    super(message);
+    this.name = "CacheError";
+  }
+}
+```
+
+## Null Safety
+
+Enable `noUncheckedIndexedAccess` and handle optional chaining:
+
+```ts
+// ❌
+const first = items[0].name;
+
+// ✅
+const first = items[0]?.name ?? "Unknown";
+```
+
+## i18n Types
+
+All i18n helpers must use a typed `Lang`:
+
+```ts
+export type Lang = "en" | "zh" | "ko";
+
+export function tr(lang: Lang, en: string, zh: string, ko: string): string {
+  return lang === "zh" ? zh : lang === "ko" ? ko : en;
+}
+```
+
+Never pass an untyped string as `lang`.
+
+## Import Style
+
+- Prefer named imports over default imports for utilities.
+- Use path aliases (`@/lib/...`) not relative `../../` chains.
+- Do not barrel-export everything from `index.ts` unless the module is a library.
+
+## Common Mistakes
+
+- `JSON.parse(...)` result typed as `any`.
+- `catch (e: any)` then `e.message` — throws if `e` is not an Error.
+- `process.env.X as string` — use `env.ts` instead.
+- Missing `?.` on array index access when `noUncheckedIndexedAccess` is on.
+- `z.object({}).passthrough()` used too broadly — validate only what you own.

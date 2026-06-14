@@ -1,0 +1,87 @@
+---
+description: Enforce conventional commit format across all XingAI repos
+alwaysApply: true
+---
+
+# Conventional Commits
+
+Every commit in a XingAI repo must follow the conventional commit format. This is enforced in CI and enables automated changelogs.
+
+## Format
+
+```
+<type>(<scope>): <short summary>
+
+[optional body]
+
+[optional footer]
+```
+
+## Types
+
+| Type | When to use |
+|---|---|
+| `feat` | New user-facing feature or capability |
+| `fix` | Bug fix |
+| `refactor` | Code change with no behavior change |
+| `perf` | Performance improvement |
+| `test` | Adding or fixing tests |
+| `docs` | Documentation only |
+| `chore` | Build, deps, config, tooling — no src change |
+| `ci` | GitHub Actions or CI config |
+| `style` | Formatting, whitespace — no logic change |
+| `revert` | Reverts a prior commit |
+
+## Scope (optional)
+
+Use the feature area or module name: `worker`, `ui`, `auth`, `i18n`, `api`, `cache`, `agent`.
+
+## Examples
+
+```
+feat(worker): add stale cache refresh with background requeue
+fix(ui): correct bottom nav overlap on iPhone SE
+refactor(agent): split orchestrator plan step into separate function
+test(api): add integration tests for /demo/run endpoint
+chore(deps): bump next from 14.1.0 to 15.0.0
+ci: add npm audit step to PR workflow
+docs(adr): add ADR-003 for cache TTL decision
+```
+
+## Rules
+
+- Summary line: 72 characters max, lowercase, no period at end.
+- Use imperative mood: "add", "fix", "remove" — not "added", "fixed", "removed".
+- Breaking changes: add `!` after type/scope and a `BREAKING CHANGE:` footer.
+- Do not use vague summaries: "updates", "changes", "fixes stuff", "WIP".
+
+## Breaking Change Format
+
+```
+feat(api)!: rename /demo/run to /api/v1/run
+
+BREAKING CHANGE: all clients must update the endpoint path.
+```
+
+## What This Enables
+
+- Automated `CHANGELOG.md` generation with `conventional-changelog` or `release-please`
+- Semantic version bumps (`feat` → minor, `fix` → patch, `!` → major)
+- Clear git history that non-authors can read
+- CI can block merges on non-conforming commit messages via `commitlint`
+
+## commitlint Setup (add to new projects)
+
+```bash
+npm install --save-dev @commitlint/cli @commitlint/config-conventional
+```
+
+```js
+// commitlint.config.js
+export default { extends: ['@commitlint/config-conventional'] };
+```
+
+```yaml
+# .github/workflows/commitlint.yml
+- uses: wagoid/commitlint-github-action@v6
+```

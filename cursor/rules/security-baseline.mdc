@@ -1,0 +1,123 @@
+---
+description: Security baseline for all XingAI repos — dependency scanning, secrets hygiene, input validation, auth
+alwaysApply: true
+---
+
+# Security Baseline
+
+Applies to every XingAI repo. Security is not optional and must not be deferred to "after launch".
+
+## Secrets Hygiene
+
+Never commit secrets. No exceptions.
+
+- All credentials go in `.env` (git-ignored) or the host platform's secret manager (Vercel, GitHub Actions secrets).
+- `.env.example` contains only safe placeholder values.
+- Never use `process.env.SECRET` directly — import from `env.ts` which validates at startup.
+- Run `git grep -r "sk-" .` before any public push to catch leaked OpenAI keys.
+- Add `.env` to `.gitignore` on project creation. Verify before first push.
+
+## Dependency Scanning
+
+Run on every PR and weekly in CI:
+
+```bash
+# Node / Next.js
+npm audit --audit-level=high
+
+# Python / FastAPI
+pip install pip-audit
+pip-audit
+```
+
+Failing rules:
+- Block merge on `high` or `critical` severity CVEs.
+- `moderate` CVEs: create a tracking issue, do not block.
+- Update vulnerable packages within 7 days of detection for `high/critical`.
+
+## Input Validation
+
+All data entering the system must be validated before use:
+
+- API request bodies: Zod (`safeParse`) in TypeScript, Pydantic in Python.
+- URL params and search params: validate type and length before use.
+- User-uploaded files: validate MIME type, size, and extension server-side.
+- Never trust `Content-Type` header alone for file uploads.
+
+## SQL / NoSQL Injection
+
+- Always use parameterized queries or ORM methods. Never string-concatenate user input into SQL.
+- SQLite (Python): use `?` placeholders, never f-strings in queries.
+- Prisma (TS): use Prisma client methods — never `queryRaw` with user input.
+
+## Authentication
+
+- Use NextAuth.js for Next.js apps with Google OAuth as the default provider.
+- Never roll custom auth. Never store passwords unless explicitly required.
+- JWT secrets must be ≥32 random bytes (`AUTH_SECRET`).
+- Session tokens must use `httpOnly; Secure; SameSite=Strict` cookies.
+- Protect all non-public API routes with session checks.
+- POCs that skip auth must display a clear "No auth — dev only" banner.
+
+## CORS
+
+FastAPI backends used by XingAI frontends:
+
+```python
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://your-product.xingai.app"],  # never "*" in production
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type", "Authorization"],
+)
+```
+
+Never use `allow_origins=["*"]` in production. OK for POC localhost dev only.
+
+## Rate Limiting
+
+Every public API must rate-limit:
+
+- Next.js: use `@upstash/ratelimit` with Redis, or Vercel's built-in rate limiting.
+- FastAPI: `slowapi` with IP-based limits.
+- Default: 20 requests/minute per IP for AI endpoints (they are expensive).
+
+## Content Security Policy
+
+Add CSP headers to every `*.xingai.app` product:
+
+```ts
+// next.config.ts
+const cspHeader = `
+  default-src 'self';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' blob: data: https:;
+  font-src 'self';
+  connect-src 'self' https://api.openai.com;
+  frame-ancestors 'none';
+`.replace(/\n/g, ' ');
+```
+
+## Pre-Push Security Checklist
+
+```markdown
+- [ ] No secrets in staged files (`git diff --staged | grep -i "sk-\|secret\|password\|token"`)
+- [ ] npm audit / pip-audit passes at high severity
+- [ ] Input validated with Zod or Pydantic at all entry points
+- [ ] No raw process.env reads — using env.ts
+- [ ] Auth enforced on all non-public routes
+- [ ] CORS restricted to known origins in production
+- [ ] Rate limiting on AI/expensive endpoints
+```
+
+## Common Mistakes
+
+- `.env` committed instead of `.env.example`.
+- `allow_origins=["*"]` shipped to production.
+- JWT secret is a short, guessable string.
+- File upload validates only client-side MIME type.
+- SQL query built with f-string + user input.
+- AI endpoint has no rate limit — one user can exhaust OpenAI budget.
