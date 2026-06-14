@@ -1,0 +1,171 @@
+---
+description: WCAG 2.1 AA accessibility baseline for all XingAI public product UIs
+alwaysApply: true
+globs: "**/*.tsx,**/*.jsx"
+---
+
+# Accessibility Baseline
+
+Applies to every XingAI public product UI. Target: **WCAG 2.1 AA**.
+
+This is not optional. Accessibility is required for global reach (EU EAA 2025, ADA in the US) and improves usability for all users.
+
+## Semantic HTML First
+
+Use the right element before reaching for ARIA:
+
+```tsx
+// ✅ — button is focusable and keyboard-operable by default
+<button onClick={handleSubmit}>Analyze</button>
+
+// ❌ — div needs manual tabIndex, role, keydown handler
+<div onClick={handleSubmit}>Analyze</div>
+```
+
+Use: `<button>`, `<a href>`, `<input>`, `<select>`, `<label>`, `<nav>`, `<main>`, `<header>`, `<footer>`, `<section>`, `<article>`, `<h1>–<h6>`.
+
+## Focus Management
+
+- All interactive elements must be keyboard-reachable (Tab) and activatable (Enter/Space).
+- Never use `outline: none` or `outline: 0` without a custom focus ring replacement.
+- Modals and drawers must trap focus while open and return focus to the trigger on close.
+- On route change, move focus to the new page heading or a skip-link target.
+
+```css
+/* Required — never remove this without a replacement */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+```
+
+## ARIA Rules
+
+Add ARIA only when semantic HTML is not enough:
+
+```tsx
+// Dynamic regions that update (AI results, status messages)
+<div role="status" aria-live="polite">{statusMessage}</div>
+
+// Error messages
+<div role="alert">{errorMessage}</div>
+
+// Icon-only buttons
+<button aria-label={tr(lang, "Close menu", "关闭菜单", "메뉴 닫기")}>
+  <XIcon aria-hidden="true" />
+</button>
+
+// Loading spinners
+<div role="status" aria-label={tr(lang, "Loading...", "加载中...", "로딩 중...")}>
+  <Spinner aria-hidden="true" />
+</div>
+```
+
+Rules:
+- `aria-label` or `aria-labelledby` on every control without visible text.
+- `aria-hidden="true"` on decorative icons and images.
+- `aria-expanded` on toggles (menus, accordions).
+- `aria-invalid` + `aria-describedby` on form fields with errors.
+
+## Color and Contrast
+
+- Text contrast: minimum **4.5:1** for body text, **3:1** for large text (18px+ regular or 14px+ bold).
+- Never use color alone to convey meaning — pair with icon, label, or pattern.
+- Test in both light and dark mode.
+- Do not rely on placeholder text as a label.
+
+Tools: [contrast.tools](https://contrast.tools), Chrome DevTools contrast checker.
+
+## Images and Media
+
+```tsx
+// ✅ informative image
+<img src={chart} alt={tr(lang, "Portfolio allocation pie chart", "投资组合饼图", "포트폴리오 파이 차트")} />
+
+// ✅ decorative image
+<img src={decorative} alt="" aria-hidden="true" />
+
+// Next.js Image
+<Image src={logo} alt="XingAI logo" width={120} height={40} />
+```
+
+- Every `<img>` must have `alt`. Decorative images: `alt=""`.
+- Videos must have captions for any spoken content.
+
+## Forms
+
+```tsx
+// ✅ — label associated with input
+<label htmlFor="goal">
+  {tr(lang, "Your investment goal", "您的投资目标", "투자 목표")}
+</label>
+<input
+  id="goal"
+  type="text"
+  aria-required="true"
+  aria-describedby={error ? "goal-error" : undefined}
+/>
+{error && (
+  <p id="goal-error" role="alert" className="text-sm text-destructive">
+    {error}
+  </p>
+)}
+```
+
+Never use placeholder as the only label for an input.
+
+## Mobile Accessibility
+
+- Touch targets: minimum 44×44 CSS px (applies to both sighted and assistive tech users).
+- Do not disable zoom (`user-scalable=no` is banned — fails WCAG 1.4.4).
+- Ensure swipe gestures have tap alternatives.
+
+```html
+<!-- ✅ -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- ❌ -->
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+```
+
+## Testing
+
+Run axe-core in CI and dev:
+
+```bash
+npm install --save-dev @axe-core/playwright
+```
+
+```ts
+// playwright/a11y.spec.ts
+import { checkA11y } from 'axe-playwright';
+
+test('home page has no a11y violations', async ({ page }) => {
+  await page.goto('/');
+  await checkA11y(page, undefined, {
+    detailedReport: true,
+    runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa'] },
+  });
+});
+```
+
+Manual checks before every ship:
+- Tab through the full page — every action reachable?
+- Screen reader (VoiceOver on Mac, NVDA on Windows) — does it make sense?
+- Zoom to 200% — does layout break?
+- Color-blind simulation in Chrome DevTools.
+
+## Pre-Ship Accessibility Checklist
+
+```markdown
+- [ ] All interactive elements reachable by keyboard
+- [ ] Focus ring visible on all interactive elements
+- [ ] Color contrast ≥ 4.5:1 for body text (light and dark)
+- [ ] All images have alt text (or alt="" if decorative)
+- [ ] All form inputs have associated labels
+- [ ] Dynamic regions use aria-live or role="status"
+- [ ] Error messages use role="alert"
+- [ ] No user-scalable=no in viewport meta
+- [ ] Touch targets ≥ 44×44px
+- [ ] axe-core passes in CI or dev run
+```

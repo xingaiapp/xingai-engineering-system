@@ -1,0 +1,96 @@
+---
+description: Branch naming, PR size, and merge strategy for XingAI repos
+alwaysApply: true
+---
+
+# Branch Strategy
+
+XingAI repos use **trunk-based development** with short-lived feature branches.
+
+## Core Rules
+
+- `main` is always deployable. Never commit broken code to `main`.
+- Feature branches live 1–3 days max. Long-lived branches cause merge pain.
+- One concern per branch. Do not mix features, refactors, and dependency bumps.
+- PRs must pass CI before merge. No exceptions.
+
+## Branch Naming
+
+```
+<type>/<short-kebab-description>
+```
+
+| Type | Example |
+|---|---|
+| `feat/` | `feat/worker-stale-refresh` |
+| `fix/` | `fix/bottom-nav-iphone-se` |
+| `refactor/` | `refactor/split-orchestrator-plan` |
+| `test/` | `test/api-integration-demo-run` |
+| `chore/` | `chore/bump-next-15` |
+| `docs/` | `docs/adr-003-cache-ttl` |
+| `ci/` | `ci/add-npm-audit-step` |
+
+Rules:
+- Lowercase and hyphen-separated.
+- Max 50 characters.
+- No ticket numbers unless your team uses them consistently — they rot.
+
+## PR Size
+
+| Size | Lines changed | Rule |
+|---|---|---|
+| Tiny | < 50 | Merge same day |
+| Small | 50–250 | Preferred. One reviewer. |
+| Medium | 250–500 | Two reviewers. Write a clear description. |
+| Large | > 500 | Split it. If you cannot split it, explain why in the PR description. |
+
+A PR that touches unrelated files (e.g. a worker fix + UI redesign) must be split.
+
+## Protected Branches
+
+Configure in GitHub → Settings → Branches:
+
+```
+Branch: main
+✅ Require pull request before merging
+✅ Require status checks to pass (CI must be green)
+✅ Require at least 1 approval
+✅ Dismiss stale reviews on new push
+✅ Do not allow force pushes
+✅ Do not allow deletions
+```
+
+## Merge Strategy
+
+- **Squash and merge** for feature branches. Keeps `main` history clean — one commit per feature.
+- **Merge commit** for release branches when you need to preserve history.
+- **Rebase** only for personal cleanup before PR — never rebase shared branches.
+
+## Release Tags
+
+After merging a `feat` or significant `fix` to `main`, tag the release:
+
+```bash
+git tag -a v0.2.1 -m "fix(worker): correct stale TTL calculation"
+git push origin v0.2.1
+```
+
+Use semantic versioning: `MAJOR.MINOR.PATCH`
+- `feat` → MINOR bump
+- `fix` → PATCH bump
+- `feat!` or `BREAKING CHANGE` → MAJOR bump
+
+## Hotfix Flow
+
+```
+main → hotfix/fix-payment-crash → PR → CI → squash merge → tag patch
+```
+
+Never hotfix directly to `main`. Even a one-line fix needs a branch + PR + CI.
+
+## Common Mistakes
+
+- Long-lived branches that diverge for weeks — painful rebase, missed reviews.
+- Committing directly to `main` to "save time" — breaks for everyone immediately.
+- Mixing feature work and dependency bumps in one PR — makes rollback harder.
+- Force-pushing to `main` after branch protection is set — protected branches block this for good reason.

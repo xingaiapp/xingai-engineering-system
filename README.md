@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.2.0
+**Version:** 0.3.0
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -49,6 +49,10 @@ docs/
 - `xingai-foundation.mdc` — mobile-first, i18n, theme, legal, SEO/AEO baseline
 - `anti-ai-writing-style.mdc` — human writing style for UI/docs/marketing
 - `typescript-quality.mdc` — strict mode, no-any, Zod validation, typed errors
+- `conventional-commits.mdc` — feat/fix/chore/refactor commit format and commitlint setup
+- `security-baseline.mdc` — secrets hygiene, dependency scanning, input validation, auth, CORS, rate limiting
+- `accessibility-baseline.mdc` — WCAG 2.1 AA: semantic HTML, ARIA, contrast, keyboard nav, axe-core
+- `branch-strategy.mdc` — trunk-based dev, branch naming, PR size, merge strategy, release tags
 - `version-readme-before-push.mdc` — README/version notes before push
 - `poc-bilingual-design-reference.mdc` — POCs must reference EN + 中文 design docs
 - `reusable-xingai-engineering-system.mdc` — identify reusable assets without over-engineering
@@ -60,6 +64,8 @@ docs/
 - `xingai-web-design` — build and refine XingAI web UI surfaces
 - `xingai-worker-setup` — scaffold worker/cache boundary architecture for AI products
 - `api-error-handling` — standardize error responses across FastAPI and Next.js APIs
+- `testing-baseline` — Vitest (Next.js) and pytest (FastAPI) setup with worker/cache test patterns
+- `ci-cd-setup` — GitHub Actions CI pipelines, branch protection, Dependabot, commitlint
 - `apply-worktree-safely` — apply agent worktree changes back to main without unsafe commits or silent overwrites
 - `research-ai-loading-ux` — loading/status UX for AI, search, polling, RAG, and long-running jobs
 - `multi-agent-poc` — build and demo orchestrator + specialist agent POCs for Enterprise Agent Platform validation
@@ -69,7 +75,7 @@ docs/
 - `reusable-asset-review.md` — decide whether a solution should become a reusable asset
 - `architecture-review.md` — review a project or POC for reusable architecture patterns
 - `multi-agent-poc-review.md` — review multi-agent POCs before team or leadership demos
-- `code-review.md` — XingAI-specific code review covering boundaries, i18n, mobile, security
+- `code-review.md` — XingAI-specific code review covering boundaries, i18n, mobile, security, a11y
 - `pr-description.md` — write consistent PR descriptions across XingAI repos
 
 ### Templates
@@ -77,9 +83,13 @@ docs/
 - `product-readme.md`
 - `poc-readme.md`
 - `enterprise-agent-poc-readme.md` — Phase 1 MVP Validation Layer POC docs
-- `adr-template.md` — expanded with stakeholders, risks, rollback plan, cost impact
-- `prd-template.md` — expanded with success metrics, phases, timeline, risk table
+- `adr-template.md` — with stakeholders, risks, rollback plan, cost impact
+- `prd-template.md` — with success metrics, phases, timeline, risk table
 - `disclaimer-template.md`
+- `github-actions/nextjs-ci.yml` — lint, type-check, test, build, npm audit
+- `github-actions/fastapi-ci.yml` — ruff, mypy, pytest, pip-audit
+- `github-actions/commitlint.yml` — conventional commit validation on PRs
+- `github-actions/dependabot.yml` — weekly dep updates for npm, pip, and Actions
 
 ### Patterns
 
@@ -88,6 +98,7 @@ docs/
 - `cache-first-before-llm.md` — hash-based input/analysis cache before LLM calls
 - `env-validation-pattern.md` — Zod/Pydantic env validation with demo mode fallback
 - `error-boundary-pattern.md` — Next.js error.tsx, not-found.tsx, loading.tsx, and FastAPI exception handlers
+- `structured-logging-pattern.md` — JSON structured logs with request_id, event, duration_ms using pino (TS) and Python logging
 
 ## Install
 
@@ -102,6 +113,17 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.3.0
+
+- Add `conventional-commits.mdc` rule — feat/fix/chore/refactor format with commitlint setup
+- Add `security-baseline.mdc` rule — secrets hygiene, npm/pip audit, CORS, rate limiting, CSP
+- Add `accessibility-baseline.mdc` rule — WCAG 2.1 AA: semantic HTML, ARIA, contrast, axe-core
+- Add `branch-strategy.mdc` rule — trunk-based dev, PR size limits, branch naming, release tags
+- Add `testing-baseline` Cursor Skill — Vitest for Next.js, pytest for FastAPI, worker/cache test patterns, 70% coverage gates
+- Add `ci-cd-setup` Cursor Skill — GitHub Actions setup, branch protection, Dependabot, commitlint
+- Add `structured-logging-pattern.md` — pino (TS) + Python JSON logging with request_id, event schema, PII rules
+- Add GitHub Actions templates: `nextjs-ci.yml`, `fastapi-ci.yml`, `commitlint.yml`, `dependabot.yml`
 
 ### 0.2.0
 
