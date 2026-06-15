@@ -2,7 +2,9 @@
 
 Use this pattern to handle runtime errors gracefully in XingAI Next.js products. Prevents white screens, surfaces helpful messages, and enables recovery.
 
-Validated in: `xingai-invest-ai`, `xingai-learn`, `xingai-meal-coach-ai`
+**Status:** Target pattern — adopt per route in Next.js App Router products.
+
+**Reference (partial):** `xingai-invest-ai` (where implemented)
 
 ## Core Rule
 

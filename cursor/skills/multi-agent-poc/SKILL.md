@@ -125,9 +125,93 @@ Mark these as Phase 2/3 in sidebar or registry.
 - Prompt: `prompts/multi-agent-poc-review.md`
 - Architecture doc: `xingai-enterprise-ai-pocs/docs/ENTERPRISE-AGENT-PLATFORM.md`
 
+## Error Propagation (required)
+
+Every agent must be wrapped in a safe runner that:
+1. Catches empty dict returns (`{}`) from the LLM and treats them as failures.
+2. Catches exceptions without crashing the pipeline.
+3. Falls back to a hardcoded response so the demo continues.
+4. Records the error in a `pipeline_errors` list returned in the response.
+
+**Never silently continue with empty agent output.** Downstream agents receiving `{}` produce meaningless results — the trace looks correct but the final answer is garbage.
+
+```python
+def _run_safe(agent_name, fn, *args, fallback_fn=None):
+    try:
+        result, backend = fn(*args)
+        if not result:
+            msg = f"{agent_name} returned empty result"
+            return fallback_fn() if fallback_fn else {}, "fallback", msg
+        return result, backend, None
+    except Exception as exc:
+        return fallback_fn() if fallback_fn else {}, "error", str(exc)
+```
+
+The `pipeline_errors` field surfaces which agents failed without breaking the demo:
+
+```json
+{
+  "pipeline_errors": [
+    {"step": 2, "agent": "Research Agent", "error": "OpenAI returned empty JSON"}
+  ]
+}
+```
+
+## Prompts Must Be Separated from Agent Logic
+
+System prompts must live in `agents/prompts.py`, not inline in agent files.
+
+```python
+# agents/prompts.py
+RESEARCH_SYSTEM = "You are the Research Agent..."
+PRODUCT_SYSTEM  = "You are the Product Agent..."
+```
+
+```python
+# agents/research_agent.py
+from agents.prompts import RESEARCH_SYSTEM
+```
+
+Reason: tuning a prompt should not require reading agent logic. Product managers and non-engineers should be able to edit `prompts.py` without touching business logic.
+
+## Fake Tools Must Respond to Input
+
+`fake_research_tool` and similar fixtures must return topic-aware data based on user input keywords. A tool that always returns the same hardcoded insight regardless of input:
+
+- Makes every demo look identical
+- Does not prove the research → product handoff works with varied inputs
+- Confuses audiences who try different prompts
+
+Use keyword matching to serve different fixture scenarios:
+
+```python
+_KEYWORD_MAP = {"invest": "invest", "meal": "meal", "learn": "learn", ...}
+
+def _match_topic(text: str) -> str:
+    lower = text.lower()
+    for kw, topic in _KEYWORD_MAP.items():
+        if kw in lower:
+            return topic
+    return "default"
+```
+
+## request_id Must Thread Through All Calls
+
+Pass `request_id` to every agent and LLM call for log correlation:
+
+```python
+result = chat_json(SYSTEM, prompt, request_id=request_id)
+```
+
+Without this, you cannot trace a specific failing demo run back to its LLM calls in logs.
+
 ## Common Mistakes
 
 - Single chatbot disguised as multi-agent (no trace, no handoffs).
 - Exposing hidden chain-of-thought instead of structured trace.
 - Over-scoping V1 with MCP, events, and memory layers.
 - POC with no fallback when OpenAI key is missing (demo fails live).
+- Agent returns `{}` on failure and pipeline continues silently — downstream agents get empty input.
+- System prompts embedded in agent files — hard to tune without touching logic.
+- `fake_research_tool` always returns same data — demo looks broken for non-default inputs.
+- No `pipeline_errors` field — reviewers cannot tell which agents failed in fallback mode.

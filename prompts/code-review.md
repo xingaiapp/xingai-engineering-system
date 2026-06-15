@@ -52,6 +52,19 @@ Review for:
    - Does the loading UX follow the research-ai-loading-ux skill?
    - Is there a pre-ship checklist item missing?
 
+9. Multi-Agent POC (apply when reviewing Python FastAPI agent pipelines)
+   - Does each agent use `_run_safe()` or equivalent? Empty dict from LLM must not silently propagate.
+   - Does the pipeline surface `pipeline_errors` in the response?
+   - Are system prompts in `agents/prompts.py`, not inlined in agent files?
+   - Does `fake_research_tool` (or equivalent) respond to different input topics?
+   - Is `request_id` passed to every `chat_json()` call for log correlation?
+   - Is `POST /demo/run` rate-limited and input-validated (max length)?
+   - Is CORS restricted to known origins (not `allow_origins=["*"]`)?
+   - Is there a `Dockerfile` and `docker-compose.yml`?
+   - Do tests cover: cache roundtrip, API 422 on bad input, trace persisted after run, pipeline runs in fallback mode?
+   - Does the `enterprise-mapping.md` exist and explain POC vs Platform gap?
+   - Is the POC README marked with a status label (Runnable or Architecture Only)?
+
 Return:
 
 ## Critical (must fix before merge)

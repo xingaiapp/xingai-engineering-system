@@ -103,7 +103,7 @@ docs/
 
 ## Install
 
-See [`docs/HOW-TO-INSTALL.md`](docs/HOW-TO-INSTALL.md).
+See [`docs/HOW-TO-INSTALL.md`](docs/HOW-TO-INSTALL.md), [`docs/ASSET-INDEX.md`](docs/ASSET-INDEX.md), and [`docs/REPO-RULE-BUNDLES.md`](docs/REPO-RULE-BUNDLES.md).
 
 ## Reusability Principle
 
