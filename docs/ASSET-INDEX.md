@@ -65,6 +65,7 @@ Quick reference for rules, skills, prompts, templates, and patterns in this repo
 | `error-boundary-pattern.md` | Target for App Router |
 | `structured-logging-pattern.md` | JSON logs + request_id |
 | `product-upgrade-rule.md` | V2 inherits V1 UX |
+| `decision-ledger-schema.md` | Proposed: cross-product decision history, zero adopters yet |
 
 ## Install
 
