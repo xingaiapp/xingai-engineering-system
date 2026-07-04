@@ -104,6 +104,7 @@ docs/
 - `product-upgrade-rule.md` — rules for upgrading product dependencies and frameworks
 - `loop-engineering-three-layer.md` — Context / Harness / Loop three-layer agent architecture with guardrails
 - `micro-loop-engine.md` — dynamic agent assembly from reusable skills, tools, memory, and loop configs
+- `executable-knowledge-pipeline.md` — encode team standards as CLAUDE.md / Skills / MCP so quality and velocity compound
 
 ## Install
 
