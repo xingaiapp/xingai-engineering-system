@@ -100,6 +100,10 @@ docs/
 - `env-validation-pattern.md` — Zod/Pydantic env validation with demo mode fallback
 - `error-boundary-pattern.md` — Next.js error.tsx, not-found.tsx, loading.tsx, and FastAPI exception handlers
 - `structured-logging-pattern.md` — JSON structured logs with request_id, event, duration_ms using pino (TS) and Python logging
+- `decision-ledger-schema.md` — cross-product schema for recording AI recommendations + human outcomes
+- `product-upgrade-rule.md` — rules for upgrading product dependencies and frameworks
+- `loop-engineering-three-layer.md` — Context / Harness / Loop three-layer agent architecture with guardrails
+- `micro-loop-engine.md` — dynamic agent assembly from reusable skills, tools, memory, and loop configs
 
 ## Install
 
