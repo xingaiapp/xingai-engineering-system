@@ -5,6 +5,7 @@ Platform-level decisions that apply across all XingAI products.
 | ADR | Title | Status |
 |-----|-------|--------|
 | [001](./001-personal-memory-engine.md) | Personal Memory Engine — Cross-Product User Context | Accepted |
+| [002](./002-agent-execution-safety.md) | Agent Execution Safety — the Sixth Global Principle | Accepted |
 
 ## How to add a platform ADR
 
