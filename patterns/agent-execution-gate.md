@@ -2,7 +2,7 @@
 
 Use this pattern when an agent or MCP tool can cause an **external effect**: run a shell command, place an order, write outside its workspace, send a notification, spend money. The gate sits between the agent's *intent* and the *effect*, and it — not the model — decides what proceeds.
 
-Mandated by [ADR-002](../docs/adr/002-agent-execution-safety.md). Proven three times before it became a pattern: Invest AI ADR-028 (trade gates G1–G7), Polymarket AI ADR-003 (CLOB execution gates), Agent Firewall (general tool-call policy engine). Firewall ADR-004/005 extend the pattern with origin provenance and pin-vs-YAML policy discipline.
+Mandated by [ADR-002](../docs/adr/002-agent-execution-safety.md). Proven three times before it became a pattern: Invest AI ADR-028 (trade gates G1–G7), Polymarket AI ADR-003 (CLOB execution gates), Agent Firewall (general tool-call policy engine). Firewall ADR-004/005 extend the pattern with origin provenance and pin-vs-YAML policy discipline. `xingai-robinhood-mcp` ADR-001 is the first **MCP gateway proxy** interception point (vs. a harness hook) — and the first reference implementation to ship with most gates deliberately unwired: it fails closed on 4 of Invest AI's 7 gates by construction until cross-repo dependencies exist, rather than faking a pass.
 
 ## Core Rule
 
@@ -26,7 +26,7 @@ When the agent reads repos, web pages, or inbound documents, add **turn-scoped p
 
 ## Each Product Owns
 
-- Choosing its interception point (harness hook, API gateway, a gate function before the broker call) and documenting what that point does and does not cover — the honest threat model
+- Choosing its interception point (harness hook, MCP gateway proxy, API gateway, a gate function before the broker call) and documenting what that point does and does not cover — the honest threat model
 - Its domain signals and weights, in config not code (`policies/*.yaml`, following config-driven-parameters discipline)
 - Its authority-scope declaration: acts freely / needs approval / never — the bounded-delegation contract
 - Writing the Decision row, including human overrides (`action_taken: modified` is the highest-value tuning data)
@@ -49,6 +49,7 @@ When the agent reads repos, web pages, or inbound documents, add **turn-scoped p
 - Building one central gate service for all products — each product gates its own surface with its own signals; what's shared is the pattern and the ledger schema, not a runtime dependency
 - Whole-session taint after one web fetch — use turn-scoped clear (UserPromptSubmit / equivalent), not "tainted until logout"
 - One-click rewrite of `policies/*.yaml` from the running service — collapses the review boundary the gate exists to protect
+- Stubbing an unimplemented gate to return "pass" so the checklist looks complete — fail closed and name the specific unwired gate instead (`xingai-robinhood-mcp` ADR-001: 4 of 7 gates reject by construction until their cross-repo dependencies exist)
 
 ## Adoption Checklist (per product)
 
@@ -66,3 +67,4 @@ When the agent reads repos, web pages, or inbound documents, add **turn-scoped p
 - `xingai-agent-firewall` — general coding-agent tool calls (hook interception, YAML signals, approval queue, ledger, [ADR-004](https://github.com/xingaiapp/xingai-agent-firewall/blob/main/docs/adr/004-origin-provenance-tracking.md) provenance, [ADR-005](https://github.com/xingaiapp/xingai-agent-firewall/blob/main/docs/adr/005-deny-add-rule.md) pin + suggestion)
 - `xingai-invest-ai` ADR-028 — domain gates for trade execution (G1–G7, phased rollout R0–R3)
 - `xingai-polymarket-ai` ADR-002/003 — human-confirm boundary and live execution gates
+- `xingai-robinhood-mcp` [ADR-001](https://github.com/xingaiapp/xingai-robinhood-mcp/blob/main/docs/adr/001-mcp-gateway-proxy.md) — MCP gateway proxy interception point (not a harness hook); implements Invest AI's G1/G6/G7 in code, G2–G5 fail-closed pending cross-repo wiring; tested only against a local mock upstream, never the real Robinhood endpoint

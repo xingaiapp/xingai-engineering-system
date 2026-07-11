@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.3
+**Version:** 0.3.4
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -121,6 +121,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.3.4
+
+- Extend `agent-execution-gate`: MCP gateway proxy as interception point; fail-closed on unwired gates (`xingai-robinhood-mcp` ADR-001)
 
 ### 0.3.3
 
