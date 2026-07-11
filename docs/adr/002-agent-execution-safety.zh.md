@@ -13,7 +13,7 @@ XingAI 五条全局原则（worker 架构、i18n、主题、SEO、AEO）管的�
 
 1. Mozilla 0din 展示了干净外观的仓库可以 prompt 注入 Claude Code 执行恶意命令——注入通过 Agent 本该读取的内容进来，模型层护栏关不上。
 2. Microsoft《To Copilot and Beyond》研究发现开发者要的是**有边界的委托**（bounded delegation）：Agent 在明确授权范围内做组装工作，而不是开放式自治。
-3. XingAI 已经独立重复发明了三次执行门禁——Invest AI ADR-028（G1–G7 交易门禁）、Polymarket AI ADR-003（live CLOB 执行门禁）、Agent Firewall ADR-001..003（策略引擎）。三份实现，零共享标准。
+3. XingAI 已经独立重复发明了三次执行门禁——Invest AI ADR-028（G1–G7 交易门禁）、Polymarket AI ADR-003（live CLOB 执行门禁）、Agent Firewall ADR-001..005（策略引擎、按轮次溯源、pin + YAML 建议）。三个领域，一套共享标准。
 
 ## 决策
 
@@ -42,4 +42,5 @@ XingAI 五条全局原则（worker 架构、i18n、主题、SEO、AEO）管的�
 
 - [patterns/agent-execution-gate.md](../../patterns/agent-execution-gate.md)
 - [patterns/decision-ledger-schema.md](../../patterns/decision-ledger-schema.md)
-- xingai-agent-firewall ADR-001..003；xingai-invest-ai ADR-028；xingai-polymarket-ai ADR-002/003
+- xingai-agent-firewall ADR-001..005（拦截、打分、审批、溯源、拒绝并加规则）；xingai-invest-ai ADR-028；xingai-polymarket-ai ADR-002/003
+- 技术博客：[按轮次污染](https://github.com/xingaiapp/xingai-tech-blog/blob/main/posts/2026-07-11-agent-firewall-origin-provenance-adr-004.zh.md)、[拒绝并加规则](https://github.com/xingaiapp/xingai-tech-blog/blob/main/posts/2026-07-11-agent-firewall-deny-add-rule-adr-005.zh.md)

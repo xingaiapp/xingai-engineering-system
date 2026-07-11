@@ -13,7 +13,7 @@ The five XingAI global principles (worker architecture, i18n, theme, SEO, AEO) g
 
 1. Mozilla 0din demonstrated that a clean-looking repo can prompt-inject Claude Code into running malicious commands — the injection arrives through content the agent is supposed to read, so model-level guardrails cannot close it.
 2. Microsoft's "To Copilot and Beyond" research found developers want **bounded delegation**: agents doing assembly work within explicit authority, not open-ended autonomy.
-3. XingAI has independently reinvented execution gating three times — Invest AI ADR-028 (G1–G7 trade gates), Polymarket AI ADR-003 (live CLOB execution gates), and Agent Firewall ADR-001..003 (policy engine). Three implementations, zero shared standard.
+3. XingAI has independently reinvented execution gating three times — Invest AI ADR-028 (G1–G7 trade gates), Polymarket AI ADR-003 (live CLOB execution gates), and Agent Firewall ADR-001..005 (policy engine, turn-scoped provenance, pin + YAML suggestion). Three domains, one shared standard.
 
 ## Decision
 
@@ -42,4 +42,5 @@ Tradeoffs:
 
 - [patterns/agent-execution-gate.md](../../patterns/agent-execution-gate.md)
 - [patterns/decision-ledger-schema.md](../../patterns/decision-ledger-schema.md)
-- xingai-agent-firewall ADR-001..003; xingai-invest-ai ADR-028; xingai-polymarket-ai ADR-002/003
+- xingai-agent-firewall ADR-001..005 (interception, scoring, approval, provenance, deny+add-rule); xingai-invest-ai ADR-028; xingai-polymarket-ai ADR-002/003
+- Tech blog: [turn-scoped taint](https://github.com/xingaiapp/xingai-tech-blog/blob/main/posts/2026-07-11-agent-firewall-origin-provenance-adr-004.md), [deny + add rule](https://github.com/xingaiapp/xingai-tech-blog/blob/main/posts/2026-07-11-agent-firewall-deny-add-rule-adr-005.md)
