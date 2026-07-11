@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.1
+**Version:** 0.3.2
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -60,7 +60,9 @@ docs/
 
 ### Cursor Skills
 
-- `project-init` — initialize new XingAI apps
+- `project-init` — initialize new XingAI apps (hero light/dark pair + OG separation)
+- `growth-deploy` — build, push, and Fly-deploy Growth Monitor
+- `project-ship` — generic pull + build + push + Fly deploy for the current repo
 - `xingai-web-design` — build and refine XingAI web UI surfaces
 - `xingai-worker-setup` — scaffold worker/cache boundary architecture for AI products
 - `api-error-handling` — standardize error responses across FastAPI and Next.js APIs
@@ -119,6 +121,12 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.3.2
+
+- Add `growth-deploy` and `project-ship` Cursor Skills for build/push/Fly workflows
+- Expand `project-init` hero rules: in-app light/dark visual pair, mobile strip, OG separate from hero
+- Document new skills in `docs/HOW-TO-INSTALL.md`
 
 ### 0.3.1
 

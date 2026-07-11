@@ -3,7 +3,9 @@ name: project-init
 description: >-
   Initializes new XingAI apps and *.xingai.app product projects. Use when creating
   a new app, bootstrapping a product repo, adding a public product surface, or
-  preparing an app for first deploy.
+  preparing an app for first deploy. Enforces mobile-first UI, XingAI chrome,
+  brand assets, EN/zh/ko i18n, light/dark themes, hero light/dark visual pair,
+  legal pages, SEO/AEO, xingai-dot-app registration, and Google OAuth guidance.
 ---
 
 # Project Init
@@ -46,9 +48,14 @@ This skill sets the product baseline. It does not replace `xingai-web-design`; u
 
 ### Hero
 
-- Create a strong hero section with product-specific headline, short subcopy, primary CTA, and secondary CTA where useful.
-- Add a lightweight hero image or background visual that explains the product.
-- Ensure hero text remains readable in light and dark themes.
+- Strong hero: headline, subcopy, primary CTA (+ secondary CTA when useful).
+- **Hero visual** — product illustration or mock; not CSS-only decoration.
+- **Light + dark pair** for in-app hero; swap by theme (`dark:hidden` / `dark:block` or `ThemedImage`).
+- **Desktop (`lg+`):** copy left, visual in second column.
+- **Mobile:** hero strip under copy — do not show visual on desktop only.
+- **`og-image.png` is separate** — OG/Twitter metadata only; not a substitute for in-app hero.
+
+Details: [references/hero-visuals.md](references/hero-visuals.md). Reference: `xingai-research-ai/components/research-hero.tsx`.
 
 ### Language
 
@@ -82,6 +89,7 @@ This skill sets the product baseline. It does not replace `xingai-web-design`; u
 
 - Register public products in `xingai-dot-app` or the current product registry.
 - Add localized labels, icon/logo, route/domain link, and status.
+- Screenshot entries need **`src` + `srcDark`** for theme-aware marketing demos.
 - If not ready, mark as `Soon`; do not ship empty links.
 
 ### Login And Google OAuth
@@ -104,7 +112,10 @@ This skill sets the product baseline. It does not replace `xingai-web-design`; u
 ```markdown
 - [ ] Mobile-first layout works at ~375px
 - [ ] Top bar, drawer, bottom nav, and desktop nav are wired where applicable
-- [ ] Logo, favicon, app icons, and hero visual exist
+- [ ] Logo, favicon, and app icons exist
+- [ ] In-app hero visual on primary route (light + dark pair; mobile strip + desktop second column)
+- [ ] OG image separate from in-app hero
+- [ ] dot-app screenshot has `src` + `srcDark` when registered
 - [ ] EN / zh / ko strings are complete
 - [ ] Light and dark themes are readable with no flash
 - [ ] Privacy, Terms, and Disclaimer exist and are linked
@@ -125,3 +136,6 @@ This skill sets the product baseline. It does not replace `xingai-web-design`; u
 - Empty product cards in the product registry.
 - Reusing another product's Google OAuth client without approval.
 - Exposing internal labels like V1/V2 in user-facing UI.
+- Using only `og-image.png` as the hero — still need in-app light/dark pair.
+- dot-app screenshot with `src` only and no `srcDark`.
+- Hero visual desktop-only with nothing on mobile.
