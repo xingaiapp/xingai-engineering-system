@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.5
+**Version:** 0.3.6
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
