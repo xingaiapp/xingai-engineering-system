@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.4
+**Version:** 0.3.5
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -78,6 +78,7 @@ docs/
 - `reusable-asset-review.md` — decide whether a solution should become a reusable asset
 - `architecture-review.md` — review a project or POC for reusable architecture patterns
 - `multi-agent-poc-review.md` — review multi-agent POCs before team or leadership demos
+- `code-change.md` — implement any code change with explicit scope, out-of-scope, and acceptance checks
 - `code-review.md` — XingAI-specific code review covering boundaries, i18n, mobile, security, a11y
 - `pr-description.md` — write consistent PR descriptions across XingAI repos
 
@@ -121,6 +122,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.3.5
+
+- Add `prompts/code-change.md` — copy-paste prompt for implementing any XingAI code change (scope, out-of-scope, acceptance, short variant); pairs with `code-review.md` and `pr-description.md`
 
 ### 0.3.4
 

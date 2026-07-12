@@ -39,6 +39,7 @@ Quick reference for rules, skills, prompts, templates, and patterns in this repo
 | `reusable-asset-review.md` | Should this become a reusable asset? |
 | `architecture-review.md` | Architecture / boundary review |
 | `multi-agent-poc-review.md` | Pre-demo POC review |
+| `code-change.md` | Implement any feature/fix with scope + acceptance |
 | `code-review.md` | PR review checklist |
 | `pr-description.md` | Standard PR body |
 

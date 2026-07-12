@@ -71,6 +71,12 @@ prompts/reusable-asset-review.md
 
 Use it when you want to decide whether a workflow should become a rule, skill, prompt, template, or pattern.
 
+Other common prompts:
+
+- `prompts/code-change.md` — implement a feature or fix with clear in/out of scope
+- `prompts/code-review.md` — review a diff before merge
+- `prompts/pr-description.md` — write the PR body
+
 ## 5. Use Templates
 
 Templates in `templates/` are starting points for new docs.
