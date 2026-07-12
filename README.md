@@ -123,6 +123,10 @@ If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
 
+### 0.3.6
+
+- Extend `worker-cache-boundary`: any external HTTP in a request handler is a violation (not only LLM calls) — cite Invest AI secondary-quote-check fix
+
 ### 0.3.5
 
 - Add `prompts/code-change.md` — copy-paste prompt for implementing any XingAI code change (scope, out-of-scope, acceptance, short variant); pairs with `code-review.md` and `pr-description.md`
