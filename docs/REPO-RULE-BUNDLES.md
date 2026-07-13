@@ -30,7 +30,7 @@ Which engineering-system assets to install per repo type.
 
 **Rules:** Product bundle + `poc-bilingual-design-reference.mdc`
 
-**Skills:** `enterprise-coding-behavior`, `enterprise-agent-team`, `multi-agent-poc`, `system-design-docs`
+**Skills:** `enterprise-coding-behavior`, `enterprise-agent-team`, `xingai-mcp-builder`, `multi-agent-poc`, `system-design-docs`
 
 ## Design / docs — e.g. `xingai-enterprise-ai-design`
 

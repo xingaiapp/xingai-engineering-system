@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.7
+**Version:** 0.3.8
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -63,6 +63,7 @@ docs/
 
 - `enterprise-coding-behavior` — Think / Simplicity / Surgical / Goal-driven + enterprise Architecture Consistency and Production Mindset; includes agent-roles, checklists, ARCHITECT.md fragment
 - `enterprise-agent-team` — multi-agent Planner / Research / Coding / Reviewer / Architect overlays on the shared behavior bar
+- `xingai-mcp-builder` — build/extend XingAI MCP gateways and tools (Python-first, read/write split, fail-closed gates, mock-before-live)
 - `project-init` — initialize new XingAI apps (hero light/dark pair + OG separation)
 - `growth-deploy` — build, push, and Fly-deploy Growth Monitor
 - `project-ship` — generic pull + build + push + Fly deploy for the current repo
@@ -125,6 +126,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.3.8
+
+- Add `xingai-mcp-builder` skill — XingAI fork of generic MCP builder skills: Python-first, surgical vs full path, gateway/gate boundaries, sanitize/mask, mock drill, lite eval; refs robinhood-mcp + claims OAuth POC
 
 ### 0.3.7
 

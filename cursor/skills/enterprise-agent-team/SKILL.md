@@ -100,4 +100,5 @@ Then append the role overlay from `agent-roles.md` for that agent only.
 - Prompt: `multi-agent-poc-review.md` — pre-demo review
 - Prompt: `code-change.md` / `code-review.md`
 - Patterns: `agent-execution-gate`, `orchestrator-trace-governance`, `loop-engineering-three-layer`
+- Skill: `xingai-mcp-builder` — when adding MCP tools or gateways
 - Drop-in fragment: [ARCHITECT.md](../enterprise-coding-behavior/ARCHITECT.md)
