@@ -37,11 +37,12 @@ Implement this code change in the target XingAI repo. Do not edit any plan file 
 - [ ] No drive-by refactors outside In scope
 
 ## How to work
-1. Mark existing todos in_progress → completed; do not recreate todos.
-2. Inspect neighboring code before writing; reuse helpers.
-3. Prefer smallest diff that ships the Goal.
-4. Verify with the repo’s usual command (e.g. `npm run lint`, targeted smoke).
-5. When done, summarize: what changed, how to verify, README/version status.
+1. Follow skill `enterprise-coding-behavior` (Think / Simplicity / Surgical / Goal-driven / Architecture Consistency / Production Mindset).
+2. Mark existing todos in_progress → completed; do not recreate todos.
+3. Inspect neighboring code before writing; reuse helpers.
+4. Prefer smallest diff that ships the Goal.
+5. Verify with the repo’s usual command (e.g. `npm run lint`, targeted smoke).
+6. When done, summarize: what changed, how to verify, README/version status.
 
 ## Change detail
 [paste plan excerpt, bug report, or acceptance table here]

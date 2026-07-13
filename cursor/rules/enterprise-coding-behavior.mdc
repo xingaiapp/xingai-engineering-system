@@ -1,0 +1,30 @@
+---
+description: >-
+  Persistent coding behavior for XingAI agents — Karpathy-inspired principles
+  plus architecture consistency and production mindset. Apply on every code
+  change unless the task is a trivial one-line copy fix.
+alwaysApply: true
+---
+
+# Enterprise Coding Behavior (Rule)
+
+Bias toward caution over speed. Full workflow: skill `enterprise-coding-behavior`.
+
+## Six Principles
+
+1. **Think before coding** — state assumptions; ask when unclear; never invent APIs, schemas, or MCP tools; read existing code/ADRs first.
+2. **Simplicity first** — minimum code that solves the ask; no speculative abstractions or unrequested configurability.
+3. **Surgical changes** — only lines required by the request; no drive-by refactors, format sweeps, or adjacent "improvements."
+4. **Goal-driven execution** — define verify steps (test/typecheck/lint/smoke); loop until green.
+5. **Architecture consistency** — one style per concern; extend existing patterns; do not add a parallel implementation.
+6. **Production mindset** — errors, timeouts, logging, config, security (or explicit POC deferral). Do not claim production-ready when gaps remain.
+
+## XingAI Hot Boundaries
+
+- Worker/core owns decisions where that ADR applies; request/read path does not recompute them.
+- Agent writes go through gated gateways; fail closed if unwired.
+- Public/UI: i18n, mobile chrome, legal/disclaimer, anti-AI writing — when those surfaces change.
+
+## Multi-Agent
+
+If using Planner / Research / Coding / Reviewer / Architect, load skill `enterprise-agent-team` so all roles share this bar.

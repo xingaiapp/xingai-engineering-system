@@ -16,11 +16,14 @@ Quick reference for rules, skills, prompts, templates, and patterns in this repo
 | `branch-strategy.mdc` | PR workflow |
 | `poc-bilingual-design-reference.mdc` | Enterprise POC repos |
 | `reusable-xingai-engineering-system.mdc` | Promoting patterns to this repo |
+| `enterprise-coding-behavior.mdc` | All code changes — think / simple / surgical / verify |
 
 ## Cursor Skills (`cursor/skills/`)
 
 | Skill | Trigger |
 |-------|---------|
+| `enterprise-coding-behavior` | Features, fixes, refactors, Karpathy-style behavior, AGENTS.md fragments |
+| `enterprise-agent-team` | Multi-agent Planner/Research/Coding/Reviewer/Architect teams |
 | `project-init` | New `*.xingai.app` product |
 | `xingai-web-design` | Web UI / dashboard work |
 | `research-ai-loading-ux` | AI waits >2s |

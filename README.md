@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.6
+**Version:** 0.3.7
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -57,9 +57,12 @@ docs/
 - `poc-bilingual-design-reference.mdc` — POCs must reference EN + 中文 design docs
 - `reusable-xingai-engineering-system.mdc` — identify reusable assets without over-engineering
 - `legal-protection-all-repos.mdc` — require disclaimers and liability protection across public repos
+- `enterprise-coding-behavior.mdc` — Karpathy-inspired coding behavior + architecture consistency + production mindset (always on)
 
 ### Cursor Skills
 
+- `enterprise-coding-behavior` — Think / Simplicity / Surgical / Goal-driven + enterprise Architecture Consistency and Production Mindset; includes agent-roles, checklists, ARCHITECT.md fragment
+- `enterprise-agent-team` — multi-agent Planner / Research / Coding / Reviewer / Architect overlays on the shared behavior bar
 - `project-init` — initialize new XingAI apps (hero light/dark pair + OG separation)
 - `growth-deploy` — build, push, and Fly-deploy Growth Monitor
 - `project-ship` — generic pull + build + push + Fly deploy for the current repo
@@ -122,6 +125,12 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.3.7
+
+- Add `enterprise-coding-behavior` skill + always-on rule — Karpathy four principles adapted for XingAI, plus Architecture Consistency and Production Mindset; `ARCHITECT.md` drop-in for `AGENTS.md` / `CLAUDE.md`
+- Add `enterprise-agent-team` skill — shared system prompt block and Planner / Research / Coding / Reviewer / Architect role overlays for multi-agent POCs and Cursor Task teams
+- Sync `VERSION` file with README (was lagging at 0.3.4)
 
 ### 0.3.6
 
