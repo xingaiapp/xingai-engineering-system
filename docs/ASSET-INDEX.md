@@ -25,6 +25,7 @@ Quick reference for rules, skills, prompts, templates, and patterns in this repo
 | `enterprise-coding-behavior` | Features, fixes, refactors, Karpathy-style behavior, AGENTS.md fragments |
 | `enterprise-agent-team` | Multi-agent Planner/Research/Coding/Reviewer/Architect teams |
 | `xingai-mcp-builder` | New/extend MCP servers, gateways, tools, OAuth MCP, control-plane contracts |
+| `xingai-project-pick` | Radar issue/email → one XingAI create/upgrade Decision Card (EN/ZH) |
 | `project-init` | New `*.xingai.app` product |
 | `xingai-web-design` | Web UI / dashboard work |
 | `research-ai-loading-ux` | AI waits >2s |

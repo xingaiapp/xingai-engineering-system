@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.8
+**Version:** 0.3.9
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -64,6 +64,7 @@ docs/
 - `enterprise-coding-behavior` — Think / Simplicity / Surgical / Goal-driven + enterprise Architecture Consistency and Production Mindset; includes agent-roles, checklists, ARCHITECT.md fragment
 - `enterprise-agent-team` — multi-agent Planner / Research / Coding / Reviewer / Architect overlays on the shared behavior bar
 - `xingai-mcp-builder` — build/extend XingAI MCP gateways and tools (Python-first, read/write split, fail-closed gates, mock-before-live)
+- `xingai-project-pick` — from Opportunity Radar issue/email context, pick one XingAI project to create or upgrade (Decision Card EN/ZH)
 - `project-init` — initialize new XingAI apps (hero light/dark pair + OG separation)
 - `growth-deploy` — build, push, and Fly-deploy Growth Monitor
 - `project-ship` — generic pull + build + push + Fly deploy for the current repo
@@ -126,6 +127,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.3.9
+
+- Add `xingai-project-pick` skill — Radar issue / newsletter context → one XingAI portfolio bet (Decision Card); CLI in `xingai-opportunity-radar` ADR-005
 
 ### 0.3.8
 
