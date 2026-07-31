@@ -65,7 +65,7 @@ docs/
 - `enterprise-agent-team` — multi-agent Planner / Research / Coding / Reviewer / Architect overlays on the shared behavior bar
 - `xingai-mcp-builder` — build/extend XingAI MCP gateways and tools (Python-first, read/write split, fail-closed gates, mock-before-live)
 - `xingai-project-pick` — from Opportunity Radar issue/email context, pick one XingAI project to create or upgrade (Decision Card EN/ZH)
-- `project-init` — initialize new XingAI apps (hero light/dark pair + OG separation)
+- `project-init` — initialize new XingAI apps (Invest-style en/zh/ko, hero light/dark + OG, **XNP** notifications)
 - `growth-deploy` — build, push, and Fly-deploy Growth Monitor
 - `project-ship` — generic pull + build + push + Fly deploy for the current repo
 - `xingai-web-design` — build and refine XingAI web UI surfaces
@@ -127,6 +127,14 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.3.11
+
+- Expand `project-init` Language: match Invest AI dashboard multilanguage — `en`/`zh`/`ko`, `LangProvider` + `tr()`, `LANGUAGE_MENU` header switcher, `localStorage` `app_language`, nav/label tables; block default next-intl URL routing
+
+### 0.3.10
+
+- Expand `project-init`: require **XingAI Notification Platform (XNP)** for SMS/email/push — tenant id, env placeholders, no direct Twilio/Resend/FCM in new apps; fake adapter allowed until XNP Phase 5+
 
 ### 0.3.9
 
