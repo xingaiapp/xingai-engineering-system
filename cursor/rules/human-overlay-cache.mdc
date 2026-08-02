@@ -1,0 +1,18 @@
+---
+description: Human review overlays stay in separate cache keys from worker results
+globs: "**/cache.py,**/app.py,**/*review*,**/regression.py"
+alwaysApply: false
+---
+
+# Human Overlay Cache
+
+When a worker-first XingAI API needs accept / reject / edit / approve:
+
+1. **Separate keys.** Worker payload ≠ human overlay. Example: `v1:verify:` vs `v1:review:`.
+2. **API may write overlays only** — never fetch URLs, call LLMs, or recompute gated metrics.
+3. **GET merges** overlay onto the last worker payload; do not rewrite the worker blob.
+4. **Re-run must not wipe reviews** — verify overwrite leaves the review key intact.
+5. **Static demos stay read-only** — hide mutation UI unless the live API responded.
+6. **Approve ≠ auto-merge into code** — SkillVersion approve/rollback is a gate; shipping rules stays a human PR.
+
+See `patterns/human-overlay-cache.md` and evidence-engine ADR-009.

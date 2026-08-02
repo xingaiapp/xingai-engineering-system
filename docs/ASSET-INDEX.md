@@ -16,6 +16,7 @@ Quick reference for rules, skills, prompts, templates, and patterns in this repo
 | `branch-strategy.mdc` | PR workflow |
 | `poc-bilingual-design-reference.mdc` | Enterprise POC repos |
 | `reusable-xingai-engineering-system.mdc` | Promoting patterns to this repo |
+| `human-overlay-cache.mdc` | Worker-first apps with human accept/reject/edit overlays |
 | `enterprise-coding-behavior.mdc` | All code changes — think / simple / surgical / verify |
 
 ## Cursor Skills (`cursor/skills/`)
@@ -65,6 +66,7 @@ Quick reference for rules, skills, prompts, templates, and patterns in this repo
 | Pattern | Status note |
 |---------|-------------|
 | `worker-cache-boundary.md` | Reference: invest-ai style |
+| `human-overlay-cache.md` | Validated: evidence-engine ADR-009 |
 | `cache-first-before-llm.md` | Validated: learn, founder |
 | `orchestrator-trace-governance.md` | Reference: multi-agent-lab |
 | `env-validation-pattern.md` | Target for Next.js env.ts |

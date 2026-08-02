@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.9
+**Version:** 0.3.12
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -127,6 +127,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.3.12
+
+- Add `human-overlay-cache` pattern + Cursor Rule — separate `v1:review:` (human) from worker verify cache; validated by evidence-engine ADR-009
 
 ### 0.3.11
 
