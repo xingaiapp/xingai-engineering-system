@@ -6,6 +6,9 @@ edit / approve — without putting verification or AI work in the API.
 
 Validated by: `xingai-evidence-engine` ADR-009 (`v1:review:`, `v1:skill:`).
 
+Tech blog: `xingai-tech-blog/posts/2026-08-04-human-overlay-cache-pattern.md` (+ `.zh.md`).
+System design: `xingai-enterprise-ai-design/articles/2026-08-04-evidence-honesty-overlay-pdf-citation-dates.md`.
+
 ## Core Rule
 
 Keep human decisions in **separate cache keys** from worker payloads.
