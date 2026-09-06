@@ -1,70 +1,56 @@
 ---
-description: XingAI anti-AI writing style for UI, docs, marketing, PRs, and public copy
+description: XingAI global anti-AI writing — human copy for UI, docs, marketing, PRs
 alwaysApply: true
 ---
 
-# Anti-AI Writing
+# Anti-AI Writing (XingAI global)
 
-Use human copy. Clear, specific, and slightly conversational. No generic AI polish.
+Applies to all XingAI repos and user-facing text. This rule is the source of truth (no separate markdown guide).
 
-## Tone
+## 1. Tone
 
-- Human, not textbook.
-- Match register to context: docs, UI, marketing, status updates, and PRs should not sound the same.
-- Opinions are fine when grounded.
+- Human, not textbook. Slightly conversational; never stiff or “perfect.”
+- Match register to context (docs ≠ marketing ≠ status updates).
 
-## Sentences
+## 2. Sentences
 
-- Mix short and long sentences.
-- Fragments are okay sometimes.
-- Avoid mechanical transitions like `Firstly`, `Secondly`, `Furthermore`, `Moreover`.
+- Mix short/long; fragments OK sometimes. No “Firstly / Secondly / Finally.”
+- Read aloud — stumble = too complex; robotic = vary length.
 
-## Banned Words
+BAD: `Firstly… Secondly… Finally…`  
+GOOD: `Here's the thing. This breaks when scale hits. And nobody notices until it's too late.`
 
-Avoid:
+## 3. Words — banned
 
-- leverage
-- delve
-- seamless
-- robust
-- cutting-edge
-- utilize
-- facilitate
-- synergy
-- ecosystem
-- holistic
-- empower
-- innovative
+Never: **leverage, delve, seamless, robust, cutting-edge, utilize, facilitate, synergy, ecosystem, holistic, empower, innovative**.
 
-Prefer plain words: use, look into, smooth, solid, latest, help.
+Prefer: *use, look into, smooth, solid, latest, help*. No weasel chains (“designed to potentially help streamline…”).
 
-## Kill Patterns
+## 4. Paragraphs
 
-- "In today's fast-paced world..."
-- "It's worth noting..."
-- "At the end of the day..."
-- "Now more than ever..."
-- "I hope this helps!"
-- AI closers like "In conclusion..."
+- 2–4 sentences max. One idea per paragraph. First sentence must earn the second.
 
-## Style Rule
+## 5. Personality
 
-Short > fancy. Clear > smart.
+- Opinions OK. Contrast OK: “This sounds good. It isn't.” Emphasis only when true.
+- Be specific (“3 days”, “€12,000”). Rhetorical questions — sparingly.
 
-Cut weak first sentences. Trim repeated framing. Keep paragraphs focused.
+## 6. Kill patterns
 
-## Active Voice
+- “Not X, it's Y”, bullet walls, “In today's fast-paced world…”, “It's worth noting…”, “At the end of the day…”, “Now more than ever…”, “I hope this helps!”
+- No AI closers (“In conclusion, we have explored…”). End on the sharp point or stop.
 
-Prefer:
+## 7. Clarity
 
-```text
-We shipped the fix.
-```
+**Short > fancy. Clear > smart.** Hemingway test. Cut first sentence of drafts. Trim ~20% on revision.
 
-Avoid:
+## 8. Active voice (default)
 
-```text
-The fix was implemented.
-```
+BAD passive: `Mistakes were made. A fix will be implemented.`  
+GOOD active: `We messed up. We'll ship the fix by Friday.` Passive only when actor truly unknown.
 
-Use passive voice only when the actor truly does not matter.
+## 9. Transitions
+
+Avoid mechanical **Furthermore / Additionally / Moreover**. Connect with logic: “That works — until scale hits. Then it breaks.”
+
+When editing copy, rewrite AI-sounding lines; do not add hype.

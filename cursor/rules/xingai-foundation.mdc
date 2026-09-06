@@ -1,89 +1,142 @@
 ---
-description: XingAI foundation — mobile chrome, i18n, theme, legal, SEO/AEO for public product apps
+description: XingAI foundation — mobile chrome, i18n (en/zh/ko), theme, legal, SEO/AEO for all *.xingai.app products
 alwaysApply: true
 ---
 
-# XingAI Foundation
+# XingAI foundation (all products)
 
-Applies to every `xingai-*` repo and public `*.xingai.app` product app.
+Applies to every `xingai-*` repo and `*.xingai.app` product app. Read `AGENTS.md` first (includes Product Upgrade Rule + Meal/Cook/Invest examples). For UI implementation details, use skill **`xingai-web-design`** (`~/.cursor/skills/xingai-web-design/`).
 
-## Mobile-First
+**Invest AI** also follows `xingai-invest-ai/.cursor/rules/decision-cache-boundary.mdc` (worker owns decisions; FastAPI read-only).
 
-- Design for 320-430px usable width first.
-- Touch targets should be at least 44x44 CSS px.
-- Use safe-area padding for fixed top/bottom chrome.
-- Default to single-column layouts on phones.
-- Put primary decision content before decorative chrome in DOM order.
-- Do not fake OS status bars in the DOM.
+---
 
-## Navigation Chrome
+## Mobile-first (required)
 
-Every shipped product surface should expose the same nav destinations across form factors.
+- Design **320–430px usable width first**; add `sm:` / `lg:` only when scaling up — never desktop-first shrink.
+- **Touch targets** ≥ 44×44 CSS px; adequate gap between tappable controls.
+- **Safe areas:** `env(safe-area-inset-*)` on fixed top/bottom chrome and main `padding-bottom`.
+- **Single-column default** on base styles; no dense multi-column tables on phone without scroll or fold.
+- **Performance:** primary decision content before decorative chrome in DOM order.
+- Do **not** fake OS status bars in the DOM.
 
-| Surface | Mobile | Desktop |
-|---|---|---|
-| Top bar | menu, brand/title, language, theme, profile/login if applicable | sticky top bar or reachable controls |
-| Side menu | sheet/drawer with full nav + settings fallback | same sheet or persistent sidebar |
-| Footer bar | fixed bottom tab bar for primary destinations | no bottom tab bar |
-| Footer links | legal + help in drawer/page footer | same legal links in footer |
+---
+
+## Navigation chrome (required)
+
+Every shipped product surface must expose the **same nav destinations** across form factors. Labels are product-specific; **pattern is not optional**.
+
+| Surface | Mobile (`< lg` / ~576px) | Desktop (`lg+`) |
+|---------|--------------------------|-----------------|
+| **Top bar** | Sticky: menu · brand/title · **language + theme** (profile if applicable) | Sticky top bar; same controls visible or reachable |
+| **Side menu** | **Sheet/drawer** from hamburger; full nav + settings fallback | **Same sheet** from menu **or** persistent sidebar — repo must pick one and stay consistent |
+| **Footer bar** | **Fixed bottom tab bar** for primary destinations (`lg:hidden`) | No bottom tab bar |
+| **Footer links** | Legal + help in drawer footer and/or page footer | Same legal links in site footer |
 
 Rules:
 
-1. Never hide language or theme on mobile unless the side drawer repeats them.
-2. Long titles should truncate cleanly.
-3. Main content needs bottom padding when bottom nav exists.
-4. Mark unreleased nav items `Soon`; do not ship empty routes.
-5. Do not expose internal labels like V1/V2 in user-facing nav or titles.
+1. **Never hide language or theme on mobile** unless the **side drawer** repeats them.
+2. Long titles: truncate (`ellipsis`); narrow screens may hide logo before truncating title.
+3. Main content `padding-bottom` ≥ bottom nav height + safe area when bottom nav exists.
+4. Mark unreleased nav items **Soon** (disabled + toast) — do not ship empty routes.
+5. Do **not** expose internal version labels (V1/V2) in user-facing nav or titles.
 
-## Language
+**Reference:** `xingai-dot-app` → `Header`, `MobileNavDrawer`, `MobileBottomNav`. Product apps → Cook/Meal `MobileChrome` (top + sheet + bottom nav on mobile).
 
-Required locales:
+---
 
-- `en`
-- `zh`
-- `ko`
+## Language — EN / 中文 / 한국어 (required)
 
-All new user-facing strings should go through the repo i18n layer. Product AI prompts and outputs should respect selected language where applicable.
+Locale codes in code: **`en`**, **`zh`** (中文), **`ko`** (한국어).
 
-## Theme
+- All **new user-facing strings** go through the repo i18n layer (e.g. `messages.js`, `translations.ts`, locale provider) — no hard-coded UI copy in components.
+- **Persist** locale (cookie and/or `localStorage`); re-apply on load before paint when possible (`i18n-boot` pattern in UX mocks).
+- **Marketing site (`xingai-dot-app`):** locale in **URL path** (`/`, `/zh/…`, `/ko/…`); switcher changes path, not cookie-only. `hreflang` + per-locale canonical.
+- **Product apps:** locale in UI + prompt/output language for AI routes; document supported locales in README.
+- Legal pages and disclaimers: **all three locales** before calling legal “done”.
+- Optional fourth locale (e.g. `es`) is product-specific — never replace en/zh/ko.
 
-- Support light and dark themes.
-- Use repo theme convention: `next-themes`, `.dark`, or `data-theme`.
-- Avoid theme flash.
-- Update `theme-color` metadata where supported.
-- Use repo tokens, preferably `oklch`; do not introduce random primary hex colors.
+---
 
-## Legal
+## Theme — light / dark (required)
 
-Every public product must link:
+- Support **`light` and `dark`** on every product app and marketing page.
+- Set theme on `<html data-theme="…">` (static UX) or `next-themes` + `.dark` (Next.js apps).
+- **No flash:** inline init script or `next-themes` `defaultTheme` + `enableSystem` as repo convention dictates.
+- Update **`theme-color`** meta when theme changes.
+- Demo/marketing imagery: provide **light + dark** pairs where screenshots are theme-dependent (`ThemedImage` on dot-app).
+- Use product **oklch tokens** from repo `globals.css` / `tokens.css` — no random hex primary colors.
 
-- `/legal/privacy`
-- `/legal/terms`
-- `/legal/disclaimer`
+---
 
-AI lifestyle/travel/style/research products must say suggestions are informational and users should verify before action. Finance products need risk-first copy and no return promises.
+## Legal protection (required)
 
-## SEO + AEO
+Every **public** `*.xingai.app` product must link to (host locally or on `xingai.app`):
 
-Before calling a product route shipped:
+| Page | Slug | Purpose |
+|------|------|---------|
+| **Privacy Policy** | `/legal/privacy` | Data collection, AI usage, cookies |
+| **Terms of Service** | `/legal/terms` | Use of product, limitations |
+| **Disclaimer** | `/legal/disclaimer` | Not professional advice; travel/style/invest suggestions |
 
-- `metadataBase`
-- unique title + description per route
-- canonical URL
-- Open Graph + Twitter card
-- sitemap.xml
-- robots.txt
-- correct `<html lang>`
-- `llms.txt`
-- short factual FAQ
-- JSON-LD where applicable
+Also:
 
-## Pre-Ship Checklist
+- **Footer** on marketing site and product apps: links to all three (+ contact if available).
+- AI lifestyle/travel products: state **suggestions only; verify before booking/action**.
+- Invest: risk-first disclaimer; no return promises.
+- New features with payments: mention refunds/support channel in Terms before launch.
 
-- [ ] Mobile layout verified at ~375px
-- [ ] Top bar, side drawer, and bottom nav wired where applicable
-- [ ] en / zh / ko strings complete
-- [ ] Light/dark readable
-- [ ] Privacy, Terms, Disclaimer linked
-- [ ] SEO/AEO files updated
+**Reference:** `xingai-dot-app/app/i18n/legal-content.ts`, `LegalDocumentShell.tsx`.
+
+---
+
+## SEO (required)
+
+Before calling a product route “shipped”:
+
+- **`metadataBase`**, unique **title** + **description** per route.
+- **Canonical URL** per page (locale-aware on marketing site).
+- **Open Graph + Twitter** card (`og:title`, `og:description`, `og:image` — use product screenshot or branded OG, not favicon alone).
+- **`sitemap.xml`** including all public locales and main routes.
+- **`robots.txt`** allowing public pages; `Sitemap:` directive.
+- **`lang`** on `<html>` matches active locale.
+- Internal links respect active locale (no `/apps` when user is on `/zh/apps`).
+
+Marketing checklist: `xingai-dot-app/docs/seo-aeo-checklist.md`.
+
+---
+
+## AEO — AI answer engines (required)
+
+- **`llms.txt`** at product root or `public/` — plain-language summary: what the product does, primary URL, main user flow, supported languages, disclaimer one-liner.
+- Homepage or product landing: **short factual FAQ** (3–5 Q&A) aligned with on-page copy.
+- **JSON-LD** where applicable: `SoftwareApplication` on product/marketing app pages; `FAQPage` on marketing home; `Organization` / `WebSite` on dot-app.
+- FAQ/schema answers: **factual**, name real domains (`cook.xingai.app`, etc.), no hype.
+- Keep **`llms.txt` and FAQ in sync** when positioning or main flow changes.
+
+---
+
+## Pre-ship checklist (agent)
+
+When adding or shipping a user-facing surface:
+
+- [ ] Mobile layout verified at ~375px; safe areas; bottom nav clearance
+- [ ] Top + side drawer + bottom nav (mobile) wired; desktop top chrome
+- [ ] en / zh / ko strings complete for new copy
+- [ ] Light + dark theme; no unreadable contrast
+- [ ] Footer links: Privacy, Terms, Disclaimer
+- [ ] `generateMetadata` (or static `seo-config.js`) + canonical + OG
+- [ ] `robots.txt`, `sitemap.xml`, `llms.txt` updated if routes changed
 - [ ] No internal version labels in UI
+
+---
+
+## Repo-specific pointers
+
+| Repo | Standards doc |
+|------|-----------------|
+| `xingai-dot-app` | `docs/marketing-site-standards.md`, `docs/seo-aeo-checklist.md` |
+| Lifestyle UX mocks | `docs/ux-v1/` — `messages.js`, `seo-config.js`, `llms.txt`, `robots.txt`, `sitemap.xml` |
+| `xingai-invest-ai` | Decision cache boundary ADR; legal/risk copy stricter |
+
+Do not duplicate full marketing checklists here — follow the repo doc above when editing that repo.

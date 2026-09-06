@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.12
+**Version:** 0.3.13
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -127,6 +127,12 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.3.13
+
+- Add workspace `AGENTS.md` (Product Upgrade Rule + Meal/Cook/Invest examples; Invest decision boundary).
+- Sync `xingai-foundation` + `anti-ai-writing-style` rules; drop dependency on deleted root markdown guides.
+- Add `xingai-brand-story` skill pointer updates.
 
 ### 0.3.12
 
