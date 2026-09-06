@@ -60,3 +60,4 @@ Before calling hero “done”:
 - [ ] Mobile has a visible hero strip or integrated visual (not desktop-only)
 - [ ] dot-app card has `srcDark` if the product is registered
 - [ ] OG image exists separately for metadata
+- [ ] Icons + motion hard gate also pass — see [visual-motion.md](visual-motion.md)
