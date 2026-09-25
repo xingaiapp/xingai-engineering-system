@@ -127,6 +127,7 @@ Default asset paths and layout: [references/hero-visuals.md](references/hero-vis
 - Every public product must link to Privacy Policy, Terms of Service, and Disclaimer.
 - Legal pages must exist in EN / zh / ko before legal is considered done.
 - Footer and mobile drawer must expose legal links.
+- **Footer family backlink:** crawlable plain `<a href="https://xingai.app/">` (and usually `/apps`) so product subdomains reinforce the main site.
 - AI lifestyle/travel/style/research products must say suggestions are informational and users should verify before action.
 - Invest or finance products need risk-first copy and no return promises.
 
@@ -137,6 +138,8 @@ Default asset paths and layout: [references/hero-visuals.md](references/hero-vis
 - Add or update `robots.txt` and `sitemap.xml`.
 - Use a branded OG image or product screenshot, not only a favicon.
 - Internal links should respect the active locale on localized marketing pages.
+- **Bing IndexNow:** host a public `/{64-hex}.txt` key file, add `lib/indexnow.ts` (or `app/lib/…`), and `scripts/submit-indexnow.py`. Reuse the XingAI portfolio key already on invest.xingai.app when practical. Document “run after first production deploy”.
+- **README URLs:** prefer the live `*.xingai.app` host over `*.vercel.app` project aliases in docs, contact, and curl examples.
 
 ### AEO
 

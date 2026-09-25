@@ -143,6 +143,7 @@ Also keep `DISCLAIMER.md` in the repo (engineering standard) — the **website m
 ### Link placement
 
 - **Site footer** on every public layout (desktop + mobile page footer).
+- **XingAI family backlink** — crawlable plain `<a href="https://xingai.app/">` (and usually `/apps`) in the footer so product subdomains reinforce the main site. Match Invest / Learn / lab wording: “Part of XingAI … All apps”.
 - **Mobile drawer** — legal block below main nav (Privacy · Terms · Disclaimer · About).
 - **Do not** bury legal links only in Settings or GitHub README.
 - Use i18n labels (`Privacy Policy`, `隐私政策`, `개인정보 처리방침`, etc.).
@@ -214,6 +215,8 @@ Use repo tokens first. If the repo has no tokens yet, start with a calm green de
 - [ ] Privacy Policy, Terms of Service, Disclaimer at `/legal/privacy`, `/legal/terms`, `/legal/disclaimer`
 - [ ] About page at `/about`; Help/FAQ linked if product has support content
 - [ ] Legal + About linked in footer and mobile drawer
+- [ ] Footer has crawlable link to https://xingai.app/ (and usually /apps)
+- [ ] Public host has IndexNow key file + submit script (or documented follow-up)
 - [ ] AI/finance copy includes appropriate limitation language
 - [ ] Matches existing repo tokens/theme
 - [ ] Mobile layout works at ~375px
