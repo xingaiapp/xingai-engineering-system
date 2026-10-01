@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.13
+**Version:** 0.3.14
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -109,6 +109,7 @@ docs/
 - `error-boundary-pattern.md` — Next.js error.tsx, not-found.tsx, loading.tsx, and FastAPI exception handlers
 - `structured-logging-pattern.md` — JSON structured logs with request_id, event, duration_ms using pino (TS) and Python logging
 - `decision-ledger-schema.md` — cross-product schema for recording AI recommendations + human outcomes
+- `shared-intelligence-layer.md` — Internet→…→Learning spine; shared Evidence/Audit/Outcome ownership (no central DB)
 - `product-upgrade-rule.md` — rules for upgrading product dependencies and frameworks
 - `loop-engineering-three-layer.md` — Context / Harness / Loop three-layer agent architecture with guardrails
 - `micro-loop-engine.md` — dynamic agent assembly from reusable skills, tools, memory, and loop configs
@@ -127,6 +128,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes
+
+### 0.3.14
+
+- ADR-003 Shared Intelligence Layer + `patterns/shared-intelligence-layer.md` — one Evidence→…→Learning spine across sites; reuse Evidence Engine / Decision Ledger / Agent Firewall; no per-product rebuild, no central shared DB.
 
 ### 0.3.13
 
