@@ -74,6 +74,12 @@ Title plus optional icon plus 2–5 concise bullets. No paragraphs.
 
 Straight or right-angle routing. No crossings. A short edge label (≤ 3 words, 18px, white pill) only when the relation is not obvious.
 
+**Gaps that carry a labeled arrow.** The 32px card gap is for unlabeled neighbors. When a labeled arrow sits in a gap:
+
+- Make the gap at least `label width + 24px`, and never under 60px. SVG does not wrap or measure text for you, so estimate the width: Latin ≈ 0.55 × font-size per character, CJK ≈ 1.0 × font-size per character.
+- If the layout cannot spare that width, put the label above the arrow on a white pill that may overlap the card edges, or move the meaning into the target card's title and drop the label.
+- Never let a label run under a card. Check every gap on the rendered PNG.
+
 ## Icons
 
 Simple 2px-stroke line icons. 36px in cards, 48px on group headers, colored with the group accent. One icon per card. Draw only icons that change the meaning: globe, pin, flag, database, gear, shield, document, card, exchange arrows, cube, spark/AI, user.
