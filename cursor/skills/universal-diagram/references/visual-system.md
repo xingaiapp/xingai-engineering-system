@@ -76,7 +76,7 @@ Straight or right-angle routing. No crossings. A short edge label (≤ 3 words, 
 
 **Gaps that carry a labeled arrow.** The 32px card gap is for unlabeled neighbors. When a labeled arrow sits in a gap:
 
-- Make the gap at least `label width + 24px`, and never under 60px. SVG does not wrap or measure text for you, so estimate the width: Latin ≈ 0.55 × font-size per character, CJK ≈ 1.0 × font-size per character.
+- Make the gap at least `label width + 24px`, and never under 60px. Estimate the label width with [Fitting text](#fitting-text).
 - If the layout cannot spare that width, put the label above the arrow on a white pill that may overlap the card edges, or move the meaning into the target card's title and drop the label.
 - Never let a label run under a card. Check every gap on the rendered PNG.
 
@@ -89,3 +89,12 @@ Simple 2px-stroke line icons. 36px in cards, 48px on group headers, colored with
 - Title: short, bold, executive-friendly.
 - Subtitle: optional, one line, states the message.
 - Takeaway banner: full width, yellow fill `#FFFBEB`, left 6px bar `#D97706`. Label `KEY TAKEAWAY` or `KEY PRINCIPLE` (18px caps) plus one sentence (26px, ink). Generate the sentence from this topic. Do not reuse a sample sentence.
+
+## Fitting text
+
+SVG does not wrap or measure text. Plan widths before placing it.
+
+- Estimate width: Latin ≈ 0.55 × font-size per character, CJK ≈ 1.0 × font-size per character.
+- Keep at least 28px between text and the card edge.
+- If a label does not fit, shorten it or split it into two `<tspan>` lines. Never shrink below 18px.
+- Confirm on the rendered PNG, not the SVG source.
