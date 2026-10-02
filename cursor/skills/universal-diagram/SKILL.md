@@ -14,7 +14,7 @@ description: >-
 
 # Universal Diagram Design
 
-Version: 1.1
+Version: 1.2
 
 Core principle: **SAME VISUAL LANGUAGE, DIFFERENT INFORMATION ARCHITECTURE.**
 
@@ -36,8 +36,10 @@ QUALITY CHECK
 
 **Reasoning.** Use the strongest available reasoning-capable model to: understand the concept, identify the primary message, extract entities and relationships, select the diagram pattern, define the information hierarchy, write the diagram specification, write the visual-generation prompt, and review the result.
 
-- In ChatGPT, the preferred reasoning model is GPT-5.6 Luna when that model is available.
-- In Cursor / CodeX, use the strongest reasoning model configured by the user. Do not switch models yourself.
+This skill cannot choose the reasoning model. The user or the host session does. Do not name a specific model here; model lineups change faster than this file.
+
+- In ChatGPT, use whichever reasoning model the session is running. If the user asks, recommend the most capable reasoning tier available to them, not a cost-optimized tier.
+- In Cursor / CodeX / Claude Code, use the reasoning model configured by the user. Do not switch models yourself.
 
 **Image generation.** Use an image-generation-capable tool when the environment has one and the user wants an actual visual diagram. Do **not** hard-code an image-generation model ID unless the project explicitly requires one. The image side stays model-agnostic.
 
@@ -134,7 +136,9 @@ Style constraints to include every time: modern enterprise architecture, flat de
 
 **Cursor.** Call `GenerateImage` (cursor namespace). Set `aspect_ratio` to `16:9`. Set `filename` to a short slug such as `diagram-latam-architecture.png`. Put the step-7 prompt in `description`. Do not name an image model.
 
-**Other environments.** Use the image-generation provider configured by the project or host (ChatGPT `image_gen`, or whatever the project already uses). Same rule: no hard-coded model ID.
+**Other environments with an image tool.** Use the image-generation capability the host or project provides. Tool names differ by environment (for example, ChatGPT exposes one as `image_gen`). Same rule: no hard-coded model ID.
+
+**No image tool (for example Claude Code).** Skip image generation. Go straight to the SVG path in step 9: author a 1920×1080 SVG from the template and render it to PNG.
 
 The image should be 16:9, presentation-ready, high resolution, clean, legible, and professional. Suitable for PowerPoint, Google Slides, Keynote, LinkedIn, architecture reviews, and technical presentations.
 
@@ -161,6 +165,8 @@ If labels are still wrong, clipped, or unreadable, stop using image generation f
 ```bash
 ~/.cursor/skills/universal-diagram/scripts/render.sh path/to/diagram.svg
 ```
+
+In Claude Code the same script lives under `~/.claude/skills/universal-diagram/scripts/`.
 
 Read the PNG and run the checklist again. Text in the SVG path is exact; prefer it whenever labels must be perfect.
 

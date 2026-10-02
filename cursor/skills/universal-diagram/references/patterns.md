@@ -34,13 +34,16 @@ B  START → STEP 1 → STEP 2 → DECISION
                               ↙        ↘
                             YES         NO
 
-C  INPUT → PROCESS → INTELLIGENCE → DECISION → OUTPUT
+C  INPUT → PROCESS → OUTPUT
+   AI / decision variant:  INPUT → PROCESS → INTELLIGENCE → DECISION → OUTPUT
+   (ETL and plain data pipelines keep the three-stage form.)
 
-D            SYSTEM A
-                ↑
-   SYSTEM B ← PLATFORM → SYSTEM C
-                ↓
-             SYSTEM D
+D               SYSTEM A
+                   ↑
+   SYSTEM B ←  PLATFORM  → SYSTEM C
+                   ↓
+                SYSTEM D
+   (every spoke starts at the hub; arrowheads point to the satellite)
 
 E  GLOBAL → REGIONAL → COUNTRY → CONFIGURATION
 
