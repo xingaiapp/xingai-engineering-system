@@ -41,6 +41,7 @@ Quick reference for rules, skills, prompts, templates, and patterns in this repo
 | `xingai-video` | Web-video alias + axing-daily STYLE |
 | `web-video-presentation` | 16:9 clickable web-video stages |
 | `universal-diagram` | 16:9 architecture / product diagrams |
+| `draw-it` | Alias for `universal-diagram` (`/draw-it`) |
 | `research-ai-loading-ux` | AI waits >2s |
 | `xingai-worker-setup` | Worker + cache boundary |
 | `api-error-handling` | API routes, error shapes |

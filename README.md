@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.15
+**Version:** 0.3.16
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -78,6 +78,7 @@ docs/
 - `xingai-video` — XingAI alias for web-video-presentation (axing-daily STYLE notes only; no private PPTX)
 - `web-video-presentation` — clickable 16:9 web-video stages (upstream garden skill)
 - `universal-diagram` — presentation-ready 16:9 architecture / product diagrams
+- `draw-it` — thin alias for `universal-diagram` (`/draw-it`)
 - `xingai-web-design` — build and refine XingAI web UI surfaces
 - `xingai-worker-setup` — scaffold worker/cache boundary architecture for AI products
 - `api-error-handling` — standardize error responses across FastAPI and Next.js APIs
@@ -138,6 +139,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes / Changelog
+
+### 0.3.16
+
+- Add `draw-it` alias skill → `universal-diagram` (`/draw-it`)
 
 ### 0.3.15
 

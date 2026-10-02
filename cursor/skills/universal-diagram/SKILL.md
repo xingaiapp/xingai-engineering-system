@@ -4,11 +4,12 @@ description: >-
   Designs consistent, presentation-ready 16:9 diagrams — architecture, system
   design, cloud, AI/RAG, data flow, workflow, product, strategy, comparison,
   roadmap, capability map — that share one visual language. Use whenever the
-  user asks to create, draw, or make a diagram, "画个图", "画架构图", "流程图",
-  "做张图解释一下", "architecture diagram", "system diagram", "data flow",
-  "capability map", "roadmap visual", "before/after", "option A vs B", or wants
-  a concept turned into a slide-ready visual, even if they do not say
+  user asks to create, draw, or make a diagram, /draw-it, "draw it", "画个图",
+  "画架构图", "流程图", "做张图解释一下", "architecture diagram", "system diagram",
+  "data flow", "capability map", "roadmap visual", "before/after", "option A vs B",
+  or wants a concept turned into a slide-ready visual, even if they do not say
   "diagram". Also use to review or redraw an existing diagram for clarity.
+  Alias skill: draw-it.
 ---
 
 # Universal Diagram Design
