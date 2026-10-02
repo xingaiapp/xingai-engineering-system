@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.16
+**Version:** 0.3.17
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -139,6 +139,11 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes / Changelog
+
+### 0.3.17
+
+- `project-init`: force desktop left-menu mid-edge toggle + fixed menu / content shift; add `references/desktop-sidebar.md`
+- `xingai-web-design`: publish bilingual helpers (`SKILL.zh-CN.md`, `README.zh-CN.md`, `references/*`); keep English `SKILL.md` as source of truth
 
 ### 0.3.16
 

@@ -9,7 +9,11 @@ description: >-
 
 # XingAI Web Design
 
+**中文阅读：** [SKILL.zh-CN.md](SKILL.zh-CN.md) · [README.zh-CN.md](README.zh-CN.md)
+
 Use this skill for front-end work on XingAI product apps, marketing pages, and public UI surfaces.
+
+Extra detail (progressive disclosure): [references/mobile-chrome.md](references/mobile-chrome.md) · [references/brand-tokens.md](references/brand-tokens.md) · [references/product-repos.md](references/product-repos.md).
 
 ## When To Apply
 

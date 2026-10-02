@@ -55,6 +55,13 @@ If the agent is about to finish without creating image/icon/motion files, **stop
 - Desktop: include a side menu that toggles open/closed. Default open. When closed, show larger icon-only nav with accessible labels/tooltips.
 - Keep the same destinations available across mobile and desktop.
 
+**Desktop left menu (forced)** — details: [references/desktop-sidebar.md](references/desktop-sidebar.md)
+
+- **Must** ship an open/close control for the left menu on desktop.
+- Place the primary toggle **in the middle of the menu’s right edge** (vertical center), not only in the footer or a distant corner. Reference: Invest AI edge `PanelLeft` button.
+- Left menu is **`position: fixed`** (pinned while the page scrolls): full height, own width.
+- Opening/closing **moves the right content** (content column offset = menu width). The **whole menu stays visible** — do not overlay content on top of the menu or clip nav items. Closed state = icon rail + content offset to rail width.
+
 ### Brand Assets (forced)
 
 - **Create** a product logo and favicon in the first UI pass — do not leave placeholder text-only branding.
@@ -186,6 +193,7 @@ Copy this into the plan or PR summary for any new XingAI public app:
 - [ ] Mobile-first layout works at ~375px
 - [ ] Top bar, mobile drawer, mobile footbar, and desktop side menu are wired
 - [ ] Desktop side menu toggles open/closed; closed mode shows icon-only nav
+- [ ] Desktop left menu has mid-edge open/close button; menu is fixed; right content shifts so the whole menu stays visible
 - [ ] Logo, favicon, and app icons exist (not emoji; not default Next placeholder only)
 - [ ] Nav / primary actions use SVG (or repo icon set) icons
 - [ ] Button / tab / CTA labels are vertically + horizontally centered (not top-aligned in tall controls)
@@ -211,6 +219,8 @@ Copy this into the plan or PR summary for any new XingAI public app:
 - Deferring icons/images/animation to a later PR when the UI is already user-visible.
 - Tall buttons/tabs with label text stuck to the top (missing flex centering on `<a class="btn">` / `.btn`).
 - Desktop-first pages squeezed down to mobile.
+- Desktop left menu with no open/close control, or toggle only buried in the footer.
+- Fixed left menu overlaying content without shifting the right column (menu or content clipped).
 - Language/theme hidden on mobile without drawer fallback.
 - Missing legal pages or only English legal copy.
 - Hard-coded UI strings in components.
