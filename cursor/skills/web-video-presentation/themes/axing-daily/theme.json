@@ -1,0 +1,28 @@
+{
+  "id": "axing-daily",
+  "name": "Axing Daily",
+  "nameZh": "阿星美股日记",
+  "description": "Cool light diary board extracted from 阿星美股日记 PPTX: soft blue-gray paper, Lato/Raleway sans, Google-blue accents, green up / gray mute tables. Friendly creator daily-US-stock report — not dark terminal, not cream broadsheet.",
+  "descriptionZh": "从《阿星美股日记》PPTX 抽的浅色日记板：冷灰蓝纸底、Lato/Raleway 无衬线、谷歌蓝强调、涨绿/表灰。创作者美股日更气质——不是暗色终端，也不是奶油报纸。",
+  "mood": [
+    "light",
+    "diary",
+    "fintech",
+    "sans",
+    "clean",
+    "punchy"
+  ],
+  "bestFor": [
+    "美股日记 / 日更播报",
+    "XingAI Daily Investment Report 录屏",
+    "实盘更新 / 指数表 / 定投组合",
+    "个人频道口播（非 pitch-deck）"
+  ],
+  "preview": {
+    "shell": "#0a0a0a",
+    "surface": "#EEF3F7",
+    "text": "#000000",
+    "accent": "#4A86E8"
+  },
+  "sourceExample": "local PPTX (not published) + STYLE.md in xingai-video/references/axing-daily/"
+}

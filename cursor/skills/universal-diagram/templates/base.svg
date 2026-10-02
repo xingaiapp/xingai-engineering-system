@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <!-- Universal Diagram base template — Pattern E example. Copy, then replace content. -->
+  <defs>
+    <style>
+      text { font-family: Inter, "SF Pro Display", "PingFang SC", "Noto Sans CJK SC", "Apple SD Gothic Neo", "Helvetica Neue", Arial, sans-serif; }
+      .title { font-size: 56px; font-weight: 700; fill: #0F172A; }
+      .subtitle { font-size: 28px; fill: #334155; }
+      .group { font-size: 20px; font-weight: 700; letter-spacing: 2px; }
+      .ctitle { font-size: 28px; font-weight: 600; fill: #0F172A; }
+      .bullet { font-size: 21px; fill: #334155; }
+      .note { font-size: 18px; fill: #64748B; }
+      .kt-label { font-size: 18px; font-weight: 700; letter-spacing: 2px; fill: #D97706; }
+      .kt { font-size: 26px; fill: #0F172A; }
+      .card { stroke-width: 2; }
+      .flow { stroke: #94A3B8; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .dashed { stroke-dasharray: 8 6; }
+      .icon { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94A3B8"/>
+    </marker>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text class="title" x="80" y="120">Multi-Currency &amp; LatAm Architecture</text>
+  <text class="subtitle" x="80" y="168">One global platform with configurable regional capabilities</text>
+
+  <!-- Group 1: Global Core (blue) -->
+  <rect x="80" y="220" width="1760" height="220" rx="24" fill="#EFF6FF" stroke="#2563EB" class="card"/>
+  <text class="group" x="112" y="260" fill="#2563EB">GLOBAL CORE</text>
+  <!-- card -->
+  <rect x="112" y="280" width="400" height="136" rx="16" fill="#FFFFFF" stroke="#BFDBFE" class="card"/>
+  <g transform="translate(140,302)" class="icon" stroke="#2563EB">
+    <path d="M4 18h28M4 12l6-6M4 12l6 6M32 24H4M32 24l-6-6M32 24l-6 6"/>
+  </g>
+  <text class="ctitle" x="188" y="330">Currency Core</text>
+  <text class="bullet" x="140" y="368">• Codes · precision · rounding</text>
+  <text class="bullet" x="140" y="398">• FX rates</text>
+  <!-- duplicate/arrange more cards at x = 544, 976, 1408 (width 400, gap 32) -->
+
+  <!-- Connector -->
+  <line class="flow" x1="960" y1="440" x2="960" y2="486"/>
+
+  <!-- Group 2: Regional Localization (green) -->
+  <rect x="80" y="490" width="1760" height="180" rx="24" fill="#ECFDF5" stroke="#059669" class="card"/>
+  <text class="group" x="112" y="530" fill="#059669">REGIONAL LOCALIZATION</text>
+
+  <line class="flow" x1="960" y1="670" x2="960" y2="716"/>
+
+  <!-- Group 3: Country Configuration (purple, dashed = optional) -->
+  <rect x="80" y="720" width="1760" height="180" rx="24" fill="#F5F3FF" stroke="#7C3AED" class="card dashed"/>
+  <text class="group" x="112" y="760" fill="#7C3AED">COUNTRY CONFIGURATION</text>
+
+  <!-- Key takeaway banner -->
+  <rect x="80" y="940" width="1760" height="84" rx="12" fill="#FFFBEB"/>
+  <rect x="80" y="940" width="6" height="84" fill="#D97706"/>
+  <text class="kt-label" x="112" y="974">KEY TAKEAWAY</text>
+  <text class="kt" x="112" y="1008">Add new countries through configuration and capability composition, not platform forks.</text>
+</svg>

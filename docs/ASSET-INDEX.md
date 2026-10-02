@@ -28,7 +28,19 @@ Quick reference for rules, skills, prompts, templates, and patterns in this repo
 | `xingai-mcp-builder` | New/extend MCP servers, gateways, tools, OAuth MCP, control-plane contracts |
 | `xingai-project-pick` | Radar issue/email → one XingAI create/upgrade Decision Card (EN/ZH) |
 | `project-init` | New `*.xingai.app` product |
+| `growth-deploy` | Growth Monitor build + Fly |
+| `invest-deploy` | Invest AI git push + Fly API |
+| `project-ship` | Generic pull + build + push + Fly |
 | `xingai-web-design` | Web UI / dashboard work |
+| `xingai-docs-pack` | ADR + blog + design + wiki pack |
+| `xingai-docs-sync` | ADR/README/BDR convention sync |
+| `xingai-ai-learning-wiki` | Public-repo → AI-Learning Wiki |
+| `xingai-wiki-ingest` | URL/image/notes → wiki |
+| `xingai-ux-png` | Critique + original UX PNG |
+| `xingai-daily-stock-intelligence` | Daily US market intelligence brief |
+| `xingai-video` | Web-video alias + axing-daily STYLE |
+| `web-video-presentation` | 16:9 clickable web-video stages |
+| `universal-diagram` | 16:9 architecture / product diagrams |
 | `research-ai-loading-ux` | AI waits >2s |
 | `xingai-worker-setup` | Worker + cache boundary |
 | `api-error-handling` | API routes, error shapes |

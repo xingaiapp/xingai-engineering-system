@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.14
+**Version:** 0.3.15
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -67,7 +67,17 @@ docs/
 - `xingai-project-pick` — from Opportunity Radar issue/email context, pick one XingAI project to create or upgrade (Decision Card EN/ZH)
 - `project-init` — initialize new XingAI apps (Invest-style en/zh/ko, hero light/dark + OG, **XNP** notifications)
 - `growth-deploy` — build, push, and Fly-deploy Growth Monitor
+- `invest-deploy` — push + Fly-deploy Invest AI API (`xingai-invest-ai-api`)
 - `project-ship` — generic pull + build + push + Fly deploy for the current repo
+- `xingai-docs-pack` — ADR + tech blog + enterprise design + wiki docs pack
+- `xingai-docs-sync` — bilingual ADR / README / BDR convention sync
+- `xingai-ai-learning-wiki` — scan public xingaiapp repos into the AI-Learning Wiki
+- `xingai-wiki-ingest` — ingest URL / image / notes into the wiki
+- `xingai-ux-png` — critique + draw original UX PNG for wiki courses
+- `xingai-daily-stock-intelligence` — daily US market intelligence report (watchlist is a private template)
+- `xingai-video` — XingAI alias for web-video-presentation (axing-daily STYLE notes only; no private PPTX)
+- `web-video-presentation` — clickable 16:9 web-video stages (upstream garden skill)
+- `universal-diagram` — presentation-ready 16:9 architecture / product diagrams
 - `xingai-web-design` — build and refine XingAI web UI surfaces
 - `xingai-worker-setup` — scaffold worker/cache boundary architecture for AI products
 - `api-error-handling` — standardize error responses across FastAPI and Next.js APIs
@@ -127,7 +137,12 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 
 If it will likely be used once, solve it directly and do not abstract yet.
 
-## Version Notes
+## Version Notes / Changelog
+
+### 0.3.15
+
+- Sync more public-safe personal Cursor skills into `cursor/skills/`: `invest-deploy`, `xingai-docs-pack`, `xingai-docs-sync`, `xingai-ai-learning-wiki`, `xingai-wiki-ingest`, `xingai-ux-png`, `xingai-daily-stock-intelligence` (watchlist scrubbed to placeholders), `universal-diagram`, `web-video-presentation`, `xingai-video` (STYLE.md only; no private PPTX/media)
+- Paths scrubbed to `/path/to/...` or `~/.cursor/skills` — see `docs/PRIVACY-SAFETY-CHECKLIST.md`
 
 ### 0.3.14
 

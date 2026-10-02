@@ -1,0 +1,80 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Theme · axing-daily
+ *   Visual DNA from 《阿星美股日记》PPTX (2025-09-08 sample):
+ *     surface #EEF3F7 · panels #F3F3F3 · ink #000 · mute #9E9E9E
+ *     accent blue #4A86E8 · soft blue chips #C9DAF8 / #D0E0E3
+ *     up green #38761D · brand orange #F46524 (logo coin / Swiss theme)
+ *     fonts: Lato (body/EN) + Raleway (display accents) + Noto Sans SC
+ *
+ *   character knobs:
+ *     • hero numbers   — Lato 700, tabular, tight track
+ *     • rule           — 1px solid #D0E0E3
+ *     • card           — soft 8px, light gray fill (diary card)
+ *     • surface        — cool blue-gray paper, no grain
+ *     • motion         — punchy diary updates (not cinematic slow)
+ *
+ *   Extra semantic tokens (chapter CSS may use):
+ *     --up / --up-deep / --chip / --brand / --highlight
+ * ───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── palette (from live slide fills, not unused scheme leftovers) ─── */
+  --shell:        #0a0a0a;             /* recording chrome / YouTube black */
+  --surface:      #EEF3F7;             /* SIGNATURE — cool diary paper */
+  --surface-2:    #F3F3F3;             /* inset panels / cards */
+  --surface-3:    #D0E0E3;             /* table rails / soft rules */
+  --text:         #000000;
+  --text-2:       #434343;
+  --text-mute:    #9E9E9E;             /* SIGNATURE — table secondary */
+  --text-faint:   #b0b0b0;
+  --rule:         #D0E0E3;
+  --accent:       #4A86E8;             /* SIGNATURE — slide title / link blue */
+  --accent-soft:  rgba(74, 134, 232, 0.12);
+  --accent-glow:  rgba(74, 134, 232, 0.28);
+
+  /* semantic (PPT table / brand) */
+  --up:           #38761D;
+  --up-deep:      #274E13;
+  --chip:         #C9DAF8;
+  --chip-2:       #A4C2F4;
+  --brand:        #F46524;             /* theme2 Swiss dk1 / logo coin family */
+  --brand-navy:   #000B26;             /* logo outline / 阿星 wordmark */
+  --highlight:    #FFFF00;             /* rare emphasis — use sparingly */
+
+  /* ─── fonts (PPT: Lato dominant, Raleway accents, Arial/Calibri fallback) ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", sans-serif;
+  --font-display-en: "Raleway", "Lato", "Arial", sans-serif;
+  --font-body:       "Lato", "Noto Sans SC", "Arial", sans-serif;
+  --font-mono:       "Lato", "Arial", ui-monospace, monospace;
+  --font-features:   "tnum", "lnum";
+
+  /* ─── motion: punchy diary beat ─── */
+  --dur-quick:      180ms;
+  --dur-base:       420ms;
+  --dur-slow:       700ms;
+  --dur-cinematic:  1100ms;
+
+  /* ─── design identity: light diary board ─── */
+  --r-card:        8px;
+  --r-stage:       0;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-body);
+  --hero-num-style:   normal;
+  --hero-num-weight:  700;
+  --hero-num-track:   -0.03em;
+  --stage-pad-x:   96px;
+  --stage-pad-y:   72px;
+  --card-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.04),
+    0 12px 28px rgba(15, 40, 70, 0.08);
+  --shadow-stage:
+    0 40px 120px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+
+  /* ─── decoration: clean paper — no grain; soft blue wash only ─── */
+  --surface-pattern:
+    linear-gradient(180deg, rgba(201, 218, 248, 0.22) 0%, transparent 42%);
+  --surface-pattern-size: 100% 100%;
+  --surface-pattern-blend: normal;
+  --surface-pattern-opacity: 1;
+}
