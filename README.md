@@ -128,7 +128,7 @@ docs/
 
 ## Install
 
-See [`docs/HOW-TO-INSTALL.md`](docs/HOW-TO-INSTALL.md), [`docs/ASSET-INDEX.md`](docs/ASSET-INDEX.md), and [`docs/REPO-RULE-BUNDLES.md`](docs/REPO-RULE-BUNDLES.md).
+See [`docs/HOW-TO-INSTALL.md`](docs/HOW-TO-INSTALL.md) (Cursor), [`docs/INSTALL-CLAUDE-CODE.md`](docs/INSTALL-CLAUDE-CODE.md) (Claude Code), [`docs/ASSET-INDEX.md`](docs/ASSET-INDEX.md), and [`docs/REPO-RULE-BUNDLES.md`](docs/REPO-RULE-BUNDLES.md).
 
 ## Reusability Principle
 
@@ -139,6 +139,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes / Changelog
+
+### 0.3.18
+
+- Add `docs/INSTALL-CLAUDE-CODE.md` — install `cursor/skills/*` into Claude Code (`~/.claude/skills/`) on another machine via symlinks; `universal-diagram` worked example, update / edit / uninstall flow
 
 ### 0.3.17
 
