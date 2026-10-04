@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.17
+**Version:** 0.3.19
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -79,6 +79,7 @@ docs/
 - `web-video-presentation` — clickable 16:9 web-video stages (upstream garden skill)
 - `universal-diagram` — presentation-ready 16:9 architecture / product diagrams
 - `draw-it` — thin alias for `universal-diagram` (`/draw-it`)
+- `xingai-team-visual` — fixed five-character team illustration system (星哥 / 至尊宝 / 小甜甜 / 牛夫人 / 二当家)
 - `xingai-web-design` — build and refine XingAI web UI surfaces
 - `xingai-worker-setup` — scaffold worker/cache boundary architecture for AI products
 - `api-error-handling` — standardize error responses across FastAPI and Next.js APIs
@@ -140,9 +141,14 @@ If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes / Changelog
 
+### 0.3.19
+
+- Add `xingai-team-visual` skill — XingAI five-character Team Visual System (Character Bible, master + reference-continuation prompts, core-five + org-chart reference images)
+
 ### 0.3.18
 
 - Add `docs/INSTALL-CLAUDE-CODE.md` — install `cursor/skills/*` into Claude Code (`~/.claude/skills/`) on another machine via symlinks; `universal-diagram` worked example, update / edit / uninstall flow
+- Sync README header version with `VERSION` (was still showing 0.3.17)
 
 ### 0.3.17
 

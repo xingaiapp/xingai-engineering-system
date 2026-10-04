@@ -54,6 +54,7 @@ cp -R cursor/skills/project-ship ~/.cursor/skills/
 cp -R cursor/skills/enterprise-coding-behavior ~/.cursor/skills/
 cp -R cursor/skills/enterprise-agent-team ~/.cursor/skills/
 cp -R cursor/skills/xingai-mcp-builder ~/.cursor/skills/
+cp -R cursor/skills/xingai-team-visual ~/.cursor/skills/
 ```
 
 For always-on coding behavior in a project, also copy the rule:
@@ -64,7 +65,7 @@ cp cursor/rules/enterprise-coding-behavior.mdc /path/to/target-project/.cursor/r
 
 Why this works:
 
-Skills are better than rules for repeatable workflows with multiple steps. For example, `project-init` is a workflow for bootstrapping a new app. `xingai-web-design` is a workflow for UI work. `growth-deploy` / `invest-deploy` / `project-ship` cover product deploys. `xingai-docs-pack` and `xingai-docs-sync` cover documentation. Wiki skills (`xingai-ai-learning-wiki`, `xingai-wiki-ingest`, `xingai-ux-png`) keep the public learning base honest. `xingai-video` + `web-video-presentation` + `universal-diagram` cover presentation media. `research-ai-loading-ux` is a workflow for AI/search loading states that need visible progress, elapsed time, completion, and retry behavior. `enterprise-coding-behavior` is the XingAI enterprise edition of Karpathy-style coding discipline; `enterprise-agent-team` applies the same bar across Planner / Research / Coding / Reviewer / Architect. `xingai-mcp-builder` is the XingAI fork of generic MCP builder skills (Python-first gateway/gates, not TypeScript-default greenfield).
+Skills are better than rules for repeatable workflows with multiple steps. For example, `project-init` is a workflow for bootstrapping a new app. `xingai-web-design` is a workflow for UI work. `growth-deploy` / `invest-deploy` / `project-ship` cover product deploys. `xingai-docs-pack` and `xingai-docs-sync` cover documentation. Wiki skills (`xingai-ai-learning-wiki`, `xingai-wiki-ingest`, `xingai-ux-png`) keep the public learning base honest. `xingai-video` + `web-video-presentation` + `universal-diagram` cover presentation media. `xingai-team-visual` keeps XingAI team / About illustrations on one five-character bible. `research-ai-loading-ux` is a workflow for AI/search loading states that need visible progress, elapsed time, completion, and retry behavior. `enterprise-coding-behavior` is the XingAI enterprise edition of Karpathy-style coding discipline; `enterprise-agent-team` applies the same bar across Planner / Research / Coding / Reviewer / Architect. `xingai-mcp-builder` is the XingAI fork of generic MCP builder skills (Python-first gateway/gates, not TypeScript-default greenfield).
 
 Common mistake:
 
