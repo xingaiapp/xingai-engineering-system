@@ -31,6 +31,8 @@ The visual identity must remain consistent across all future images.
 - [ ] 4. Generate → quality checklist → regenerate once if checklist fails
 ```
 
+If the agent has no image-generation tool (for example Claude Code), see [No image tool](#no-image-tool-claude-code).
+
 ## Reference images (Character Bible)
 
 Always prefer these as the primary visual reference when generating:
@@ -363,6 +365,14 @@ Alternative:
 4:3 for presentations.
 
 In Cursor: call `GenerateImage` with `aspect_ratio` `16:9` unless the user asks otherwise. Attach / describe the reference image from `assets/`.
+
+### No image tool (Claude Code)
+
+Claude Code has no built-in image generator. Do not pretend to generate an image. Instead:
+
+1. **Prompt** — read the reference image(s) in `assets/`, then output a ready-to-paste prompt (reference-continuation if the user can attach the reference image to their image tool, master prompt otherwise). State the aspect ratio and tell the user to attach `assets/xingai-team-core-five.jpg`.
+2. **Review** — when the user sends back a generated image, read it and go through the [Quality Checklist](#quality-checklist) item by item. If any item fails, give one tighter prompt that names the failures.
+3. **Diagrams** — for relationship, org, or layout visuals that do not need new character art, build an SVG / HTML layout that embeds the existing reference image(s) or crops of them instead of new drawings.
 
 ---
 

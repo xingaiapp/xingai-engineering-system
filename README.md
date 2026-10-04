@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.19
+**Version:** 0.3.20
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -140,6 +140,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes / Changelog
+
+### 0.3.20
+
+- `xingai-team-visual`: add a no-image-tool path for Claude Code — output a ready prompt, review returned images against the Quality Checklist, build SVG / HTML layouts from the reference images
 
 ### 0.3.19
 
