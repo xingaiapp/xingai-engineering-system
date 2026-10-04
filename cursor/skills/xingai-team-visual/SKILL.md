@@ -2,11 +2,12 @@
 name: xingai-team-visual
 description: >-
   Generates consistent XingAI team illustrations, team diagrams, character
-  posters, About Us graphics, and relationship visuals using a fixed five-character
-  system (星哥, 至尊宝, 小甜甜, 牛夫人, 二当家). Use when the user asks for XingAI
-  team picture, team poster, About/Team visual, character bible illustration,
-  /xingai-team-visual, or wants images that keep the same faces, costumes, colors,
-  and hierarchy.
+  posters, About Us graphics, and org visuals using a fixed six-character
+  system: 星哥 (founder) plus five leaders 至尊宝, 牛夫人, 小甜甜, 二当家,
+  华安（唐伯虎）. Use when the user asks for XingAI team picture, team poster,
+  About/Team visual, 华府组织架构, character bible illustration,
+  /xingai-team-visual, or wants images that keep the same faces, costumes,
+  colors, roles, and hierarchy.
 ---
 
 # XingAI Team Visual Skill
@@ -15,7 +16,7 @@ description: >-
 
 Generate consistent XingAI team illustrations, team diagrams,
 character posters, About Us graphics, product illustrations,
-and organizational relationship visuals.
+and organizational visuals.
 
 The visual identity must remain consistent across all future images.
 
@@ -35,14 +36,14 @@ If the agent has no image-generation tool (for example Claude Code), see [No ima
 
 ## Reference images (Character Bible)
 
-Always prefer these as the primary visual reference when generating:
+The reference images are the source of truth. If this file and an image disagree, the image wins — then update this file.
 
 | File | Use |
 |------|-----|
-| [assets/xingai-team-core-five.jpg](assets/xingai-team-core-five.jpg) | Core five — primary identity bible |
-| [assets/xingai-team-org-chart.jpg](assets/xingai-team-org-chart.jpg) | Extended org / multi-tier layout reference only |
+| [assets/xingai-team-core-five.jpg](assets/xingai-team-core-five.jpg) | 星哥 + five leaders — primary identity bible |
+| [assets/xingai-team-org-chart.jpg](assets/xingai-team-org-chart.jpg) | 华府组织架构 — full 55-person org (星哥 · 5 leaders · 20 managers · 30 executors) |
 
-**Core IP = five characters only** for default posters. Do not invent new main characters. The org-chart reference may include extra supporting figures; do **not** promote them into the core five unless the user explicitly asks.
+**Core IP = six characters**: 星哥 plus the five first-tier leaders. Default posters show only these six. The org chart's second- and third-tier figures are supporting cast; include them only when the user asks for the full org chart.
 
 Full generation prompts: [references/master-prompt.md](references/master-prompt.md) · [references/reference-continuation.md](references/reference-continuation.md)
 
@@ -50,123 +51,69 @@ Full generation prompts: [references/master-prompt.md](references/master-prompt.
 
 ## Core Team
 
-The XingAI team contains exactly five recurring characters:
+### 星哥 — Founder / Boss
 
-### 1. 星哥
+Role: 愿景 · 战略 · 最终决策 (Vision · Strategy · Final Decision). Sets direction, makes decisions, empowers the team, creates value.
 
-Role:
-Founder / CEO / Vision / Strategy
+Personality: calm, confident, clever, slightly mysterious.
 
-Personality:
-Calm, confident, clever, slightly mysterious.
+Visual: mature Chinese male, dark hair with subtle gray, friendly confident smile, dark XingAI hoodie, golden crown, XingAI coffee mug, often seated on a carved wooden chair.
 
-Visual:
-Mature Chinese male.
-Dark hair with subtle gray.
-Friendly confident smile.
-Dark XingAI hoodie.
-Golden crown.
-Coffee mug.
+Color: gold / warm yellow.
 
-Color:
-Gold / warm yellow.
+Position: top center, largest.
 
-Position:
-Usually top center or visual center.
+### The five leaders (第一层 · 5人负责人)
 
----
+Default left-to-right order, as in the reference images:
 
-### 2. 至尊宝
+| # | Character | Nameplate role | System | Color |
+|---|-----------|----------------|--------|-------|
+| 1 | 至尊宝 | 群主 · QA总闸 · 星哥缺席时拍板 | 质量保证体系 (QA) — Quality Gatekeeper | Deep blue |
+| 2 | 牛夫人 | 内容策略 · 审改 · 独立复核 | 内容策略体系 — Content Strategy | Purple |
+| 3 | 小甜甜 | 发布 · 养号 · 送审 | 发布与增长体系 — Publish & Growth | Pink |
+| 4 | 二当家 | 复核 · 重剪 · 核验 | 复核与优化体系 — Recheck & Edit | Green |
+| 5 | 华安（唐伯虎） | 代码 · 技术 · 工具 | 技术与工具体系 — Tech & Tools | Sky blue |
 
-Role:
-Technology / AI / Engineering
+#### 1. 至尊宝
 
-Personality:
-Confident, humorous, technically powerful.
+Responsibilities: 内容质量把关, 最终审核决策, 风险识别与控制, 确保对外发布质量. Group owner; makes the call when 星哥 is away.
 
-Visual:
-Chinese Monkey King / wuxia-inspired character.
-Dark hair.
-Headband.
-Red scarf.
-Staff.
-Confident expression.
+Personality: confident, humorous, decisive.
 
-Color:
-Blue.
+Visual: Monkey King / wuxia-inspired young man, messy dark hair tied up, golden circlet headband, red scarf, staff on his back, thumbs-up and confident grin.
 
-Position:
-Usually left.
+#### 2. 牛夫人
 
----
+Responsibilities: 制定内容策略, 内容审核与修改, 独立复核把关, 保证内容质量与合规.
 
-### 3. 小甜甜
+Personality: strong, decisive, demanding.
 
-Role:
-Design / UX / Product Experience
+Visual: elegant woman in dark traditional dress, dark hair in an updo with gold ornaments and tassels, stern expression, pointing at the viewer.
 
-Personality:
-Warm, creative, empathetic, charming.
+#### 3. 小甜甜
 
-Visual:
-Young Chinese woman.
-Long dark hair.
-Pink clothing.
-Traditional Chinese hair accessories.
-Soft smile / playful expression.
+Responsibilities: 多平台内容发布, 账号运营与维护, 提交送审流程, 提升曝光与粉丝增长.
 
-Color:
-Pink.
+Personality: warm, playful, charming.
 
-Position:
-Usually center.
+Visual: young woman, long dark hair with pink flower ornaments, pink traditional outfit, chin resting on hands, winking, small hearts around her.
 
----
+#### 4. 二当家
 
-### 4. 牛夫人
+Responsibilities: 视频/内容复核, 重剪与优化, 数据核验与校对, 确保发布符合标准.
 
-Role:
-Operations / Growth / Quality / Accountability
+Personality: humorous, observant, resourceful.
 
-Personality:
-Strong, decisive, demanding.
+Visual: wuxia-style man, dark cap with white headband, stubble and mustache, gray traditional robe, gourd at his side, laughing, pointing up.
 
-Visual:
-Chinese historical/wuxia-inspired woman.
-Elegant dark hair.
-Gold ornaments.
-Traditional clothing.
-Strong serious expression.
+#### 5. 华安（唐伯虎）
 
-Color:
-Purple.
+Responsibilities: 开发与技术实现, AI 工具搭建与维护, 技术支持与优化, 提升效率与自动化.
 
-Position:
-Usually right.
+Personality: clever, cheerful, scholarly.
 
----
-
-### 5. 二当家
-
-Role:
-Intelligence / Marketing / Community
-
-Personality:
-Humorous, observant, resourceful.
-
-Visual:
-Wuxia-style Chinese man.
-Gray traditional clothing.
-Small hat.
-Mustache.
-Wine gourd.
-Cheerful expression.
-
-Color:
-Green.
-
-Position:
-Usually bottom center.
+Visual: young scholar, black scholar's hat with white headband, white-and-gray robe with dark trim, holding scrolls / bamboo slips, bamboo behind him, friendly smile.
 
 ---
 
@@ -180,7 +127,7 @@ Use:
 - Watercolor brush textures
 - Clean ink outlines
 - Expressive faces
-- Soft paper texture
+- Soft paper texture, faint ink-wash mountains and pavilions
 - Premium startup branding
 - Humor
 - White space
@@ -194,7 +141,7 @@ Avoid:
 - Random anime characters
 - Excessive visual complexity
 - Generic Western superhero aesthetics
-- Additional team members
+- Additional team members beyond the requested tier
 
 ---
 
@@ -215,57 +162,27 @@ Preserve:
 7. Character proportions
 8. Brush / illustration style
 
-Never redesign the five characters unless explicitly requested.
+Never redesign the characters unless explicitly requested.
 
 **以后不要重新“描述人物”。** Use the Character Bible + reference image. Only describe *composition / theme / format*.
 
 ---
 
-## Team Relationship Model
-
-The default relationship graph is:
+## Team Structure
 
 ```text
-                    星哥
-                      |
-          ┌───────────┼───────────┐
-          ↓           ↓           ↓
-       至尊宝       小甜甜       牛夫人
-          │           ↑           │
-          └──────→ 二当家 ←───────┘
+                         星哥
+                  Founder / Boss
+                          |
+   ┌──────────┬──────────┼──────────┬──────────┐
+   ↓          ↓          ↓          ↓          ↓
+ 至尊宝     牛夫人     小甜甜     二当家      华安
+  QA       内容策略     发布       复核     技术工具
 ```
 
-Relationships:
+星哥 connects to each of the five leaders with a downward arrow. Each leader owns one system (see the table above). In the full org chart, each leader then has four managers (第二层 20人主管) and six executors (第三层 30人执行).
 
-星哥 → 至尊宝
-Leadership / Technology
-
-星哥 → 小甜甜
-Leadership / Product
-
-星哥 → 牛夫人
-Leadership / Operations
-
-至尊宝 ↔ 小甜甜
-Technology + Design
-Positive / playful
-
-小甜甜 ↔ 牛夫人
-Design + Operations
-Creative tension
-
-至尊宝 → 二当家
-Technology + Intelligence
-
-牛夫人 → 二当家
-Operations + Intelligence
-
-二当家 → 小甜甜
-Intelligence + Product support
-
-Long-term brand mapping:
-
-**星哥 = Vision → 至尊宝 = Build → 小甜甜 = Experience → 牛夫人 = Execute → 二当家 = Intelligence**
+Do not invent extra relationship lines between the leaders unless the user asks for them.
 
 ---
 
@@ -274,70 +191,61 @@ Long-term brand mapping:
 For a team poster:
 
 ```text
-                 星哥
-          Founder / Boss
+                         星哥
+                  Founder / Boss
 
-       至尊宝    小甜甜    牛夫人
+  至尊宝     牛夫人     小甜甜     二当家      华安
 
-                 二当家
+          五位负责人 · 一个团队 · 一个使命
 ```
 
 Use:
 
-- hand-drawn arrows
-- colored brush strokes
-- simple relationship icons
+- hand-drawn arrows from 星哥 to each leader
+- a colored watercolor circle behind each character
+- a colored brush-stroke nameplate per leader, with its role line
+- one small icon row per leader (QA shield, content edit, send/publish, film/recheck, code/tools)
 - generous white space
-- colored watercolor circles
 
 ---
 
 ## Brand Rules
 
-Brand:
+Brand: XingAI
 
-XingAI
+Positioning: AI for a Smarter, Happier Life
 
-Positioning:
+Secondary line: Better Decisions, Brighter Days · 更好的决策 · 更亮的每一天
 
-AI for a Smarter, Happier Life
+Team tagline: 五位负责人 · 一个团队 · 一个使命 (Five Leaders · One Team · One Mission)
 
-The XingAI logo should be subtle.
-
-Do not allow branding to overpower the characters.
+The XingAI logo should be subtle. Do not allow branding to overpower the characters.
 
 ---
 
 ## Standard Color Mapping
 
 星哥       → Gold
-至尊宝     → Blue
-小甜甜     → Pink
+至尊宝     → Deep blue
 牛夫人     → Purple
+小甜甜     → Pink
 二当家     → Green
+华安       → Sky blue
 
-Do not randomly change these colors.
+至尊宝 and 华安 are both blue. Keep them distinct: deep navy for 至尊宝, lighter sky blue for 华安. Do not randomly change these colors.
 
 ---
 
 ## Standard Nameplates
 
-星哥
-神秘大Boss
+星哥 — Founder / Boss · 愿景 · 战略 · 最终决策
+至尊宝 — 群主 | QA总闸 | 星哥缺席时拍板
+牛夫人 — 内容策略 | 审改 | 独立复核
+小甜甜 — 发布 | 养号 | 送审
+二当家 — 复核 | 重剪 | 核验
+华安（唐伯虎） — 代码 | 技术 | 工具
 
-至尊宝
-嘴最硬
-
-小甜甜
-最会哄人
-
-牛夫人
-最会追责
-
-二当家
-背锅侠 + 情报员
-
-Keep Chinese typography large and readable.
+Keep Chinese typography large and readable. Image models often garble small Chinese text; keep nameplate text short, and prefer overlaying text afterward if it comes out wrong.
 
 ---
 
@@ -384,16 +292,16 @@ When asked:
 
 use:
 
-"Create a premium XingAI team illustration using the established five-character
+"Create a premium XingAI team illustration using the established six-character
 visual system.
 
 Use the reference image as the primary character reference.
 
 Preserve the identities of:
-星哥, 至尊宝, 小甜甜, 牛夫人, 二当家.
+星哥, 至尊宝, 牛夫人, 小甜甜, 二当家, 华安（唐伯虎）.
 
-Use the established roles, personalities, colors, costumes and relationship
-hierarchy.
+Use the established roles, personalities, colors, costumes and hierarchy:
+星哥 on top, the five leaders in one row below.
 
 Create a polished Chinese-inspired modern cartoon illustration with
 hand-painted watercolor textures, clean ink outlines, expressive faces,
@@ -415,13 +323,13 @@ When continuing from an uploaded / skill reference image, use [references/refere
 
 Before finalizing:
 
-- [ ] Exactly five main characters
-- [ ] All five names correct
-- [ ] Character personalities preserved
-- [ ] Character colors preserved
+- [ ] Exactly six main characters (星哥 + five leaders), unless a full org chart was requested
+- [ ] All six names correct, including 华安（唐伯虎）
+- [ ] Each leader's role line matches the Standard Nameplates
+- [ ] Character personalities and props preserved
+- [ ] Character colors preserved; 至尊宝 and 华安 blues distinguishable
+- [ ] 星哥 clearly on top; arrows from 星哥 to each leader
 - [ ] XingAI branding present but subtle
-- [ ] Hierarchy is visually obvious
-- [ ] Relationships are understandable
 - [ ] Chinese typography is readable
 - [ ] No random people
 - [ ] No photorealism

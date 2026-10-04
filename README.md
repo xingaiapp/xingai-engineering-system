@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.20
+**Version:** 0.3.21
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -79,7 +79,7 @@ docs/
 - `web-video-presentation` — clickable 16:9 web-video stages (upstream garden skill)
 - `universal-diagram` — presentation-ready 16:9 architecture / product diagrams
 - `draw-it` — thin alias for `universal-diagram` (`/draw-it`)
-- `xingai-team-visual` — fixed five-character team illustration system (星哥 / 至尊宝 / 小甜甜 / 牛夫人 / 二当家)
+- `xingai-team-visual` — fixed six-character team illustration system (星哥 + five leaders 至尊宝 / 牛夫人 / 小甜甜 / 二当家 / 华安)
 - `xingai-web-design` — build and refine XingAI web UI surfaces
 - `xingai-worker-setup` — scaffold worker/cache boundary architecture for AI products
 - `api-error-handling` — standardize error responses across FastAPI and Next.js APIs
@@ -140,6 +140,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes / Changelog
+
+### 0.3.21
+
+- `xingai-team-visual`: align the Character Bible with the reference images — core is now 星哥 + five leaders (adds 华安（唐伯虎）), roles / nameplates follow the org chart (QA总闸, 内容策略, 发布, 复核, 代码技术工具), team structure is 星哥 → each leader, 至尊宝 deep blue vs 华安 sky blue
 
 ### 0.3.20
 
