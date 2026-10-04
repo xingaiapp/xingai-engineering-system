@@ -57,5 +57,5 @@ Hierarchy for visuals: **星哥 → each leader**. Do not invent peer “CEO boa
 ## Related
 
 - Skill: [`skills/xingai-team-visual/SKILL.md`](../../skills/xingai-team-visual/SKILL.md)
-- Marketing Team: [xingai-dot-app `/team`](https://github.com/xingaiapp/xingai-dot-app/blob/main/app/%5Blocale%5D/team/page.tsx) (path may vary by branch)
+- Marketing Team: [`xingai-dot-app` `app/[locale]/team/page.tsx`](https://github.com/xingaiapp/xingai-dot-app/blob/main/app/%5Blocale%5D/team/page.tsx)
 - ADR-002 Agent Execution Safety (agents as roles; this ADR is brand cast, not execution gates)

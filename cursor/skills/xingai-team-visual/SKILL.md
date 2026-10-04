@@ -22,6 +22,8 @@ The visual identity must remain consistent across all future images.
 
 **Quick invoke:** `/xingai-team-visual` · “画 XingAI 团队图” · “team picture”.
 
+**Platform ADR:** [ADR-004 Team Visual Character System](../../../docs/adr/004-team-visual-character-system.md) · [中文](../../../docs/adr/004-team-visual-character-system.zh.md)
+
 ## First actions when invoked
 
 ```text

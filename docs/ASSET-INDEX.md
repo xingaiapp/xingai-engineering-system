@@ -42,7 +42,7 @@ Quick reference for rules, skills, prompts, templates, and patterns in this repo
 | `web-video-presentation` | 16:9 clickable web-video stages |
 | `universal-diagram` | 16:9 architecture / product diagrams |
 | `draw-it` | Alias for `universal-diagram` (`/draw-it`) |
-| `xingai-team-visual` | XingAI team / About illustrations (five-character bible) |
+| `xingai-team-visual` | XingAI team / About illustrations (星哥 + five leaders; [ADR-004](adr/004-team-visual-character-system.md)) |
 | `research-ai-loading-ux` | AI waits >2s |
 | `xingai-worker-setup` | Worker + cache boundary |
 | `api-error-handling` | API routes, error shapes |

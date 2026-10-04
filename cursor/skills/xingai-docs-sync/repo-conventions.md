@@ -61,6 +61,20 @@ If a repo is not listed here, fall back to the workflow in `SKILL.md`: find `doc
 - Template: Status/Date/Owner → Context → Honest assessment → Decision → Consequences → Alternatives considered → Action items (checkboxes; human-only actions stay unchecked and called out) → Related.
 - **Only place** in the portfolio where full pricing / competitive-strategy numbers are allowed in detail.
 
+## `xingai-engineering-system`
+
+- Platform ADRs: `docs/adr/NNN-slug.md` — **3-digit**, bilingual pair with `.zh.md`.
+- Index: `docs/adr/README.md` — table `ADR | Title | Status` (中文 link inline in Status). No Mermaid graph as of ADR-004.
+- Scope: decisions that affect ≥2 products or shared skills/patterns — not product-local UX.
+- Root `README.md`: header `**Version:** x.y.z` + `VERSION` file + `## Version Notes / Changelog` with `### x.y.z` newest first. Patch-bump when shipping ADR/skill/asset changes.
+- Cross-links to product repos use GitHub URLs.
+
+## `xingai-dot-app`
+
+- **No `docs/adr/` yet** — do not invent one without user OK.
+- Docs live under `docs/` (`marketing-site-standards.md`, `product-wiki.md`, `seo-aeo-checklist.md`, …).
+- Root `README.md`: `**Version:** YYYY.MM.DDx` + `### Current version notes` with backtick version tags newest first (e.g. `` `2026.10.04i` ``).
+
 ## Wiki / knowledge-base style repos
 
 - Course pages, product pages, synthesis pages, `index.md` + `log.md` ingest tracking — **not** the ADR pattern.
