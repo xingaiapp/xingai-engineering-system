@@ -88,8 +88,14 @@ COMPOSITION:
         五位负责人 · 一个团队 · 一个使命
         Five Leaders · One Team · One Mission
 
-Each leader has a colored brush-stroke nameplate with the Chinese name,
-and one short role line under it (as listed above).
+Each leader has a colored brush-stroke nameplate with the Chinese name
+and one short line under it. Use ONE nameplate set for the whole image:
+
+Personality set (default for posters / About page):
+星哥 神秘大Boss · 至尊宝 嘴最硬 · 牛夫人 最会追责 · 小甜甜 最会哄人 ·
+二当家 背锅侠 + 情报员 · 华安 最会写码
+
+Org-role set (for org charts): the role lines listed above with each character.
 Optionally one small icon row per leader:
 QA shield, content edit, paper-plane publish, film recheck, code / gear tools.
 

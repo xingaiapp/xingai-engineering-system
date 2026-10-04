@@ -186,29 +186,41 @@ Never redesign the characters unless explicitly requested.
 
 星哥 connects to each of the five leaders with a downward arrow. Each leader owns one system (see the table above). In the full org chart, each leader then has four managers (第二层 20人主管) and six executors (第三层 30人执行).
 
-Do not invent extra relationship lines between the leaders unless the user asks for them.
+Do not invent extra relationship lines between the leaders. The only exceptions are the two small symbols in the personality set (see [Standard Nameplates](#standard-nameplates)): ♡ between 至尊宝 and 牛夫人, 💔 between 小甜甜 and 二当家.
 
 ---
 
 ## Default Composition
 
-For a team poster:
+For a team poster (personality set, like `assets/xingai-team-core-five.jpg`):
 
 ```text
                          星哥
-                  Founder / Boss
+                      神秘大Boss
 
-  至尊宝     牛夫人     小甜甜     二当家      华安
+  至尊宝  ♡  牛夫人     小甜甜  💔  二当家      华安
+  嘴最硬     最会追责    最会哄人    背锅侠+情报员  最会写码
 
           五位负责人 · 一个团队 · 一个使命
+```
+
+For an org chart (org-role set, like `assets/xingai-team-org-chart.jpg`):
+
+```text
+                         星哥
+          Founder / Boss · 愿景 · 战略 · 最终决策
+
+  至尊宝     牛夫人     小甜甜     二当家      华安
+  QA总闸     内容策略    发布       复核      代码技术工具
+  [system card per leader]  →  optional 第二层 / 第三层
 ```
 
 Use:
 
 - hand-drawn arrows from 星哥 to each leader
 - a colored watercolor circle behind each character
-- a colored brush-stroke nameplate per leader, with its role line
-- one small icon row per leader (QA shield, content edit, send/publish, film/recheck, code/tools)
+- a colored brush-stroke nameplate per leader, with one line from the chosen nameplate set
+- org charts only: one system card or icon row per leader (QA shield, content edit, send/publish, film/recheck, code/tools)
 - generous white space
 
 ---
@@ -242,12 +254,41 @@ The XingAI logo should be subtle. Do not allow branding to overpower the charact
 
 ## Standard Nameplates
 
+There are two nameplate sets. Both are official. Pick one per image and **never mix them in the same image**.
+
+### Personality set — posters, About / Team page, social, character cards
+
+Source: `assets/xingai-team-core-five.jpg`, `assets/team-character-bible.webp`.
+
+| Character | Nameplate | English tag |
+|-----------|-----------|-------------|
+| 星哥 | 神秘大Boss | — |
+| 至尊宝 | 嘴最硬 | Challenge & QA |
+| 牛夫人 | 最会追责 | Operations |
+| 小甜甜 | 最会哄人 | Design & UX |
+| 二当家 | 背锅侠 + 情报员 | Intelligence |
+| 华安（唐伯虎） | 最会写码 | Tech & Tools |
+
+Optional small symbols in this set: ♡ between 至尊宝 and 牛夫人, 💔 between 小甜甜 and 二当家. English tagline: "Five personalities. One mission."
+
+### Org-role set — org charts, 华府组织架构, responsibility / process diagrams
+
+Source: `assets/xingai-team-org-chart.jpg` and its en / ko editions.
+
 星哥 — Founder / Boss · 愿景 · 战略 · 最终决策
 至尊宝 — 群主 | QA总闸 | 星哥缺席时拍板
 牛夫人 — 内容策略 | 审改 | 独立复核
 小甜甜 — 发布 | 养号 | 送审
 二当家 — 复核 | 重剪 | 核验
 华安（唐伯虎） — 代码 | 技术 | 工具
+
+Use the system names and duty lists from the [five leaders table](#the-five-leaders-第一层--5人负责人) with this set.
+
+### Which set?
+
+- "团队海报", "team poster", About / Team page, social post, character card → **personality set** (default).
+- "组织架构", "org chart", who-owns-what, workflow / responsibility diagram → **org-role set**.
+- Unclear → ask, or default to the personality set for a single image.
 
 Keep Chinese typography large and readable. Image models often garble small Chinese text; keep nameplate text short, and prefer overlaying text afterward if it comes out wrong.
 
@@ -329,7 +370,7 @@ Before finalizing:
 
 - [ ] Exactly six main characters (星哥 + five leaders), unless a full org chart was requested
 - [ ] All six names correct, including 华安（唐伯虎）
-- [ ] Each leader's role line matches the Standard Nameplates
+- [ ] Nameplates come from one set only (personality or org-role), matching the image's purpose
 - [ ] Character personalities and props preserved
 - [ ] Character colors preserved; 至尊宝 and 华安 blues distinguishable
 - [ ] 星哥 clearly on top; arrows from 星哥 to each leader

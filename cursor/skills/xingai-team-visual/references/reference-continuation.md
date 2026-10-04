@@ -10,12 +10,12 @@ color coding, and hierarchy of all six characters.
 
 The six characters are:
 
-星哥 — Founder / Boss (gold)
-至尊宝 — 群主 | QA总闸 | 星哥缺席时拍板 (deep blue)
-牛夫人 — 内容策略 | 审改 | 独立复核 (purple)
-小甜甜 — 发布 | 养号 | 送审 (pink)
-二当家 — 复核 | 重剪 | 核验 (green)
-华安（唐伯虎） — 代码 | 技术 | 工具 (sky blue)
+星哥 — 神秘大Boss (gold)
+至尊宝 — 嘴最硬 · Challenge & QA (deep blue)
+牛夫人 — 最会追责 · Operations (purple)
+小甜甜 — 最会哄人 · Design & UX (pink)
+二当家 — 背锅侠 + 情报员 · Intelligence (green)
+华安（唐伯虎） — 最会写码 · Tech & Tools (sky blue)
 
 Do NOT redesign the characters from scratch.
 
@@ -30,13 +30,14 @@ Create a premium XingAI startup team poster.
 Composition:
 
                       星哥
-                 Founder / Boss
+                   神秘大Boss
 
   至尊宝    牛夫人    小甜甜    二当家    华安
 
         五位负责人 · 一个团队 · 一个使命
 
 Use hand-drawn arrows from 星哥 to each of the five leaders.
+Optional small symbols: ♡ between 至尊宝 and 牛夫人, 💔 between 小甜甜 and 二当家.
 
 Do not change the character personalities.
 
@@ -46,6 +47,10 @@ Do not turn the image into a generic corporate team photo.
 
 Make it look like an official XingAI brand illustration.
 ```
+
+For an org chart instead of a poster, swap the nameplates for the org-role set
+(see SKILL.md → Standard Nameplates) and attach `assets/xingai-team-org-chart.jpg`.
+Never mix the two sets in one image.
 
 ## Short invoke example
 
