@@ -40,8 +40,12 @@ The reference images are the source of truth. If this file and an image disagree
 
 | File | Use |
 |------|-----|
-| [assets/xingai-team-core-five.jpg](assets/xingai-team-core-five.jpg) | 星哥 + five leaders — primary identity bible |
+| [assets/xingai-team-core-five.jpg](assets/xingai-team-core-five.jpg) | 星哥 + five leaders — primary identity bible (16:9) |
+| [assets/team-character-bible.webp](assets/team-character-bible.webp) | Character bible card — same six characters, compact layout |
 | [assets/xingai-team-org-chart.jpg](assets/xingai-team-org-chart.jpg) | 华府组织架构 — full 55-person org (星哥 · 5 leaders · 20 managers · 30 executors) |
+| [assets/xingai-team-org-chart-en.jpg](assets/xingai-team-org-chart-en.jpg) | English edition, 星哥 + five leaders — English names and copy (Xing, Supreme Treasure, Madam Niu, Sweetie, Second Boss, Hua An) |
+| [assets/xingai-team-org-chart-ko.jpg](assets/xingai-team-org-chart-ko.jpg) | Korean edition, 星哥 + five leaders — Korean names and copy (별형, 지존보, 우부인, 소첨첨, 이당가, 화안) |
+| [assets/xingai-team-org-chart-full-ko.jpg](assets/xingai-team-org-chart-full-ko.jpg) | Korean edition of the full 55-person org chart |
 
 **Core IP = six characters**: 星哥 plus the five first-tier leaders. Default posters show only these six. The org chart's second- and third-tier figures are supporting cast; include them only when the user asks for the full org chart.
 

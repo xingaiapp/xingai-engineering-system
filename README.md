@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.22
+**Version:** 0.3.23
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -140,6 +140,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes / Changelog
+
+### 0.3.23
+
+- `xingai-team-visual`: add the Korean full org chart (`xingai-team-org-chart-full-ko.jpg`); list every reference image (core five, character bible, org chart zh / en / ko) in SKILL.md
 
 ### 0.3.22
 
