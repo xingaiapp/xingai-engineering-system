@@ -142,6 +142,10 @@ If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes / Changelog
 
+### 0.3.28
+
+- `docs/INSTALL-CLAUDE-CODE.md`: document the symlink layout — two-hop chain `~/.claude/skills` → `~/.cursor/skills` → repo, repo-linked vs. private local copies, and a one-line layout check; install steps now follow the chain
+
 ### 0.3.27
 
 - `xingai-team-visual`: add Korean and English strings for the personality nameplate set (고집 끝판왕 / Never Backs Down …) plus localized taglines
