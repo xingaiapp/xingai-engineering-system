@@ -1,0 +1,51 @@
+---
+description: Cache, crawlable HTML, and one source for SEO/AEO/GEO on xingai.app, invest, and travel
+alwaysApply: true
+---
+
+# Cache + SEO / AEO / GEO
+
+Applies to `xingai.app`, `invest.xingai.app`, and `travel.xingai.app`.
+
+> Cache for performance. Purge for freshness. SSR/SSG for discoverability. One HTML source for SEO, AEO, and GEO.
+
+Correctness and freshness beat cache hit rate. A deviation needs a note in that repo's ADR or README.
+
+## One HTML
+
+Users, Googlebot, Bingbot, GPTBot, and PerplexityBot get the same core HTML. No cloaking and no AI-only URLs. Do not add `Vary: User-Agent`.
+
+Indexable pages put these in the first server render: `title`, description, canonical, one H1, the answer, FAQ, internal links, and JSON-LD when the page has it. JSON-LD uses the same fields as the visible copy.
+
+A client locale toggle is not an indexable language. Do not emit `hreflang` until that language has its own URL and is in the first HTML.
+
+## Layers do not clear each other
+
+Browser, Vercel CDN, Next `fetch` / ISR, API or worker cache, and the database are separate. A green deploy does not prove the HTML or the data cache changed.
+
+Invalidate the URL, tag, or fetch key that changed. Do not wipe the whole site unless the change is global. `stale-while-revalidate` does not replace that purge.
+
+Hashed `/_next/static/*` may use `public, max-age=31536000, immutable`. Never mark an unversioned URL immutable.
+
+## Do not recode the generic TTL sheet
+
+Measured 2026-10-05. These are the production facts. Do not "fix" them by pasting `s-maxage=600` or a 30–60s market API onto the apps.
+
+| Site | HTML today | What to do |
+|---|---|---|
+| `xingai.app`, Travel evergreen pages | `public, max-age=0, must-revalidate` and Vercel CDN `HIT`. Static HTML changes when the production deployment alias moves. | Leave it. A 5–60 minute `s-maxage` only re-fetches unchanged HTML. |
+| Invest public HTML | `private, no-cache, no-store` because the root layout reads request headers. | Fresher than a 1–5 minute CDN cache. Do not add `s-maxage` until each locale URL renders one stable HTML document. |
+
+## Invest data
+
+The worker writes the decision cache. FastAPI only reads it. Do not add a request-path quote or FRED fetch to make numbers look newer. Do not present a cached research snapshot as a live price. If the page shows a market-derived figure, show the as-of time from the cache.
+
+## Travel data
+
+City guides, compares, stories, and other published pages change on deploy. `/result` and `/trips` are this browser's session or local history: `noindex`, omitted from the sitemap, never a shared cache entry. Do not put live prices, hours, or availability into evergreen HTML.
+
+A regenerated model answer is not a published article. Published pages follow the deploy cache. Regenerated answers stay short-lived.
+
+## Discoverability
+
+Sitemap lists current public URLs only. `robots.txt` is not access control. `llms.txt` matches the public pages. After a public HTML or sitemap change, request the production URL and check status, title, canonical, H1, and JSON-LD. Spoofing a bot User-Agent only checks that the HTML matches; it does not prove the page was indexed.

@@ -7,6 +7,7 @@ Which engineering-system assets to install per repo type.
 **Rules** (copy to `.cursor/rules/`):
 
 - `xingai-foundation.mdc`
+- `xingai-cache-seo-aeo-geo.mdc`
 - `typescript-quality.mdc`
 - `security-baseline.mdc`
 - `accessibility-baseline.mdc`

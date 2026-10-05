@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.25
+**Version:** 0.3.26
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -47,6 +47,7 @@ docs/
 ### Cursor Rules
 
 - `xingai-foundation.mdc` — mobile-first, i18n, theme, legal, SEO/AEO baseline
+- `xingai-cache-seo-aeo-geo.mdc` — one HTML for SEO/AEO/GEO; separate cache layers; no generic TTL sheet on xingai.app, Invest, or Travel
 - `anti-ai-writing-style.mdc` — human writing style for UI/docs/marketing
 - `typescript-quality.mdc` — strict mode, no-any, Zod validation, typed errors
 - `conventional-commits.mdc` — feat/fix/chore/refactor commit format and commitlint setup
@@ -140,6 +141,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes / Changelog
+
+### 0.3.26
+
+- Add `xingai-cache-seo-aeo-geo` rule. Same core HTML for users and crawlers. Vercel static HTML stays on the deployment alias. Invest stays worker-cache read-only. Do not implement the generic 5–60 minute / 30–60 second TTL sheet.
 
 ### 0.3.25
 

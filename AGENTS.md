@@ -4,6 +4,8 @@
 
 Workspace rule **`.cursor/rules/xingai-foundation.mdc`** — mobile-first chrome (top / side drawer / bottom nav), **en / zh / ko**, light/dark theme, legal pages (privacy, terms, disclaimer), SEO + AEO (`llms.txt`, sitemap, metadata). Applies to every `xingai-*` repo and `*.xingai.app` app.
 
+Workspace rule **`.cursor/rules/xingai-cache-seo-aeo-geo.mdc`** — one HTML source for users and crawlers; cache layers stay separate; do not paste a generic TTL sheet onto `xingai.app`, Invest, or Travel. Source copy: `cursor/rules/xingai-cache-seo-aeo-geo.mdc`.
+
 ## Web UI (global Cursor skill)
 
 For front-end work on any `xingai-*` repo or `*.xingai.app` product, use the personal skill **`xingai-web-design`** (`~/.cursor/skills/xingai-web-design/`). It combines design craft (from `web-design-engineer`) with upgrade rules, decision-system UX, oklch tokens, and mobile chrome patterns. Human-readable Chinese: `~/.cursor/skills/xingai-web-design/SKILL.zh-CN.md`.

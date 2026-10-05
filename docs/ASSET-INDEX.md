@@ -7,6 +7,7 @@ Quick reference for rules, skills, prompts, templates, and patterns in this repo
 | Rule | When to use |
 |------|-------------|
 | `xingai-foundation.mdc` | All XingAI product apps — mobile, i18n, legal, SEO |
+| `xingai-cache-seo-aeo-geo.mdc` | xingai.app, Invest, Travel — one HTML, separate cache layers, no generic TTL sheet |
 | `typescript-quality.mdc` | TypeScript / Next.js projects |
 | `security-baseline.mdc` | All repos with API or user data |
 | `accessibility-baseline.mdc` | UI with React components |
