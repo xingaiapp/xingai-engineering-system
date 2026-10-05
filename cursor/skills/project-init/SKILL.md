@@ -135,16 +135,19 @@ Default asset paths and layout: [references/hero-visuals.md](references/hero-vis
 - Legal pages must exist in EN / zh / ko before legal is considered done.
 - Footer and mobile drawer must expose legal links.
 - **Footer family backlink:** crawlable plain `<a href="https://xingai.app/">` (and usually `/apps`) so product subdomains reinforce the main site.
+- Also accept foundation slugs `/legal/privacy`, `/legal/terms`, `/legal/disclaimer` via redirect to the local pages (do not 404).
+- Details and anti-patterns: [references/footer-seo.md](references/footer-seo.md).
 - AI lifestyle/travel/style/research products must say suggestions are informational and users should verify before action.
 - Invest or finance products need risk-first copy and no return promises.
 
 ### SEO
 
 - Add `metadataBase`, route-specific title and description, canonical URL, Open Graph, and Twitter card metadata.
-- Set `<html lang>` to the active locale.
+- Set `<html lang>` to the active locale **when that locale has its own URL in the first HTML**. Client-only locale toggles stay `lang="en"` (or the default document language) and must **not** invent `hreflang`.
 - Add or update `robots.txt` and `sitemap.xml`.
 - Use a branded OG image or product screenshot, not only a favicon.
 - Internal links should respect the active locale on localized marketing pages.
+- Footer must include the [family + legal crawl set](references/footer-seo.md).
 - **Bing IndexNow:** host a public `/{64-hex}.txt` key file, add `lib/indexnow.ts` (or `app/lib/…`), and `scripts/submit-indexnow.py`. Reuse the XingAI portfolio key already on invest.xingai.app when practical. Document “run after first production deploy”.
 - **README URLs:** prefer the live `*.xingai.app` host over `*.vercel.app` project aliases in docs, contact, and curl examples.
 
@@ -204,8 +207,11 @@ Copy this into the plan or PR summary for any new XingAI public app:
 - [ ] EN / zh / ko strings are complete
 - [ ] Light and dark themes are readable with no flash
 - [ ] Privacy, Terms, and Disclaimer exist and are linked
+- [ ] `/legal/privacy`, `/legal/terms`, `/legal/disclaimer` redirect to local legal pages (no 404)
+- [ ] Footer has crawlable plain anchors to `https://xingai.app/` and usually `/apps` (+ sibling products)
 - [ ] SEO metadata, canonical, OG/Twitter, robots.txt, and sitemap.xml are done
 - [ ] llms.txt, FAQ, and JSON-LD are done
+- [ ] Client-only locales do not invent `hreflang`; `<html lang>` matches the indexable document language
 - [ ] Product is registered in xingai-dot-app with localized metadata
 - [ ] Beautiful icons and primary/secondary buttons match repo style
 - [ ] Login, if present, uses a new Google OAuth client with correct redirect URIs
