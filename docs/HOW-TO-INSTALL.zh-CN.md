@@ -75,7 +75,7 @@ cp cursor/rules/enterprise-coding-behavior.mdc /path/to/target-project/.cursor/r
 - `xingai-docs-pack` 和 `xingai-docs-sync`：文档。
 - Wiki 类技能（`xingai-ai-learning-wiki`、`xingai-wiki-ingest`、`xingai-ux-png`）：保证公开学习库内容准确。
 - `xingai-video` + `web-video-presentation` + `universal-diagram`：演示类媒体。
-- `xingai-team-visual`：让 XingAI 团队图和 About 页插图都按同一套五人角色设定来画。
+- `xingai-team-visual`：让 XingAI 团队图和 About 页插图都按同一套六人角色设定（星哥 + 五位负责人）来画。
 - `research-ai-loading-ux`：AI 和搜索的加载状态，需要显示进度、已用时间、完成状态和重试。
 - `enterprise-coding-behavior`：XingAI 企业版的 Karpathy 式编码纪律。
 - `enterprise-agent-team`：把同样的标准用到 Planner / Research / Coding / Reviewer / Architect 各个角色上。

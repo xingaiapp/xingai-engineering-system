@@ -142,6 +142,10 @@ If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes / Changelog
 
+### 0.3.31
+
+- `docs/HOW-TO-INSTALL.md` / `.zh-CN.md`: fix `xingai-team-visual` description — six-character bible (星哥 + five leaders), matching the skill
+
 ### 0.3.30
 
 - Add `docs/HOW-TO-INSTALL.zh-CN.md` — Chinese translation of the Cursor install guide; language switch links in both versions and README

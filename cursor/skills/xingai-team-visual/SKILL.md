@@ -273,20 +273,25 @@ Source: `assets/xingai-team-core-five.jpg`, `assets/team-character-bible.webp`.
 
 Optional small symbols in this set: ♡ between 至尊宝 and 牛夫人, 💔 between 小甜甜 and 二当家. English tagline: "Five personalities. One mission."
 
-Localized personality set (use these exact strings; do not re-translate):
+Localized personality set — **source of truth is the live site** (`xingai-dot-app/app/data/team.ts`, `/team` page). Use these exact strings; do not re-translate. If the site changes, update this table.
 
-| Character | 中文 | 한국어 | English |
-|-----------|------|--------|---------|
-| 星哥 | 星哥 · 神秘大Boss | 별형 (星哥) · 신비주의 대보스 | Xing (Star Brother) · The Mysterious Big Boss |
-| 至尊宝 | 至尊宝 · 嘴最硬 | 지존보 (至尊宝) · 고집 끝판왕 | Supreme Treasure · Never Backs Down |
-| 牛夫人 | 牛夫人 · 最会追责 | 우부인 (牛夫人) · 책임 추궁 1인자 | Madam Niu · Holds You Accountable |
-| 小甜甜 | 小甜甜 · 最会哄人 | 소첨첨 (小甜甜) · 달래기 1인자 | Sweetie · Sweet-Talk Master |
-| 二当家 | 二当家 · 背锅侠 + 情报员 | 이당가 (二当家) · 독박 전문 + 정보원 | Second Boss · Fall Guy + Intel Scout |
-| 华安（唐伯虎） | 华安（唐伯虎） · 最会写码 | 화안 (당백호) · 코딩 1인자 | Hua An (Tang Bohu) · Code Wizard |
+| Character | 中文 | 한국어 | English | Title (en / 中文 / 한국어) |
+|-----------|------|--------|---------|---------------------------|
+| 星哥 | 星哥 · 神秘大Boss | 싱게 (星哥) · 신비주의 대보스 | Xing (星哥) · The Mysterious Big Boss | Vision / 愿景 / Vision |
+| 至尊宝 | 至尊宝 · 嘴最硬 | Joker (至尊宝) · 입이 제일 세다 | Joker (至尊宝) · Sharpest tongue | Chief Challenger / 首席挑战官 / 최고 반론 책임자 |
+| 牛夫人 | 牛夫人 · 最会追责 | Lady Bull (牛夫人) · 추궁 달인 | Lady Bull (牛夫人) · Best at chasing blame | Chief Accountability Officer / 首席追责官 / 최고 책임 추궁관 |
+| 小甜甜 | 小甜甜 · 最会哄人 | Sweetie (小甜甜) · 달래기 달인 | Sweetie (小甜甜) · Best at charming | User Advocate / 首席用户体验官 / 사용자 대변인 |
+| 二当家 | 二当家 · 背锅侠 + 情报员 | Second Master (二当家) · 총알받이 + 정보원 | Second Master (二当家) · Scapegoat + Intel | Research & Intelligence Lead / 研究与情报负责人 / 리서치 · 인텔리전스 리드 |
+| 华安（唐伯虎） | 华安（唐伯虎） · 最会写码 | Hua An (华安) · 코드 붓 | Hua An (华安) · Code brush | Tech & Tools Lead / 技术与工具负责人 / 테크 · 툴 리드 |
 
-Small tags in Korean: 도전 · QA / 운영 / 디자인 · UX / 정보 수집 / 기술 · 도구.
-Taglines: 五位负责人 · 一个团队 · 一个使命 / 5명의 책임자 · 하나의 팀 · 하나의 사명 / Five Leaders · One Team · One Mission. Handwritten note: Five personalities. One mission. / 다섯 가지 개성, 하나의 사명.
-Korean names follow `assets/xingai-team-org-chart-ko.jpg`; English names follow `assets/xingai-team-org-chart-en.jpg`.
+On en and ko pages the site keeps English character names and shows the Chinese name beside them. 星哥's nickname (神秘大Boss) is not on the site yet; its en / ko lines above are poster-only.
+
+Taglines (site `castMission` / `castFooter`):
+- 中文: 五种性格 · 一个使命 / 五位负责人 · 一个团队 · 一个使命
+- English: Five personalities. One mission. / Five Leaders · One Team · One Mission
+- 한국어: 다섯 성격. 하나의 미션. / 다섯 리더 · 한 팀 · 한 미션
+
+The ko / en org-chart images (`xingai-team-org-chart-*`) use older names (지존보, Supreme Treasure …). Treat them as layout and art references only; take names and copy from this table.
 
 ### Org-role set — org charts, 华府组织架构, responsibility / process diagrams
 
