@@ -273,6 +273,21 @@ Source: `assets/xingai-team-core-five.jpg`, `assets/team-character-bible.webp`.
 
 Optional small symbols in this set: ♡ between 至尊宝 and 牛夫人, 💔 between 小甜甜 and 二当家. English tagline: "Five personalities. One mission."
 
+Localized personality set (use these exact strings; do not re-translate):
+
+| Character | 中文 | 한국어 | English |
+|-----------|------|--------|---------|
+| 星哥 | 星哥 · 神秘大Boss | 별형 (星哥) · 신비주의 대보스 | Xing (Star Brother) · The Mysterious Big Boss |
+| 至尊宝 | 至尊宝 · 嘴最硬 | 지존보 (至尊宝) · 고집 끝판왕 | Supreme Treasure · Never Backs Down |
+| 牛夫人 | 牛夫人 · 最会追责 | 우부인 (牛夫人) · 책임 추궁 1인자 | Madam Niu · Holds You Accountable |
+| 小甜甜 | 小甜甜 · 最会哄人 | 소첨첨 (小甜甜) · 달래기 1인자 | Sweetie · Sweet-Talk Master |
+| 二当家 | 二当家 · 背锅侠 + 情报员 | 이당가 (二当家) · 독박 전문 + 정보원 | Second Boss · Fall Guy + Intel Scout |
+| 华安（唐伯虎） | 华安（唐伯虎） · 最会写码 | 화안 (당백호) · 코딩 1인자 | Hua An (Tang Bohu) · Code Wizard |
+
+Small tags in Korean: 도전 · QA / 운영 / 디자인 · UX / 정보 수집 / 기술 · 도구.
+Taglines: 五位负责人 · 一个团队 · 一个使命 / 5명의 책임자 · 하나의 팀 · 하나의 사명 / Five Leaders · One Team · One Mission. Handwritten note: Five personalities. One mission. / 다섯 가지 개성, 하나의 사명.
+Korean names follow `assets/xingai-team-org-chart-ko.jpg`; English names follow `assets/xingai-team-org-chart-en.jpg`.
+
 ### Org-role set — org charts, 华府组织架构, responsibility / process diagrams
 
 Source: `assets/xingai-team-org-chart.jpg` and its en / ko editions.

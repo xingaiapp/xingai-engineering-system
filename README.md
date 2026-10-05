@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.26
+**Version:** 0.3.27
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -141,6 +141,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes / Changelog
+
+### 0.3.27
+
+- `xingai-team-visual`: add Korean and English strings for the personality nameplate set (고집 끝판왕 / Never Backs Down …) plus localized taglines
 
 ### 0.3.26
 
