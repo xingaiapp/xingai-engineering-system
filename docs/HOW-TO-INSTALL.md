@@ -1,5 +1,7 @@
 # How To Install XingAI Engineering Assets
 
+English · [中文](HOW-TO-INSTALL.zh-CN.md)
+
 This guide explains how to copy reusable rules and skills into a new Cursor workspace.
 
 Using Claude Code? See [`INSTALL-CLAUDE-CODE.md`](INSTALL-CLAUDE-CODE.md) ([中文](INSTALL-CLAUDE-CODE.zh-CN.md)) to symlink these skills into `~/.claude/skills/` on any machine.
