@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.31
+**Version:** 0.3.32
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -141,6 +141,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes / Changelog
+
+### 0.3.32
+
+- `xingai-team-visual`: follow the live site for leader order (至尊宝, 小甜甜, 牛夫人, 二当家, 华安) and tagline (AI Decision Systems / AI 决策系统 / AI 의사결정 시스템); drop the ♡ / 💔 symbols, which only fit the older reference-image order
 
 ### 0.3.31
 

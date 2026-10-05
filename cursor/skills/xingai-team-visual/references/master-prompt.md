@@ -34,7 +34,7 @@ Signature props: golden crown and XingAI coffee mug.
 Role: 愿景 · 战略 · 最终决策 (Vision / Strategy / Final Decision).
 Color: gold / warm yellow.
 
-THE FIVE LEADERS (one row below 星哥, left to right):
+THE FIVE LEADERS (one row below 星哥, left to right: 至尊宝, 小甜甜, 牛夫人, 二当家, 华安):
 
 1. 至尊宝 — 群主 | QA总闸 | 星哥缺席时拍板
 Personality: confident, humorous, decisive.
@@ -43,19 +43,19 @@ golden circlet headband, red scarf, staff on his back, thumbs-up, confident grin
 System: 质量保证体系 (QA) — Quality Gatekeeper.
 Color: deep blue.
 
-2. 牛夫人 — 内容策略 | 审改 | 独立复核
-Personality: strong, decisive, demanding.
-Appearance: elegant woman in dark traditional dress, dark hair in an updo
-with gold ornaments and tassels, stern expression, pointing at the viewer.
-System: 内容策略体系 — Content Strategy.
-Color: purple.
-
-3. 小甜甜 — 发布 | 养号 | 送审
+2. 小甜甜 — 发布 | 养号 | 送审
 Personality: warm, playful, charming.
 Appearance: young woman, long dark hair with pink flower ornaments,
 pink traditional outfit, chin resting on hands, winking, small hearts.
 System: 发布与增长体系 — Publish & Growth.
 Color: pink.
+
+3. 牛夫人 — 内容策略 | 审改 | 独立复核
+Personality: strong, decisive, demanding.
+Appearance: elegant woman in dark traditional dress, dark hair in an updo
+with gold ornaments and tassels, stern expression, pointing at the viewer.
+System: 内容策略体系 — Content Strategy.
+Color: purple.
 
 4. 二当家 — 复核 | 重剪 | 核验
 Personality: humorous, observant, resourceful.
@@ -83,7 +83,7 @@ COMPOSITION:
                       星哥
                  Founder / Boss
 
-  至尊宝    牛夫人    小甜甜    二当家    华安
+  至尊宝    小甜甜    牛夫人    二当家    华安
 
         五位负责人 · 一个团队 · 一个使命
         Five Leaders · One Team · One Mission
@@ -92,7 +92,7 @@ Each leader has a colored brush-stroke nameplate with the Chinese name
 and one short line under it. Use ONE nameplate set for the whole image:
 
 Personality set (default for posters / About page):
-星哥 神秘大Boss · 至尊宝 嘴最硬 · 牛夫人 最会追责 · 小甜甜 最会哄人 ·
+星哥 神秘大Boss · 至尊宝 嘴最硬 · 小甜甜 最会哄人 · 牛夫人 最会追责 ·
 二当家 背锅侠 + 情报员 · 华安 最会写码
 
 Org-role set (for org charts): the role lines listed above with each character.
@@ -102,7 +102,7 @@ QA shield, content edit, paper-plane publish, film recheck, code / gear tools.
 BRAND:
 
 Subtly integrate XingAI branding:
-"XingAI — AI for a Smarter, Happier Life" in a corner.
+"XingAI — AI Decision Systems" in a corner (localize: AI 决策系统 / AI 의사결정 시스템).
 Optional handwritten note: "Better Decisions, Brighter Days".
 Do not make the logo dominate the illustration.
 

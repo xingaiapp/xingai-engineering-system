@@ -32,12 +32,13 @@ Composition:
                       星哥
                    神秘大Boss
 
-  至尊宝    牛夫人    小甜甜    二当家    华安
+  至尊宝    小甜甜    牛夫人    二当家    华安
 
         五位负责人 · 一个团队 · 一个使命
 
 Use hand-drawn arrows from 星哥 to each of the five leaders.
-Optional small symbols: ♡ between 至尊宝 and 牛夫人, 💔 between 小甜甜 and 二当家.
+No heart or broken-heart symbols between the leaders.
+Brand line: "XingAI — AI Decision Systems" (localize: AI 决策系统 / AI 의사결정 시스템).
 
 Do not change the character personalities.
 
@@ -63,7 +64,7 @@ Use the existing six-character reference image.
 Theme:
 "五位负责人 · 一个团队 · 一个使命"
 
-Show 星哥 leading 至尊宝, 牛夫人, 小甜甜, 二当家 and 华安（唐伯虎）
+Show 星哥 leading 至尊宝, 小甜甜, 牛夫人, 二当家 and 华安（唐伯虎）
 as they build XingAI together.
 
 Keep all character identities and visual styles consistent.

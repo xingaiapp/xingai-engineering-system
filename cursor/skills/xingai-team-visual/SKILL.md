@@ -3,7 +3,7 @@ name: xingai-team-visual
 description: >-
   Generates consistent XingAI team illustrations, team diagrams, character
   posters, About Us graphics, and org visuals using a fixed six-character
-  system: 星哥 (founder) plus five leaders 至尊宝, 牛夫人, 小甜甜, 二当家,
+  system: 星哥 (founder) plus five leaders 至尊宝, 小甜甜, 牛夫人, 二当家,
   华安（唐伯虎）. Use when the user asks for XingAI team picture, team poster,
   About/Team visual, 华府组织架构, character bible illustration,
   /xingai-team-visual, or wants images that keep the same faces, costumes,
@@ -71,13 +71,13 @@ Position: top center, largest.
 
 ### The five leaders (第一层 · 5人负责人)
 
-Default left-to-right order, as in the reference images:
+Default left-to-right order follows the live site (`castLeaderOrder` in `xingai-dot-app/app/data/team.ts`): 至尊宝, 小甜甜, 牛夫人, 二当家, 华安. The older reference images put 牛夫人 before 小甜甜; follow the site in new work.
 
 | # | Character | Nameplate role | System | Color |
 |---|-----------|----------------|--------|-------|
 | 1 | 至尊宝 | 群主 · QA总闸 · 星哥缺席时拍板 | 质量保证体系 (QA) — Quality Gatekeeper | Deep blue |
-| 2 | 牛夫人 | 内容策略 · 审改 · 独立复核 | 内容策略体系 — Content Strategy | Purple |
-| 3 | 小甜甜 | 发布 · 养号 · 送审 | 发布与增长体系 — Publish & Growth | Pink |
+| 2 | 小甜甜 | 发布 · 养号 · 送审 | 发布与增长体系 — Publish & Growth | Pink |
+| 3 | 牛夫人 | 内容策略 · 审改 · 独立复核 | 内容策略体系 — Content Strategy | Purple |
 | 4 | 二当家 | 复核 · 重剪 · 核验 | 复核与优化体系 — Recheck & Edit | Green |
 | 5 | 华安（唐伯虎） | 代码 · 技术 · 工具 | 技术与工具体系 — Tech & Tools | Sky blue |
 
@@ -89,7 +89,7 @@ Personality: confident, humorous, decisive.
 
 Visual: Monkey King / wuxia-inspired young man, messy dark hair tied up, golden circlet headband, red scarf, staff on his back, thumbs-up and confident grin.
 
-#### 2. 牛夫人
+#### 3. 牛夫人
 
 Responsibilities: 制定内容策略, 内容审核与修改, 独立复核把关, 保证内容质量与合规.
 
@@ -97,7 +97,7 @@ Personality: strong, decisive, demanding.
 
 Visual: elegant woman in dark traditional dress, dark hair in an updo with gold ornaments and tassels, stern expression, pointing at the viewer.
 
-#### 3. 小甜甜
+#### 2. 小甜甜
 
 Responsibilities: 多平台内容发布, 账号运营与维护, 提交送审流程, 提升曝光与粉丝增长.
 
@@ -182,13 +182,13 @@ Never redesign the characters unless explicitly requested.
                           |
    ┌──────────┬──────────┼──────────┬──────────┐
    ↓          ↓          ↓          ↓          ↓
- 至尊宝     牛夫人     小甜甜     二当家      华安
-  QA       内容策略     发布       复核     技术工具
+ 至尊宝     小甜甜     牛夫人     二当家      华安
+  QA        发布      内容策略     复核     技术工具
 ```
 
 星哥 connects to each of the five leaders with a downward arrow. Each leader owns one system (see the table above). In the full org chart, each leader then has four managers (第二层 20人主管) and six executors (第三层 30人执行).
 
-Do not invent extra relationship lines between the leaders. The only exceptions are the two small symbols in the personality set (see [Standard Nameplates](#standard-nameplates)): ♡ between 至尊宝 and 牛夫人, 💔 between 小甜甜 and 二当家.
+Do not invent extra relationship lines between the leaders, and do not add ♡ / 💔 symbols: they only fit the older reference-image layout (至尊宝 next to 牛夫人, 小甜甜 next to 二当家), not the site order.
 
 ---
 
@@ -200,8 +200,8 @@ For a team poster (personality set, like `assets/xingai-team-core-five.jpg`):
                          星哥
                       神秘大Boss
 
-  至尊宝  ♡  牛夫人     小甜甜  💔  二当家      华安
-  嘴最硬     最会追责    最会哄人    背锅侠+情报员  最会写码
+  至尊宝     小甜甜     牛夫人     二当家      华安
+  嘴最硬     最会哄人    最会追责    背锅侠+情报员  最会写码
 
           五位负责人 · 一个团队 · 一个使命
 ```
@@ -212,8 +212,8 @@ For an org chart (org-role set, like `assets/xingai-team-org-chart.jpg`):
                          星哥
           Founder / Boss · 愿景 · 战略 · 最终决策
 
-  至尊宝     牛夫人     小甜甜     二当家      华安
-  QA总闸     内容策略    发布       复核      代码技术工具
+  至尊宝     小甜甜     牛夫人     二当家      华安
+  QA总闸     发布       内容策略    复核      代码技术工具
   [system card per leader]  →  optional 第二层 / 第三层
 ```
 
@@ -231,7 +231,7 @@ Use:
 
 Brand: XingAI
 
-Positioning: AI for a Smarter, Happier Life
+Tagline (live site): AI Decision Systems · AI 决策系统 · AI 의사결정 시스템. Older reference images say "AI for a Smarter, Happier Life"; use the site tagline in new work.
 
 Secondary line: Better Decisions, Brighter Days · 更好的决策 · 更亮的每一天
 
@@ -271,7 +271,7 @@ Source: `assets/xingai-team-core-five.jpg`, `assets/team-character-bible.webp`.
 | 二当家 | 背锅侠 + 情报员 | Intelligence |
 | 华安（唐伯虎） | 最会写码 | Tech & Tools |
 
-Optional small symbols in this set: ♡ between 至尊宝 and 牛夫人, 💔 between 小甜甜 and 二当家. English tagline: "Five personalities. One mission."
+No ♡ / 💔 symbols in the site order (see [Team Structure](#team-structure)). English tagline: "Five personalities. One mission."
 
 Localized personality set — **source of truth is the live site** (`xingai-dot-app/app/data/team.ts`, `/team` page). Use these exact strings; do not re-translate. If the site changes, update this table.
 
@@ -365,7 +365,7 @@ visual system.
 Use the reference image as the primary character reference.
 
 Preserve the identities of:
-星哥, 至尊宝, 牛夫人, 小甜甜, 二当家, 华安（唐伯虎）.
+星哥, 至尊宝, 小甜甜, 牛夫人, 二当家, 华安（唐伯虎）.
 
 Use the established roles, personalities, colors, costumes and hierarchy:
 星哥 on top, the five leaders in one row below.
