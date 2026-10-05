@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.27
+**Version:** 0.3.31
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -145,6 +145,7 @@ If it will likely be used once, solve it directly and do not abstract yet.
 ### 0.3.31
 
 - `docs/HOW-TO-INSTALL.md` / `.zh-CN.md`: fix `xingai-team-visual` description — six-character bible (星哥 + five leaders), matching the skill
+- `xingai-team-visual`: localized personality nameplates now follow the live xingai.app `/team` copy (Joker, Lady Bull, Second Master, 싱게 …) with titles and taglines; ko / en org-chart images are art references only for names
 
 ### 0.3.30
 
