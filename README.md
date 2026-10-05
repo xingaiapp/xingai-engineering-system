@@ -130,7 +130,7 @@ docs/
 
 ## Install
 
-See [`docs/HOW-TO-INSTALL.md`](docs/HOW-TO-INSTALL.md) (Cursor), [`docs/INSTALL-CLAUDE-CODE.md`](docs/INSTALL-CLAUDE-CODE.md) (Claude Code), [`docs/ASSET-INDEX.md`](docs/ASSET-INDEX.md), and [`docs/REPO-RULE-BUNDLES.md`](docs/REPO-RULE-BUNDLES.md).
+See [`docs/HOW-TO-INSTALL.md`](docs/HOW-TO-INSTALL.md) (Cursor), [`docs/INSTALL-CLAUDE-CODE.md`](docs/INSTALL-CLAUDE-CODE.md) (Claude Code; [中文](docs/INSTALL-CLAUDE-CODE.zh-CN.md)), [`docs/ASSET-INDEX.md`](docs/ASSET-INDEX.md), and [`docs/REPO-RULE-BUNDLES.md`](docs/REPO-RULE-BUNDLES.md).
 
 ## Reusability Principle
 
@@ -141,6 +141,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes / Changelog
+
+### 0.3.29
+
+- Add `docs/INSTALL-CLAUDE-CODE.zh-CN.md` — Chinese translation of the Claude Code install guide; language switch links in both versions, README and HOW-TO-INSTALL
 
 ### 0.3.28
 

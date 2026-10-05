@@ -1,5 +1,7 @@
 # Install Skills Into Claude Code
 
+English · [中文](INSTALL-CLAUDE-CODE.zh-CN.md)
+
 This guide installs the skills in `cursor/skills/` into Claude Code on another Mac (or any machine). It uses `universal-diagram` as the worked example.
 
 The method is to **symlink, not copy**. Claude Code then reads the skill straight from this repo, so a `git pull` updates every machine.

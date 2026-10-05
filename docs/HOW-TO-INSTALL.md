@@ -2,7 +2,7 @@
 
 This guide explains how to copy reusable rules and skills into a new Cursor workspace.
 
-Using Claude Code? See [`INSTALL-CLAUDE-CODE.md`](INSTALL-CLAUDE-CODE.md) to symlink these skills into `~/.claude/skills/` on any machine.
+Using Claude Code? See [`INSTALL-CLAUDE-CODE.md`](INSTALL-CLAUDE-CODE.md) ([中文](INSTALL-CLAUDE-CODE.zh-CN.md)) to symlink these skills into `~/.claude/skills/` on any machine.
 
 ## 1. Clone This Repository
 
