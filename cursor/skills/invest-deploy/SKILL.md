@@ -34,7 +34,8 @@ Not `invest-t-advisor`. Not `xingai-dot-app`.
 
 ```text
 Fly app:  xingai-invest-ai-api
-API URL:  https://xingai-invest-ai-api.fly.dev
+Health:   https://invest.xingai.app/api/v1/health · /api/v2/health (public, proxied)
+API host: not published here — see your local (private) copy of this skill
 Frontend: https://invest.xingai.app (Vercel auto-deploy from main)
 Runbook:  xingai-invest-ai/docs/deploy/release-runbook.md
 ```

@@ -56,8 +56,9 @@ Not `xingai-dot-app`. Frontend and back-end live in the **same repo**.
 
 7. **Smoke** — after deploy:
    ```bash
-   curl -sS https://xingai-growth-api.fly.dev/health
-   curl -sS -o /dev/null -w "%{http_code}" https://xingai-growth-api.fly.dev/api/v2/overview
+   API="https://<api-host>"   # from your local (private) copy of this skill
+   curl -sS "$API/health"
+   curl -sS -o /dev/null -w "%{http_code}" "$API/api/v2/overview"
    ```
    Expect health JSON and overview `200` (or documented empty state).
 
@@ -67,7 +68,7 @@ Not `xingai-dot-app`. Frontend and back-end live in the **same repo**.
 
 ```text
 Fly app:   xingai-growth-api
-API URL:   https://xingai-growth-api.fly.dev
+API host:  not published here — see your local (private) copy of this skill
 Frontend:  https://growth.xingai.app  (Vercel — auto-deploy from main)
 Volume:    growth_monitor_data → /app/data  (SQLite)
 Cron:      supercronic daily 02:00 UTC (back-end/crontab)
