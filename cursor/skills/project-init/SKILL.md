@@ -15,6 +15,8 @@ Use this skill whenever the user asks to create, scaffold, bootstrap, or ship a 
 
 This skill sets the product baseline. It does not replace `xingai-web-design`; for front-end implementation, read and follow `~/.cursor/skills/xingai-web-design/SKILL.md` too.
 
+For a **Travel-grade full website** after the shell exists (path locales, static cache, content graph, localized metadata, ship audit), continue with `~/.cursor/skills/create-project/SKILL.md`.
+
 ## Hard gate — visual presence (non-negotiable)
 
 For any **public UI** (product app, marketing page, demo shell), the agent **must** add real visuals before calling the project ready. Text + chrome alone is **not** done.
