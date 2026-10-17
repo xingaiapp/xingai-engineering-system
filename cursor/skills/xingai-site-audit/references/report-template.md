@@ -6,13 +6,15 @@ Date · scope (site / repo / both) · assumed audience · assumed goal
 
 | Lens | Weight | Score | Confidence |
 |---|---|---|---|
-| UX & conversion | 20 | | tested / read / inferred |
-| SEO | 15 | | |
-| AEO | 10 | | |
-| GEO | 10 | | |
-| Performance & accessibility | 15 | | |
-| CTO | 15 | | |
-| Architecture | 15 | | |
+| UX & conversion | 14 | | tested / read / inferred |
+| SEO | 12 | | |
+| AEO | 8 | | |
+| GEO | 8 | | |
+| Performance & accessibility | 12 | | |
+| CTO | 12 | | |
+| Architecture | 10 | | |
+| Internationalization | 12 | | |
+| Responsive & mobile-first | 12 | | |
 
 Caps applied: none / <which and why>.
 Not verified: <list>.

@@ -3,22 +3,22 @@
 Score each item 0 / 1 / 2. Lens score = (sum / (2 × items scored)) × weight.
 Skip items that do not apply and say why.
 
-## 1. UX & conversion (20)
+## 1. UX & conversion (14)
 
 1. Value proposition is clear above the fold in under 5 seconds, without animation.
 2. One primary CTA, visually dominant, repeated at natural decision points.
 3. Information architecture: nav labels are plain, depth <= 3 clicks to any key page.
 4. Core flow works with no sign-up wall before the first value moment.
 5. Social proof or trust signals: real names, sources, status labels, contact.
-6. Mobile-first: thumb-reachable nav, no horizontal scroll, tap targets >= 44px.
+6. (Mobile layout is scored in lens 9; here judge only the desktop first impression.)
 7. Copy is specific and consistent (no contradictory counts or claims).
 8. Empty, loading, error and offline states are designed, with honest waiting UX.
 9. Forms are short, labelled, validated inline, and recover from errors.
 10. Pricing/limits and next step are visible; no dark patterns.
 11. Visual hierarchy, spacing and type scale are consistent; dark/light both work.
-12. Localization is complete (not machine-stub), language switch persists.
+12. Language switch is easy to find and persists (completeness is scored in lens 8).
 
-## 2. SEO (15)
+## 2. SEO (12)
 
 1. Crawlable: 200 on key URLs, no accidental `noindex`, `robots.txt` sane.
 2. XML sitemap lists canonical URLs, includes lastmod, referenced in robots.
@@ -35,7 +35,7 @@ Skip items that do not apply and say why.
 12. Off-page basics: Search Console and Bing Webmaster verified, backlinks plan,
     brand SERP owned.
 
-## 3. AEO (10)
+## 3. AEO (8)
 
 1. Question-led headings with a 40-60 word direct answer beneath.
 2. FAQ block marked up (FAQPage) and matching visible text.
@@ -45,7 +45,7 @@ Skip items that do not apply and say why.
 6. Concise page summaries and TL;DRs near the top.
 7. Speakable or short-answer content for voice where relevant.
 
-## 4. GEO — generative engine optimization (10)
+## 4. GEO — generative engine optimization (8)
 
 1. `llms.txt` present, accurate, current, links to canonical pages.
 2. AI crawlers are not blocked unintentionally (GPTBot, ClaudeBot,
@@ -59,7 +59,7 @@ Skip items that do not apply and say why.
 9. Test it: ask 3-5 target questions in two assistants; record whether the
    site is cited and whether the description is correct `[tested]`.
 
-## 5. Performance & accessibility (15)
+## 5. Performance & accessibility (12)
 
 1. TTFB < 0.6s on cached routes; CDN cache hit on HTML where safe.
 2. LCP < 2.5s, CLS < 0.1, INP < 200ms (lab or field; state which).
@@ -74,7 +74,7 @@ Skip items that do not apply and say why.
 11. Works at 200% zoom and 320px width.
 12. HTTPS only, HSTS, HTTP/2 or 3, compression on.
 
-## 6. CTO — risk and delivery (15)
+## 6. CTO — risk and delivery (12)
 
 1. Security headers: CSP, X-Frame-Options/frame-ancestors, Referrer-Policy,
    Permissions-Policy, nosniff.
@@ -93,7 +93,7 @@ Skip items that do not apply and say why.
 11. Bus factor: runbook, README, ADRs, one-command setup.
 12. Roadmap realism: what is live vs. planned is honest and tracked.
 
-## 7. Architecture (15)
+## 7. Architecture (10)
 
 1. Clear boundaries: read path vs. compute path (CQRS); workers compute,
    API reads cache, frontend renders.
@@ -108,6 +108,74 @@ Skip items that do not apply and say why.
 10. Environment parity: local, preview, production differ only by config.
 11. Extensibility: adding a product, language or page is a small change.
 
+## 8. Internationalization — i18n (12)
+
+Check every supported locale, not just the homepage. Sample at least 6 pages
+per locale (home, listing, detail, pricing, legal, contact).
+
+1. Coverage: every user-facing string exists in every locale; key sets are
+   identical (diff the translation files); no untranslated long strings.
+2. No English leaks on localized pages: nav, buttons, errors, empty states,
+   form validation, alt text, metadata, JSON-LD descriptions.
+3. One URL per locale (`/zh/...`, `/ko/...` or subdomain), crawlable, in the
+   sitemap; no locale decided only by cookie or IP for indexable content.
+4. `hreflang` complete and reciprocal on every page, with `x-default`;
+   `canonical` is self-referencing per locale.
+5. `<html lang>` correct per locale on the server (zh-CN vs zh-TW, not just `zh`);
+   `og:locale` and `og:locale:alternate` set.
+6. Metadata localized: title, description, OG image text, structured data.
+7. Language switcher: visible on mobile, keeps the user on the equivalent page,
+   remembers the choice; auto-redirect by `Accept-Language` is avoided or
+   non-blocking (suggest, do not force, so crawlers still see every locale).
+8. Subdomains and sibling products support the same locales (or state why not);
+   check `/zh` and `/ko` on each (404 and unexplained redirects count against).
+9. Formatting: dates, numbers, currency, plurals and units use `Intl`/locale
+   rules; no hard-coded `MM/DD`.
+10. Typography: CJK fonts load with a fallback stack, line-height and line
+    breaking suit the script, no clipped or overflowing text when strings are
+    longer (German-style expansion, Korean/Chinese vertical metrics).
+11. Quality: terminology consistent and natural; brand names, product names
+    and technical terms handled by a glossary; machine-translated text flagged
+    for native review `[not verified]` unless a native speaker confirmed.
+12. AI/GEO surfaces: `llms.txt` or equivalent covers each locale or links to
+    localized pages; FAQ and Q&A exist in each language.
+13. Process: new strings cannot ship without all locales (CI check or type
+    system); RTL readiness noted if a RTL language is planned.
+
+## 9. Responsive & mobile-first (12)
+
+Test at 375 (phone), 768 (tablet), 1280 (desktop) and a 320px stress width.
+Google indexes the mobile version, so mobile is the primary version.
+
+1. Mobile-first build: base CSS targets the phone, `min-width` queries add
+   complexity upward; desktop is an enhancement, not a shrunk copy.
+2. Viewport meta correct (`width=device-width, initial-scale=1`), zoom not
+   disabled; `viewport-fit=cover` and safe-area insets for notched phones.
+3. No horizontal scroll at 320, 375, 768; no clipped content or overlapping
+   elements; `scrollWidth <= innerWidth`.
+4. Navigation fits the device: bottom nav or drawer on phone, full header on
+   desktop; primary actions within thumb reach; nav is keyboard operable.
+5. Tap targets >= 44x44 CSS px (>= 24px absolute minimum) with spacing;
+   hover-only interactions have a touch/keyboard equivalent.
+6. Fluid layout: relative units, `clamp()` type scale, CSS grid/flex wrapping,
+   container or media queries at real content break points, not device names.
+7. Readable type: body >= 16px on mobile (prevents iOS input zoom), line
+   length 45-75 characters, adequate contrast outdoors.
+8. Media is responsive: `srcset`/`sizes`, aspect-ratio reserved (no layout
+   shift), video does not autoplay on mobile data, art direction where needed.
+9. Forms are mobile-friendly: correct `inputmode`/`type`/`autocomplete`,
+   labels above fields, sticky primary CTA does not hide inputs behind the
+   keyboard.
+10. Content parity: mobile shows the same content, structured data and links
+    as desktop (no hidden "desktop-only" copy that crawlers rely on).
+11. Orientation and device features: works in landscape, at 200% text zoom,
+    with reduced motion, in both themes; PWA basics (manifest, icons,
+    theme-color) if the product is meant to be installed.
+12. Mobile performance: tested under 4G / mid-tier CPU throttling; LCP, INP
+    and CLS meet targets on the mobile profile, not just desktop.
+13. Tablet and large screens: layout uses the extra space (max-width and
+    columns), no stretched single column on 1440px+ or ultra-wide.
+
 ## Caps (apply after scoring)
 
 - Site is `noindex`, blocked in robots, or not on HTTPS: total capped at 50.
@@ -117,3 +185,7 @@ Skip items that do not apply and say why.
 - No legal pages on a site collecting data or giving finance/health content:
   CTO capped at 60%.
 - Contradictory or false claims on the page: UX and GEO each lose 20%.
+- Horizontal scroll or unusable navigation at 375px: Responsive capped at 50%
+  and UX capped at 80%.
+- A supported locale returns 404, redirects away, or serves English content
+  under a localized URL: i18n capped at 60%.

@@ -1,11 +1,12 @@
 ---
 name: xingai-site-audit
 description: >-
-  Scores a live website and/or its codebase from seven expert lenses (UX,
-  SEO, AEO, GEO, performance and accessibility, CTO, architecture) and turns
+  Scores a live website and/or its codebase from nine expert lenses (UX,
+  SEO, AEO, GEO, performance and accessibility, CTO, architecture,
+  internationalization, responsive and mobile-first design) and turns
   the findings into a traffic-first fix list. Use when Xing asks to evaluate,
   audit, score or review a site or project, including phrasings like "评估网站",
-  "打分", "网站体检", "SEO/AEO/GEO 检查", "从 CTO 角度看", "怎么提升流量", or gives a
+  "打分", "网站体检", "SEO/AEO/GEO 检查", "多语言/i18n 检查", "响应式/移动端检查", "从 CTO 角度看", "怎么提升流量", or gives a
   URL or repo and asks how good it is.
 ---
 
@@ -46,7 +47,8 @@ technical terms).
 2. **Probe the live site** (see `references/probes.md`): status codes, headers,
    `robots.txt`, `sitemap.xml`, `llms.txt`, canonical/hreflang/meta/JSON-LD,
    legal pages, subdomain health, mobile viewport (375px) overflow, image alt,
-   heading structure, page weight, TTFB. Use `curl` for facts and the built-in
+   heading structure, page weight, TTFB, per-locale pages and
+   breakpoints (375 / 768 / 1280 px). Use `curl` for facts and the built-in
    browser for rendered behaviour and screenshots.
 3. **Read the code** if a repo is given: routing and rendering mode, data
    boundaries, caching, auth, secrets handling, tests, CI, dependencies,
@@ -61,23 +63,28 @@ technical terms).
 
 ## Lenses and weights (total 100)
 
+If the user asks only about some lenses (e.g. "is i18n good?"), score just those
+and report them on their own 0-100 scale, not as part of the total.
+
 | Lens | Weight | Question it answers |
 |---|---|---|
-| UX & conversion | 20 | Can a first-time visitor understand it in 5 seconds and take the next step? |
-| SEO | 15 | Can search engines crawl, index and rank it? |
-| AEO (answer engines) | 10 | Can featured snippets, voice and assistant answers lift it directly? |
-| GEO (generative engines) | 10 | Will ChatGPT/Claude/Perplexity/Gemini cite and describe it correctly? |
-| Performance & accessibility | 15 | Is it fast, stable and usable by everyone? |
-| CTO (risk and delivery) | 15 | Is it safe, reliable, affordable and shippable by a small team? |
-| Architecture | 15 | Will the design survive growth without rewrites? |
+| UX & conversion | 14 | Can a first-time visitor understand it in 5 seconds and take the next step? |
+| SEO | 12 | Can search engines crawl, index and rank it? |
+| AEO (answer engines) | 8 | Can featured snippets, voice and assistant answers lift it directly? |
+| GEO (generative engines) | 8 | Will ChatGPT/Claude/Perplexity/Gemini cite and describe it correctly? |
+| Performance & accessibility | 12 | Is it fast, stable and usable by everyone? |
+| CTO (risk and delivery) | 12 | Is it safe, reliable, affordable and shippable by a small team? |
+| Architecture | 10 | Will the design survive growth without rewrites? |
+| Internationalization (i18n) | 12 | Does every supported language get a complete, indexable, natural experience? |
+| Responsive & mobile-first | 12 | Is it designed for the phone first and still good on tablet and desktop? |
 
 Grades: 90+ excellent, 80-89 strong, 70-79 solid with gaps, 60-69 needs work,
 below 60 fix fundamentals before promoting.
 
 ## XingAI-specific checks (apply when the target is a *.xingai.app product)
 
-- Foundation chrome: top bar, side drawer, bottom nav on mobile; en / zh / ko;
-  light/dark; privacy, terms, disclaimer reachable at predictable paths.
+- Foundation chrome: top bar, side drawer, bottom nav on mobile; en / zh / ko
+  on every product and subdomain (not only the main site); light/dark; privacy, terms, disclaimer reachable at predictable paths.
 - Product Upgrade Rule: later versions keep the visual language and earlier
   user-facing features; no internal version labels in the UI.
 - Invest AI: FastAPI only reads cache; no request-time decision logic;

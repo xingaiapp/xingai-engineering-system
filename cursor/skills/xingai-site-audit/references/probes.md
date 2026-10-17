@@ -46,3 +46,45 @@ INP and say lab vs. field. If not, mark performance numbers `[not verified]`.
 
 GEO test: ask two assistants 3-5 questions a target user would ask, record
 whether the site is cited and whether its description is accurate.
+
+## i18n probes
+
+```bash
+# translation key parity (adapt to the repo's file layout)
+# compare key sets per locale; list keys missing in any locale
+
+# per-locale head signals on sampled pages
+for l in zh ko; do for p in "" apps pricing legal contact; do
+  echo "/$l/$p"; curl -s "$U/$l/$p" | grep -oE '<html[^>]*lang="[^"]*"|hrefLang="[^"]+"|hreflang="[^"]+"|og:locale"[^>]*|<link rel="canonical"[^>]*>' | sort -u; done; done
+
+# English leaking into a localized page (visible text lines with 3+ English words)
+curl -s "$U/zh" | sed 's/<script[^>]*>[^<]*<\/script>//g; s/<[^>]*>/\n/g' | grep -E '[A-Za-z]{4,} [A-Za-z]{3,} [A-Za-z]{3,}'
+
+# locale coverage of sibling products and subdomains
+for h in app1 app2; do for l in "" zh ko; do curl -s -o /dev/null -w "$h/$l %{http_code} %{redirect_url}\n" "https://$h.example.com/$l"; done; done
+
+# Accept-Language behaviour (should not force-redirect crawlers)
+curl -sI -H "Accept-Language: ko-KR,ko;q=0.9" "$U" | egrep -i '^(HTTP|location)'
+curl -s -o /dev/null -w "%{http_code}\n" "$U/zh/llms.txt"
+```
+
+## Responsive probes
+
+Emulate 320, 375, 768 and 1280 widths in the browser, reload after each, then:
+
+```js
+({vw: innerWidth, sw: document.documentElement.scrollWidth,
+  viewport: document.querySelector('meta[name=viewport]')?.content,
+  smallTargets: [...document.querySelectorAll('a,button,input,select,textarea,[role=button]')]
+    .filter(e => { const r = e.getBoundingClientRect();
+      return r.width && r.height && (r.width < 44 || r.height < 44) }).length,
+  smallText: [...document.querySelectorAll('p,li,span,a')]
+    .filter(e => parseFloat(getComputedStyle(e).fontSize) < 14 && e.innerText?.trim()).length,
+  imgsNoSrcset: [...document.images].filter(i => !i.srcset && i.naturalWidth > 600).length,
+  overflowing: [...document.querySelectorAll('body *')]
+    .filter(e => e.getBoundingClientRect().right > innerWidth + 1).length})
+```
+
+Also take a screenshot per width, open the nav on phone, focus a form field,
+rotate to landscape, and set text zoom to 200%. Throttle to 4G/4x CPU slowdown
+before reading LCP/INP/CLS.
