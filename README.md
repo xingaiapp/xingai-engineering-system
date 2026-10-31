@@ -1,6 +1,6 @@
 # XingAI Engineering System
 
-**Version:** 0.3.32
+**Version:** 0.3.33
 
 Reusable Cursor rules, skills, prompts, templates, and workflows that power XingAI apps, docs, blogs, design systems, and POCs.
 
@@ -141,6 +141,10 @@ If XingAI will likely use a pattern at least 3 times in the next 90 days, consid
 If it will likely be used once, solve it directly and do not abstract yet.
 
 ## Version Notes / Changelog
+
+### 0.3.33
+
+- Add `docs/agent-delivery-pipeline.md` / `.zh-CN.md` — reusable orchestrator + specialist-agent delivery pipeline (stages, roles, two human gates, autonomy model, guardrails)
 
 ### 0.3.32
 
